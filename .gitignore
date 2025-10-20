@@ -1,0 +1,71 @@
+# Questa è la lista di file/cartelle da ignorare per un progetto Unity.
+# Posizionala nella radice del tuo repository (accanto alla cartella Assets).
+
+# ------------------------------------------------------------------------------
+# CARTELLE DI UNITY GENERATE AUTOMATICAMENTE (DA IGNORARE)
+# Unity le rigenera all'apertura del progetto, sono la causa principale dei tuoi avvisi.
+# ------------------------------------------------------------------------------
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+# La cartella del tuo progetto (RV25_26) contiene questi elementi,
+# quindi le regole con / le ignoreranno.
+
+# ------------------------------------------------------------------------------
+# FILE DI SOLUZIONE E PROGETTO VS/RIDER (DA IGNORARE)
+# Sono generati dall'editor e spesso causano conflitti.
+# ------------------------------------------------------------------------------
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# ------------------------------------------------------------------------------
+# FILE DI BUILD E PACKAGE (DA IGNORARE)
+# ------------------------------------------------------------------------------
+*.apk
+*.unitypackage
+*.app
+*.exe
+*.dll
+*.log
+
+# ------------------------------------------------------------------------------
+# FILE DI SISTEMA OPERATIVO (DA IGNORARE)
+# ------------------------------------------------------------------------------
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Visual Studio (e altri IDE)
+.vs/
+.vscode/
+
+# ------------------------------------------------------------------------------
+# CONFIGURAZIONE AGGIUNTIVA
+# ------------------------------------------------------------------------------
+
+# Mantenere tutti i file .meta (Sono essenziali per Unity!)
+!/[Aa]ssets/**/*.meta
+!/[Pp]ackages/**/*.meta
+!/[Pp]roject[Ss]ettings/**/*.meta
