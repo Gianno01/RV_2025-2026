@@ -5,14 +5,14 @@
 # CARTELLE DI UNITY GENERATE AUTOMATICAMENTE (DA IGNORARE)
 # Unity le rigenera all'apertura del progetto, sono la causa principale dei tuoi avvisi.
 # ------------------------------------------------------------------------------
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
-/[Mm]emoryCaptures/
+RV25_26/[Ll]ibrary/
+RV25_26/[Tt]emp/
+RV25_26/[Oo]bj/
+RV25_26/[Bb]uild/
+RV25_26/[Bb]uilds/
+RV25_26/[Ll]ogs/
+RV25_26/[Uu]ser[Ss]ettings/
+RV25_26/[Mm]emoryCaptures/
 # La cartella del tuo progetto (RV25_26) contiene questi elementi,
 # quindi le regole con / le ignoreranno.
 
@@ -66,6 +66,6 @@ Desktop.ini
 # ------------------------------------------------------------------------------
 
 # Mantenere tutti i file .meta (Sono essenziali per Unity!)
-!/[Aa]ssets/**/*.meta
-!/[Pp]ackages/**/*.meta
-!/[Pp]roject[Ss]ettings/**/*.meta
+!RV25_26/[Aa]ssets/**/*.meta
+!RV25_26/[Pp]ackages/**/*.meta
+!RV25_26/[Pp]roject[Ss]ettings/**/*.meta
