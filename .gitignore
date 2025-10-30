@@ -20,8 +20,8 @@ RV25_26/[Mm]emoryCaptures/
 # FILE DI SOLUZIONE E PROGETTO VS/RIDER (DA IGNORARE)
 # Sono generati dall'editor e spesso causano conflitti.
 # ------------------------------------------------------------------------------
-ExportedObj/
-.consulo/
+RV25_26/ExportedObj/
+RV25_26/.consulo/
 *.csproj
 *.unityproj
 *.sln
@@ -51,15 +51,15 @@ ExportedObj/
 # FILE DI SISTEMA OPERATIVO (DA IGNORARE)
 # ------------------------------------------------------------------------------
 # Mac
-.DS_Store
+RV25_26/.DS_Store
 
 # Windows
-Thumbs.db
-Desktop.ini
+RV25_26/Thumbs.db
+RV25_26/Desktop.ini
 
 # Visual Studio (e altri IDE)
-.vs/
-.vscode/
+RV25_26/.vs/
+RV25_26/.vscode/
 
 # ------------------------------------------------------------------------------
 # CONFIGURAZIONE AGGIUNTIVA
