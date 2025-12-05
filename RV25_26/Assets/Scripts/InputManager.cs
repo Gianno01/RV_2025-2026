@@ -17,6 +17,7 @@ public class InputManager : MonoBehaviour
 
     Vector3 origin = Vector3.zero;
     Vector3 direction = Vector3.zero;
+    public AppEventData appEventData;
 
     void Update()
     {
