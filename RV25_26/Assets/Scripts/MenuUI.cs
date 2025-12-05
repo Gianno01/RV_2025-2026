@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// MenuUI invoca l'evento _onStart se premuto il bottone _startButton.
+/// </summary>
 public class MenuUI : MonoBehaviour
 {
     [SerializeField] private Button _startButton;

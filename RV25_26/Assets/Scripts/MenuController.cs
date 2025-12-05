@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// MenuController reagisce all'evento _onStart e carica la main scene scelta. L'evento _onStart è invocato dal MenuUI.
+/// </summary>
 public class MenuController : MonoBehaviour
 {
-    private MenuUI _menuUI;
     [SerializeField] private AppEventData _onStart;
-    [SerializeField] private Scene _mainScene;
+    [SerializeField] private string _mainScene;
 
     void Start()
     {
@@ -14,6 +16,6 @@ public class MenuController : MonoBehaviour
 
     private void HandleOnStart()
     {
-        SceneManager.LoadScene(_mainScene.name);
+        SceneManager.LoadScene(_mainScene);
     }
 }
