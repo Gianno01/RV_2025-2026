@@ -69,3 +69,4 @@ RV25_26/.vscode/
 !RV25_26/[Aa]ssets/**/*.meta
 !RV25_26/[Pp]ackages/**/*.meta
 !RV25_26/[Pp]roject[Ss]ettings/**/*.meta
+!RV25_26/[Aa]ssets/**/*.dll
