@@ -13,7 +13,7 @@ public class InteractionController : MonoBehaviour
     public GameObject tutorialPanel; // Trascina qui il pannello UI del tutorial
 
     [Header("Keys")]
-    public KeyCode interactKey = KeyCode.Q;
+    public KeyCode interactKey = KeyCode.E;
     public KeyCode tutorialKey = KeyCode.H;
 
     private void Update()
