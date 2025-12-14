@@ -6,7 +6,7 @@ public class TalkingCharacter : MonoBehaviour, IsInteractable
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AppEventData _onDialogue;
     public void Interact() {
-        DialogueParam dialogueParam;
+        SpatialParam dialogueParam;
         dialogueParam.audioSource = _audioSource;
         dialogueParam.audioClip = _dialogue;
         
