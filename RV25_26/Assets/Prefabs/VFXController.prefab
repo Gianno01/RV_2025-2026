@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8939722334837097460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8562213452892847616}
+  - component: {fileID: 2909635697983710299}
+  - component: {fileID: 3611391170019248863}
+  - component: {fileID: 4172990476290487392}
+  m_Layer: 0
+  m_Name: VFXController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8562213452892847616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8939722334837097460}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2909635697983710299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8939722334837097460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d3aab075648d446b01b4e5c57bf0d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlackScreenFader
+  _blackScreen: {fileID: 0}
+  _fadeInDuration: 2
+  _fadeInEase: 1
+  _fadeOutDuration: 2
+  _fadeOutEase: 1
+  _onEndFadeIn: {fileID: 11400000, guid: 94a7ffad887dfb84c91d7a63799c95e3, type: 2}
+  _onEndFadeOut: {fileID: 11400000, guid: 2bc22b63b40cfc94780de0c673e42aa2, type: 2}
+--- !u!114 &3611391170019248863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8939722334837097460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7545d71401700e5418730d8d936d7579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExplosionFader
+  _screenVfxVolume: {fileID: 0}
+  _whitePoint: {fileID: 0}
+  _scaleInEase: 17
+  _scaleOutEase: 17
+  _minPointScale: {x: 0, y: 0, z: 1}
+  _maxPointScale: {x: 18, y: 18, z: 1}
+  _scaleInDuration: 1
+  _scaleOutDuration: 2
+  _baseColor: {r: 1, g: 1, b: 1, a: 1}
+  _minHDRIntensity: 2
+  _maxHDRIntensity: 10
+  _bloomInDuration: 3
+  _bloomOutDuration: 3
+  _minFocusDistance: 0
+  _maxFocusDistance: 3
+  _depthOfFieldInDuration: 2
+  _depthOfFieldOutDuration: 5
+  _minDistortionIntensity: 0
+  _maxDistortionIntensity: 0.6
+  _lensDistortionInDuration: 1
+  _lensDistortionOutDuration: 4
+  _minAberationIntensity: 0
+  _maxAberrationIntensity: 1
+  _chromaticAberrationInDuration: 2
+  _chromaticAberrationOutDuration: 2
+  _onExplosionInEnd: {fileID: 11400000, guid: 25fe9342121ce084ca55def290e936c9, type: 2}
+  _onExplosionOutEnd: {fileID: 11400000, guid: bd8acf6656034614999792219f953b32, type: 2}
+--- !u!114 &4172990476290487392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8939722334837097460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db812c7f6c3ac4547bbab504ca24d722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VFXController
+  _blackScreenFader: {fileID: 2909635697983710299}
+  _fadeInOutSecGap: 2
+  _onFadeInEnd: {fileID: 11400000, guid: 94a7ffad887dfb84c91d7a63799c95e3, type: 2}
+  _onFadeOutEnd: {fileID: 11400000, guid: 2bc22b63b40cfc94780de0c673e42aa2, type: 2}
+  _explosionFader: {fileID: 3611391170019248863}
+  _explosionInOutSecGap: 1
+  _onExplosionInEnd: {fileID: 11400000, guid: 25fe9342121ce084ca55def290e936c9, type: 2}
+  _onExplosionOutEnd: {fileID: 11400000, guid: bd8acf6656034614999792219f953b32, type: 2}

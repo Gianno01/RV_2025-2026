@@ -4,43 +4,75 @@ using UnityEngine;
 public class VFXController : MonoBehaviour
 {
     [SerializeField] private BlackScreenFader _blackScreenFader;
-    [SerializeField] private AppEventData _onEndFadeIn;
-    [SerializeField] private AppEventData _onEndFadeOut;
-    [SerializeField] private float _fadeInFadeOutSecGap;
-    private bool _fadeOutAfterFadeIn = false;
-    private bool _useFadeInFadeOutSecGap = false;
+    [SerializeField] private float _fadeInOutSecGap;
+    [SerializeField] private AppEventData _onFadeInEnd;
+    [SerializeField] private AppEventData _onFadeOutEnd;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private ExplosionFader _explosionFader;
+    [SerializeField] private float _explosionInOutSecGap;
+    [SerializeField] private AppEventData _onExplosionInEnd;
+    [SerializeField] private AppEventData _onExplosionOutEnd;
+
+    private bool _OutAfterIn = false;
+    private bool _useInOutSecGap = false;
+
     void Start()
     {
-        _onEndFadeIn.OnEvent += HandleOnFadeInEnd;
-        _onEndFadeOut.OnEvent += HandleOnFadeOutEnd;
+        _onFadeInEnd.OnEvent += HandleOnFadeInEnd;
+        _onFadeOutEnd.OnEvent += HandleOnFadeOutEnd;
+        _onExplosionInEnd.OnEvent += HandleOnExplosionInEnd;
+        _onExplosionOutEnd.OnEvent += HandleOnExplosionOutEnd;
     }
 
     void OnDisable()
     {
-        _onEndFadeIn.OnEvent -= HandleOnFadeInEnd;
-        _onEndFadeOut.OnEvent -= HandleOnFadeOutEnd;
+        _onFadeInEnd.OnEvent -= HandleOnFadeInEnd;
+        _onFadeOutEnd.OnEvent -= HandleOnFadeOutEnd;
+        _onExplosionInEnd.OnEvent -= HandleOnExplosionInEnd;
+        _onExplosionOutEnd.OnEvent -= HandleOnExplosionOutEnd;
     }
 
     public void PlayChangeAreaFadeIn()
     {
-        _fadeOutAfterFadeIn = true;
-        _useFadeInFadeOutSecGap = true;
+        _OutAfterIn = true;
+        _useInOutSecGap = true;
         _blackScreenFader.FadeIn();
+    }
+
+    public void PlayExplosionIn()
+    {
+        _OutAfterIn = true;
+        _useInOutSecGap = true;
+        _explosionFader.InitToMinEffects();
+        _explosionFader.ExplodeIn();
     }
 
     private void HandleOnFadeInEnd()
     {
-        if (_fadeOutAfterFadeIn)
+        if (_OutAfterIn)
         {
-            if(_useFadeInFadeOutSecGap) DOVirtual.DelayedCall(_fadeInFadeOutSecGap, _blackScreenFader.FadeOut);
+            if(_useInOutSecGap) DOVirtual.DelayedCall(_fadeInOutSecGap, _blackScreenFader.FadeOut);
             else _blackScreenFader.FadeOut();  
         } 
     }
 
     private void HandleOnFadeOutEnd()
     {
-        
+        // nulla per ora
+    }
+
+    private void HandleOnExplosionInEnd()
+    {
+        // per test. In realtà c'è un cambio di scena e nella nuova scena initMaxEffect ed explode out
+        if (_OutAfterIn)
+        {
+            if(_useInOutSecGap) DOVirtual.DelayedCall(_explosionInOutSecGap, () => {_explosionFader.InitToMaxEffects(); _explosionFader.ExplodeOut();});
+            else {_explosionFader.InitToMaxEffects(); _explosionFader.ExplodeOut();}  
+        } 
+    }
+
+    private void HandleOnExplosionOutEnd()
+    {
+        _explosionFader.DisableEffects();
     }
 }
