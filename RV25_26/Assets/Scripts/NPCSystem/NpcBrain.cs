@@ -5,12 +5,12 @@ using System.Collections;
 public enum NpcState { Idle, Patrol, Talk }
 
 [RequireComponent(typeof(NavMeshAgent))]
-[RequireComponent(typeof(BoxCollider))] // Assicura che ci sia il tuo collider
+[RequireComponent(typeof(BoxCollider))] 
 public class NpcBrain : MonoBehaviour, IsInteractable
 {
     [Header("Stato")]
     public NpcState currentState = NpcState.Idle;
-
+    private TalkingCharacter _talkingVoice; // Riferimento al componente audio
     [Header("Pattugliamento")]
     public Transform[] waypoints;
     public float waitTimeAtPoint = 2f;
@@ -27,24 +27,31 @@ public class NpcBrain : MonoBehaviour, IsInteractable
     private Transform playerTransform;
     private NpcState previousState; 
 
-    void Start()
-    {
-        agent = GetComponent<NavMeshAgent>();
-        
-        // Cerca il player (assicurati che il tuo player abbia il Tag "Player")
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null) playerTransform = player.transform;
-        
-        // Disattiva rotazione automatica del NavMeshAgent quando siamo fermi a parlare
-        // per controllarla noi manualmente, altrimenti lo lasciamo fare a lui.
-        agent.updateRotation = true;
+  void Start()
+{
+    // 1. Recupera i componenti necessari
+    agent = GetComponent<NavMeshAgent>();
+    _talkingVoice = GetComponent<TalkingCharacter>(); // Assicurati di aver dichiarato questa variabile in alto nella classe
 
-        if (waypoints.Length > 0)
-        {
-            currentState = NpcState.Patrol;
-            MoveToNextWaypoint();
-        }
+    // 2. Trova il Player (DICHIARAZIONE UNICA)
+    GameObject player = GameObject.FindGameObjectWithTag("Player");
+    
+    if (player != null) 
+    {
+        playerTransform = player.transform;
     }
+
+    // 3. Configurazione NavMesh
+    agent.updateRotation = true;
+
+    if (waypoints.Length > 0)
+    {
+        currentState = NpcState.Patrol;
+        MoveToNextWaypoint();
+    }
+}
+
+    
     public string GetDescription()
     {
         return $"{actionVerb} {npcName}";
@@ -67,13 +74,10 @@ public class NpcBrain : MonoBehaviour, IsInteractable
         }
     }
 
-    // --- LOGICHE ---
-
     void PatrolLogic()
     {
-        agent.updateRotation = true; // L'agente ruota verso dove cammina
+        agent.updateRotation = true; 
 
-        // Se l'agente è arrivato a destinazione (e non sta calcolando il percorso)
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {
             StartCoroutine(WaitAndMove());
@@ -131,7 +135,14 @@ public class NpcBrain : MonoBehaviour, IsInteractable
     {
         previousState = currentState;
         currentState = NpcState.Talk;
-        Debug.Log("NPC: Ciao! (Guarda la linea rossa per vedere se ti guardo)");
+
+        // COMANDO ALLA VOCE: Se esiste il componente audio, fallo suonare
+        if (_talkingVoice != null)
+        {
+            _talkingVoice.Interact();
+        }
+
+        Debug.Log("NPC: Inizio conversazione.");
     }
 
     public void EndConversation()

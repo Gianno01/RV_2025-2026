@@ -1,16 +1,29 @@
 using UnityEngine;
+
 [RequireComponent(typeof(AudioSource))]
-public class TalkingCharacter : MonoBehaviour, IsInteractable 
+public class TalkingCharacter : MonoBehaviour 
 {
-    [SerializeField] private AudioClip _dialogue;
-    [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private AppEventData _onDialogue;
-    public void Interact() {
-        SpatialParam dialogueParam;
-        dialogueParam.audioSource = _audioSource;
-        dialogueParam.audioClip = _dialogue;
-        
-        _onDialogue.RaiseWithParam(dialogueParam);
+    [Header("Configurazione Audio")]
+    [SerializeField] private AudioClip _dialogueClip;
+    [SerializeField] private AppEventData _onSpatialAudioEvent;
+
+    private AudioSource _myAudioSource;
+
+    void Awake() // Usiamo Awake per essere sicuri che l'audio sia pronto
+    {
+        _myAudioSource = GetComponent<AudioSource>();
+        _myAudioSource.spatialBlend = 1.0f; // Forza l'audio 3D
     }
-    public string GetDescription() { return "Oggetto di prova"; }
+
+    // Questo metodo viene chiamato dal NpcBrain
+    public void Interact() 
+    {
+        if (_dialogueClip == null || _onSpatialAudioEvent == null) return;
+
+        SpatialParam dialogueParam;
+        dialogueParam.audioSource = _myAudioSource;
+        dialogueParam.audioClip = _dialogueClip;
+
+        _onSpatialAudioEvent.RaiseWithParam(dialogueParam);
+    }
 }
