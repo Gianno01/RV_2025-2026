@@ -1,8 +1,11 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class VFXController : MonoBehaviour
 {
+    [SerializeField] private Camera _VFXCamera;
+
     [SerializeField] private BlackScreenFader _blackScreenFader;
     [SerializeField] private float _fadeInOutSecGap;
     [SerializeField] private AppEventData _onFadeInEnd;
@@ -16,8 +19,13 @@ public class VFXController : MonoBehaviour
     private bool _OutAfterIn = false;
     private bool _useInOutSecGap = false;
 
+    private UniversalAdditionalCameraData mainCam;
+
     void Start()
     {
+        mainCam = Camera.main.GetComponent<UniversalAdditionalCameraData>();
+        mainCam.cameraStack.Add(_VFXCamera);
+
         _onFadeInEnd.OnEvent += HandleOnFadeInEnd;
         _onFadeOutEnd.OnEvent += HandleOnFadeOutEnd;
         _onExplosionInEnd.OnEvent += HandleOnExplosionInEnd;

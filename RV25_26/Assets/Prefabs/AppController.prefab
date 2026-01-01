@@ -46,6 +46,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AppController
   _scenes:
   - HomeScene
-  - MainScene
+  - MasterScene
+  _additiveScenes:
+  - EnvironmentScene
+  - UserScene
+  - NPCScene
+  - SoundScene
+  - VFXScene
   _onCutsceneStart: {fileID: 11400000, guid: c833f77d13cb40e48a97ee9d83774660, type: 2}
   _onGameplayResume: {fileID: 11400000, guid: 3e6c25369ad99704cb3e9862b46b3ce6, type: 2}

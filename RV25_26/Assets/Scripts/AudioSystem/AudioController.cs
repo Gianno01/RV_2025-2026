@@ -20,7 +20,7 @@ public class AudioController : MonoBehaviour
     [SerializeField] private AppEventData _onAudio;
     private AudioSource _noSpatialAudioSource;
 
-    void Start()
+    void Awake()
     {
         _onSpatialAudio.OnParamEvent += HandleOnSpatialAudio;
         _onAudio.OnParamEvent += HandleOnAudio;

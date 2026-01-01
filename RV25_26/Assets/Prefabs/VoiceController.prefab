@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4585331565929152499}
   - component: {fileID: 8865116521119571287}
   m_Layer: 0
-  m_Name: AudioController
+  m_Name: VoiceController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,5 +142,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53fce82eee760f445930bfaa6c85d7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VoiceController
-  _onDialogue: {fileID: 0}
-  _onMonologue: {fileID: 0}
+  _onSpatialAudio: {fileID: 0}
+  _onAudio: {fileID: 0}

@@ -16,6 +16,7 @@ public class AppController : MonoBehaviour
 {
     [HideInInspector] public static AppController Instance { get; private set; }
     [SerializeField] private string[] _scenes;
+    [SerializeField] private string[] _additiveScenes;
     [SerializeField] private AppEventData _onCutsceneStart;
     [SerializeField] private AppEventData _onGameplayResume;
     private GameplayController _gameplayController;
@@ -45,11 +46,21 @@ public class AppController : MonoBehaviour
             _menuController.enabled = false;
             ToHomeState();
         }else if(scene.name == _scenes[1]){
+            LoadAdditiveScenes();
+
             _gameplayController = GameObject.FindAnyObjectByType<GameplayController>();
             _cutsceneController = GameObject.FindAnyObjectByType<CutsceneController>();
             _gameplayController.enabled = false;
             _cutsceneController.enabled = false;
             ToGameplayState();
+        }
+    }
+
+    private void LoadAdditiveScenes()
+    {
+        foreach(string s in _additiveScenes)
+        {
+            SceneManager.LoadScene(s, LoadSceneMode.Additive);
         }
     }
 

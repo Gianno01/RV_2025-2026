@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuController
   _onStart: {fileID: 11400000, guid: d1c4800c61a66e5409e2ec22cefc4be8, type: 2}
-  _mainScene: MainScene
+  _mainScene: MasterScene

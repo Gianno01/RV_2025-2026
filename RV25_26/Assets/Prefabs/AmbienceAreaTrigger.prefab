@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3706452997070370988
+--- !u!1 &6604237971499484066
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,58 +8,75 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4366859246248098938}
-  - component: {fileID: 4622592790556747222}
-  - component: {fileID: 3136553429563650847}
+  - component: {fileID: 7557542218861335035}
+  - component: {fileID: 3372698810627129178}
+  - component: {fileID: 796107339181883259}
+  - component: {fileID: 7838727367893698286}
   m_Layer: 0
-  m_Name: AreaTrigger
+  m_Name: AmbienceAreaTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4366859246248098938
+--- !u!4 &7557542218861335035
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3706452997070370988}
+  m_GameObject: {fileID: 6604237971499484066}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.47496, y: 0, z: 0.20428}
+  m_LocalPosition: {x: 1.37745, y: -1.5541, z: 1.76438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4622592790556747222
+--- !u!114 &3372698810627129178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3706452997070370988}
+  m_GameObject: {fileID: 6604237971499484066}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 811937216f37e3a409594db124b8b54f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaTrigger
-  _isReferenceToOtherGameobject: 1
-  _gameObjectName: QuestController
-  _componentName: QuestController
-  _methodName: PlayHint
+  _isReferenceToOtherGameobject: 0
+  _gameObjectName: 
+  _componentName: AudioSpot
+  _methodName: PlayAudio
   _param: 0
   _collisionLayer:
     serializedVersion: 2
-    m_Bits: 1
---- !u!65 &3136553429563650847
+    m_Bits: 64
+--- !u!114 &796107339181883259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6604237971499484066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca91019b6e9de94ea047726fb71f192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioSpot
+  _isSpatialAudio: 0
+  _onSpatialAudio: {fileID: 0}
+  _onAudio: {fileID: 11400000, guid: e0c45183597c1cb4faa3ed9911c9da8c, type: 2}
+  _clip: {fileID: 0}
+--- !u!65 &7838727367893698286
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3706452997070370988}
+  m_GameObject: {fileID: 6604237971499484066}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

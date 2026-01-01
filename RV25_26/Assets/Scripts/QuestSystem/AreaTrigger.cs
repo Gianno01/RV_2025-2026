@@ -11,6 +11,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class AreaTrigger : MonoBehaviour
 {
+    [SerializeField] private bool _isReferenceToOtherGameobject;
     [SerializeField] private string _gameObjectName;
     [SerializeField] private string _componentName;
     [SerializeField] private string _methodName;
@@ -34,7 +35,15 @@ public class AreaTrigger : MonoBehaviour
             Type type = Type.GetType(_componentName);
             _method = type.GetMethod(_methodName);
             _paramNumber = _method.GetParameters().Length;
-            _obj = (MonoBehaviour) GameObject.Find(_gameObjectName).GetComponent(_componentName);
+
+            if (_isReferenceToOtherGameobject)
+            {
+                _obj = (MonoBehaviour) GameObject.Find(_gameObjectName).GetComponent(_componentName);
+            }
+            else
+            {
+                _obj = (MonoBehaviour) gameObject.GetComponent(_componentName);
+            }
         }
     }
 
