@@ -171,6 +171,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: VoiceController
       objectReference: {fileID: 0}
+    - target: {fileID: 8865116521119571287, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
+      propertyPath: _onAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: ac4837d110398b949898dc90c88644c0, type: 2}
+    - target: {fileID: 8865116521119571287, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
+      propertyPath: _onSpatialAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: 39caf63f6077823488ca6294971900b4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -228,6 +236,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AmbienceController
       objectReference: {fileID: 0}
+    - target: {fileID: 8865116521119571287, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
+      propertyPath: _onAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: e0c45183597c1cb4faa3ed9911c9da8c, type: 2}
+    - target: {fileID: 8865116521119571287, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
+      propertyPath: _onSpatialAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: e0c45183597c1cb4faa3ed9911c9da8c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -285,6 +301,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SFXController
       objectReference: {fileID: 0}
+    - target: {fileID: 8865116521119571287, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
+      propertyPath: _onAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: 06de42c25d427aa4ba121e000bc34f6a, type: 2}
+    - target: {fileID: 8865116521119571287, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
+      propertyPath: _onSpatialAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: 06de42c25d427aa4ba121e000bc34f6a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

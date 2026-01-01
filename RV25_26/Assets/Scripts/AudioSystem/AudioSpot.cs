@@ -11,8 +11,11 @@ public class AudioSpot : MonoBehaviour
 
     private void Awake()
     {
-        _audioSource = gameObject.GetComponent<AudioSource>();
-        _audioSource.spatialBlend = 1.0f;
+        if (_isSpatialAudio)
+        {
+            _audioSource = gameObject.GetComponent<AudioSource>();
+            _audioSource.spatialBlend = 1.0f;
+        }
     }
 
     public void PlayAudio()
