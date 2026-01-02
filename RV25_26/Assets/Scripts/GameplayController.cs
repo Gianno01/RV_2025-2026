@@ -6,10 +6,42 @@ using UnityEngine;
 /// </summary>
 public class GameplayController : MonoBehaviour
 {
+    [SerializeField] private AppEventData _onFadeInEnd;
+    [SerializeField] private AppEventData _onGameplayExit;
     private QuestController _questController;
+    private VFXController _VFXController;
+    private GameObject _player;
 
-    void Start()
+    public void Init()
     {
         _questController = GameObject.FindAnyObjectByType<QuestController>();
+        _player = GameObject.FindAnyObjectByType<MotionController>().gameObject;
+        _VFXController = GameObject.FindAnyObjectByType<VFXController>();
+        this.enabled = false;
+    }
+
+    public void ExitGameplay()
+    {
+        _onFadeInEnd.OnEvent += HandleFadeInEnd;
+        _VFXController.PlayChangeAppStateFadeIn();
+    }
+
+    public void EnterGameplay(AppState appState)
+    {
+        this.enabled = true;
+        _player.SetActive(true);
+
+        if(appState == AppState.Home)
+            return;
+        
+        _VFXController.PlayChangeAppStateFadeOut();
+    }
+
+    private void HandleFadeInEnd()
+    {
+        _onFadeInEnd.OnEvent -= HandleFadeInEnd;
+        _player.SetActive(false);
+        _onGameplayExit.Raise();
+        this.enabled = false;
     }
 }

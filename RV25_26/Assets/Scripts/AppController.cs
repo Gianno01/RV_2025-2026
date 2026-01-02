@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,6 +18,8 @@ public class AppController : MonoBehaviour
     [SerializeField] private string[] _additiveScenes;
     [SerializeField] private AppEventData _onCutsceneStart;
     [SerializeField] private AppEventData _onGameplayResume;
+    [SerializeField] private AppEventData _onGameplayExit;
+    [SerializeField] private AppEventData _onCutsceneExit;
     private GameplayController _gameplayController;
     private CutsceneController _cutsceneController;
     private MenuController _menuController;
@@ -52,8 +53,8 @@ public class AppController : MonoBehaviour
 
             _gameplayController = GameObject.FindAnyObjectByType<GameplayController>();
             _cutsceneController = GameObject.FindAnyObjectByType<CutsceneController>();
-            _gameplayController.enabled = false;
-            _cutsceneController.enabled = false;
+            _gameplayController.Init();
+            _cutsceneController.Init();
             ToGameplayState();
         }
     }
@@ -66,35 +67,48 @@ public class AppController : MonoBehaviour
         }
     }
 
-    private void HandleCutsceneStart(object param)
+    private void HandleCutsceneStart()
     {
-        ToCutscenState();
-        int timelineIndex = (int) param;
-        _cutsceneController.PlayTimeline(timelineIndex);
+        _onGameplayExit.OnEvent += HandleOnGameplayExit;
+        _gameplayController.ExitGameplay();
     }
 
     private void HandleOnGameplayResume()
     {
+        _onCutsceneExit.OnEvent += HandleOnCutsceneExit;
+        _cutsceneController.ExitCutscene();
+    }
+
+    private void HandleOnGameplayExit()
+    {
+        _onGameplayExit.OnEvent -= HandleOnGameplayExit;
+
+        ToCutsceneState();
+        _cutsceneController.PlayCurrentTimeline();
+    }
+
+    private void HandleOnCutsceneExit()
+    {
+        _onCutsceneExit.OnEvent -= HandleOnCutsceneExit;
+
         ToGameplayState();
     }
 
    // i tre metodi di seguito sono callback agli eventi che producono un cambio di stato
     private void ToGameplayState()
     {
+        _gameplayController.EnterGameplay(_currentAppState);
         _currentAppState = AppState.Gameplay;
-        _cutsceneController.enabled = false;
-        _gameplayController.enabled = true;
 
         if(_onGameplayResume.OnEvent != null) _onGameplayResume.OnEvent -= HandleOnGameplayResume;
-        _onCutsceneStart.OnParamEvent += HandleCutsceneStart;
+        _onCutsceneStart.OnEvent += HandleCutsceneStart;
     }
-    private void ToCutscenState()
+    private void ToCutsceneState()
     {
         _currentAppState = AppState.Cutscene;
-        _gameplayController.enabled = false;
-        _cutsceneController.enabled = true;
+        _cutsceneController.EnterCutscene();
 
-        if(_onCutsceneStart.OnEvent != null) _onCutsceneStart.OnParamEvent -= HandleCutsceneStart;
+        if(_onCutsceneStart.OnEvent != null) _onCutsceneStart.OnEvent -= HandleCutsceneStart;
         _onGameplayResume.OnEvent += HandleOnGameplayResume;
     }
     private void ToHomeState()

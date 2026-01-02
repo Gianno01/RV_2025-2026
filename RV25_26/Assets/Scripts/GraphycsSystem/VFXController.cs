@@ -45,6 +45,20 @@ public class VFXController : MonoBehaviour
         _onWakeUpOutEnd.OnEvent -= HandleOnWakeUpOutEnd;
     }
 
+    public void PlayChangeAppStateFadeIn()
+    {
+        _OutAfterIn = false;
+        _useInOutSecGap = false;
+        _blackScreenFader.InitToMinEffect();
+        _blackScreenFader.FadeIn();
+    }
+
+    public void PlayChangeAppStateFadeOut()
+    {
+        _blackScreenFader.InitToMaxEffect();
+        _blackScreenFader.FadeOut();
+    }
+
     public void PlayChangeAreaFadeIn()
     {
         _OutAfterIn = true;
@@ -77,7 +91,7 @@ public class VFXController : MonoBehaviour
         {
             if(_useInOutSecGap) DOVirtual.DelayedCall(_fadeInOutSecGap, () => {_blackScreenFader.InitToMaxEffect(); _blackScreenFader.FadeOut();});
             else _blackScreenFader.FadeOut();  
-        } 
+        }
     }
 
     private void HandleOnFadeOutEnd()

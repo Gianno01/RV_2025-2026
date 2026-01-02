@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -12,17 +13,25 @@ public class CutsceneController : MonoBehaviour
     //[SerializeField] private AppEventData _onTimelineEnd;
     [SerializeField] private AppEventData _onGameplayResume;
     [SerializeField] private AppEventData _onCutsceneStart;
+    [SerializeField] private AppEventData _onFadeInEnd;
+    [SerializeField] private AppEventData _onCutsceneExit;
     private PlayableDirector _playableDirector;
     private int _currentTimelineIndex;
+    private VFXController _VFXController;
 
     void Awake()
     {
         _playableDirector = gameObject.GetComponent<PlayableDirector>();
     }
 
-    public void PlayTimeline(int timelineIndex)
+    public void Init()
     {
-        _currentTimelineIndex = timelineIndex;
+        _VFXController = GameObject.FindAnyObjectByType<VFXController>();
+        this.enabled = false;
+    }
+
+    public void PlayCurrentTimeline()
+    {
         _playableDirector.playableAsset = _timelines[_currentTimelineIndex];
         //_onTimelineEnd.OnEvent += HandleOnTimelineEnd;
         _playableDirector.Play();
@@ -42,6 +51,28 @@ public class CutsceneController : MonoBehaviour
 
     public void StartCutscene(int timelineIndex)
     {
-        _onCutsceneStart.RaiseWithParam(timelineIndex);
+        _currentTimelineIndex = timelineIndex;
+        _onCutsceneStart.Raise();
+    }
+
+    public void EnterCutscene()
+    {
+        this.enabled = true;
+        _VFXController.PlayChangeAppStateFadeOut();
+    }
+
+    public void ExitCutscene()
+    {
+        _onFadeInEnd.OnEvent += HandleOnFadeInEnd;
+        _VFXController.PlayChangeAppStateFadeIn();
+    }
+
+    private void HandleOnFadeInEnd()
+    {
+        _onFadeInEnd.OnEvent -= HandleOnFadeInEnd;
+        GameObject cutsceneCam = GameObject.FindAnyObjectByType<CinemachineCamera>().gameObject;
+        cutsceneCam.SetActive(false);
+        _onCutsceneExit.Raise();
+        this.enabled = false;
     }
 }
