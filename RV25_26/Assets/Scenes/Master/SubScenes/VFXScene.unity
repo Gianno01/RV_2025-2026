@@ -209,6 +209,14 @@ PrefabInstance:
       propertyPath: _VFXCamera
       value: 
       objectReference: {fileID: 237555256}
+    - target: {fileID: 8498369833732532915, guid: fba206494396d1f41b03ec1950339934, type: 3}
+      propertyPath: _whitePoint
+      value: 
+      objectReference: {fileID: 1137075619}
+    - target: {fileID: 8498369833732532915, guid: fba206494396d1f41b03ec1950339934, type: 3}
+      propertyPath: _screenVfxVolume
+      value: 
+      objectReference: {fileID: 1362333305}
     - target: {fileID: 8562213452892847616, guid: fba206494396d1f41b03ec1950339934, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.24251
@@ -427,6 +435,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1137075619 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5258468581051007936, guid: 9e8c56c8033156f45b359d076afe2140, type: 3}
+  m_PrefabInstance: {fileID: 1137075617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &1362333304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -495,6 +514,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+--- !u!1001 &1471119322
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 656879241717481802, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
+      propertyPath: m_Name
+      value: WakeUpTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618640752499648319, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.807
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618640752499648319, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618640752499648319, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.07976
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618640752499648319, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618640752499648319, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618640752499648319, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618640752499648319, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618640752499648319, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618640752499648319, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618640752499648319, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
 --- !u!1001 &1587068436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -681,3 +757,4 @@ SceneRoots:
   - {fileID: 1362333304}
   - {fileID: 1918202148}
   - {fileID: 591628359}
+  - {fileID: 1471119322}
