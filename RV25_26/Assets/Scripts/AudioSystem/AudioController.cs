@@ -57,7 +57,6 @@ public class AudioController : MonoBehaviour
     private void HandleOnAudio(object param)
     {
         AudioClip clip = (AudioClip) param;
-        Debug.Log("CLIP NAME: " + clip.name);
         _noSpatialAudioSource.PlayOneShot(clip);
     }
 }
