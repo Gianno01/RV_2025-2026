@@ -22,16 +22,30 @@ public class AudioController : MonoBehaviour
 
     void Awake()
     {
-        _onSpatialAudio.OnParamEvent += HandleOnSpatialAudio;
-        _onAudio.OnParamEvent += HandleOnAudio;
-        _noSpatialAudioSource = gameObject.GetComponent<AudioSource>();
-        _noSpatialAudioSource.spatialBlend = 0;
+        if (_onSpatialAudio)
+        {
+            _onSpatialAudio.OnParamEvent += HandleOnSpatialAudio;
+        }
+
+        if (_onAudio)
+        {
+            _onAudio.OnParamEvent += HandleOnAudio;
+            _noSpatialAudioSource = gameObject.GetComponent<AudioSource>();
+            _noSpatialAudioSource.spatialBlend = 0;
+        }
     }
 
     void OnDisable()
     {
-        _onSpatialAudio.OnParamEvent -= HandleOnSpatialAudio;
-        _onAudio.OnParamEvent -= HandleOnAudio;
+        if (_onSpatialAudio)
+        {
+            _onSpatialAudio.OnParamEvent -= HandleOnSpatialAudio;
+        }
+
+        if (_onAudio)
+        {
+            _onAudio.OnParamEvent -= HandleOnAudio;
+        }
     }
 
     private void HandleOnSpatialAudio(object param)
