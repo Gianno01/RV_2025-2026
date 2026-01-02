@@ -37,6 +37,8 @@ public class AppController : MonoBehaviour
     void Start()
     {
         SceneManager.sceneLoaded += HandleOnSceneLoaded;
+        //per test, da commentare
+        HandleOnSceneLoaded(SceneManager.GetActiveScene(),LoadSceneMode.Single);
     }
 
     private void HandleOnSceneLoaded(Scene scene, LoadSceneMode mode)
