@@ -25,8 +25,8 @@ public class QuestController : MonoBehaviour
     {
         _onStartQuest.OnParamEvent += HandleOnStartQuest;
         // commenta se non vuoi testare il quest system nella scena QuestSystem
-        _onStartQuest.RaiseWithParam(1);
-        DOVirtual.DelayedCall(10, () => _onStartQuest.RaiseWithParam(0),false);
+        //_onStartQuest.RaiseWithParam(1);
+        //DOVirtual.DelayedCall(10, () => _onStartQuest.RaiseWithParam(0),false);
     }
 
     void OnDisable()
