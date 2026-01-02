@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -39,7 +41,7 @@ public class AppController : MonoBehaviour
     {
         SceneManager.sceneLoaded += HandleOnSceneLoaded;
         //per test, da commentare
-        HandleOnSceneLoaded(SceneManager.GetActiveScene(),LoadSceneMode.Single);
+        //HandleOnSceneLoaded(SceneManager.GetActiveScene(),LoadSceneMode.Single);
     }
 
     private void HandleOnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -49,22 +51,27 @@ public class AppController : MonoBehaviour
             _menuController.enabled = false;
             ToHomeState();
         }else if(scene.name == _scenes[1]){
-            LoadAdditiveScenes();
-
-            _gameplayController = GameObject.FindAnyObjectByType<GameplayController>();
-            _cutsceneController = GameObject.FindAnyObjectByType<CutsceneController>();
-            _gameplayController.Init();
-            _cutsceneController.Init();
-            ToGameplayState();
+            StartCoroutine(LoadAdditiveScenes());
         }
     }
 
-    private void LoadAdditiveScenes()
-    {
-        foreach(string s in _additiveScenes)
-        {
-            SceneManager.LoadScene(s, LoadSceneMode.Additive);
-        }
+    private IEnumerator LoadAdditiveScenes() { 
+        List<AsyncOperation> ops = new List<AsyncOperation>();
+        foreach (string s in _additiveScenes) {
+            AsyncOperation op = SceneManager.LoadSceneAsync(s, LoadSceneMode.Additive);
+            op.allowSceneActivation = true; 
+            ops.Add(op); 
+        } 
+        foreach (var op in ops) { 
+            while (!op.isDone) 
+                yield return null; 
+        } 
+
+        _gameplayController = GameObject.FindAnyObjectByType<GameplayController>();
+        _cutsceneController = GameObject.FindAnyObjectByType<CutsceneController>();
+        _gameplayController.Init();
+        _cutsceneController.Init();
+        ToGameplayState();
     }
 
     private void HandleCutsceneStart()
