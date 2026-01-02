@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1928036006751862024
+--- !u!1 &4464355152316592375
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,55 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8440547223716782132}
-  - component: {fileID: 8632603682733910915}
-  - component: {fileID: 4545150119156045797}
-  - component: {fileID: 2420407838052002520}
+  - component: {fileID: 2137877383869609280}
+  - component: {fileID: 5734378155084505025}
+  - component: {fileID: 783538547135958406}
   m_Layer: 0
-  m_Name: SFXTrigger
+  m_Name: SFXController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8440547223716782132
+--- !u!4 &2137877383869609280
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928036006751862024}
+  m_GameObject: {fileID: 4464355152316592375}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.80929, y: -2.86391, z: 0.39999998}
-  m_LocalScale: {x: 1, y: 1, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8632603682733910915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928036006751862024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ca91019b6e9de94ea047726fb71f192, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioSpot
-  _isSpatialAudio: 1
-  _onSpatialAudio: {fileID: 11400000, guid: 06de42c25d427aa4ba121e000bc34f6a, type: 2}
-  _onAudio: {fileID: 0}
-  _clip: {fileID: 8300000, guid: 3f9f4e9bfb00dfe45848b6d69af8c89c, type: 3}
---- !u!82 &4545150119156045797
+--- !u!82 &5734378155084505025
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928036006751862024}
+  m_GameObject: {fileID: 4464355152316592375}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5518195975160408736, guid: af85ee41901bd3e4ab76bcfd8b736562, type: 2}
@@ -107,7 +90,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -147,24 +130,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!65 &2420407838052002520
-BoxCollider:
+--- !u!114 &783538547135958406
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928036006751862024}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_GameObject: {fileID: 4464355152316592375}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53fce82eee760f445930bfaa6c85d7a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VoiceController
+  _onSpatialAudio: {fileID: 11400000, guid: 06de42c25d427aa4ba121e000bc34f6a, type: 2}
+  _onAudio: {fileID: 0}

@@ -1193,18 +1193,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1333462660}
     m_Modifications:
     - target: {fileID: 1206458453766649474, guid: 7b04af129e71fdc479ff2be5bf199ff3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1206458453766649474, guid: 7b04af129e71fdc479ff2be5bf199ff3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1206458453766649474, guid: 7b04af129e71fdc479ff2be5bf199ff3, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1206458453766649474, guid: 7b04af129e71fdc479ff2be5bf199ff3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.80929
       objectReference: {fileID: 0}
@@ -1248,10 +1236,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SFXAreaTrigger
       objectReference: {fileID: 0}
-    - target: {fileID: 6436801237542994449, guid: 7b04af129e71fdc479ff2be5bf199ff3, type: 3}
-      propertyPath: _clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3f9f4e9bfb00dfe45848b6d69af8c89c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
