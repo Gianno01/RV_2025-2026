@@ -13,6 +13,16 @@ public class BlackScreenFader : MonoBehaviour
     [SerializeField] private AppEventData _onEndFadeOut;
 
     private Tween _fadeTween;
+
+    public void InitToMaxEffect()
+    {
+        _blackScreen.alpha = 1;
+    }
+
+    public void InitToMinEffect()
+    {
+        _blackScreen.alpha = 0;
+    }
     
     public void FadeIn()
     {

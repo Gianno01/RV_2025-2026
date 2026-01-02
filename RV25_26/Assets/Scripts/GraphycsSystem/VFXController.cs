@@ -16,6 +16,9 @@ public class VFXController : MonoBehaviour
     [SerializeField] private AppEventData _onExplosionInEnd;
     [SerializeField] private AppEventData _onExplosionOutEnd;
 
+    [SerializeField] private ExplosionFader _wakeUpFader;
+    [SerializeField] private AppEventData _onWakeUpOutEnd;
+
     private bool _OutAfterIn = false;
     private bool _useInOutSecGap = false;
 
@@ -30,6 +33,7 @@ public class VFXController : MonoBehaviour
         _onFadeOutEnd.OnEvent += HandleOnFadeOutEnd;
         _onExplosionInEnd.OnEvent += HandleOnExplosionInEnd;
         _onExplosionOutEnd.OnEvent += HandleOnExplosionOutEnd;
+        _onWakeUpOutEnd.OnEvent += HandleOnWakeUpOutEnd;
     }
 
     void OnDisable()
@@ -38,12 +42,14 @@ public class VFXController : MonoBehaviour
         _onFadeOutEnd.OnEvent -= HandleOnFadeOutEnd;
         _onExplosionInEnd.OnEvent -= HandleOnExplosionInEnd;
         _onExplosionOutEnd.OnEvent -= HandleOnExplosionOutEnd;
+        _onWakeUpOutEnd.OnEvent -= HandleOnWakeUpOutEnd;
     }
 
     public void PlayChangeAreaFadeIn()
     {
         _OutAfterIn = true;
         _useInOutSecGap = true;
+        _blackScreenFader.InitToMinEffect();
         _blackScreenFader.FadeIn();
     }
 
@@ -55,18 +61,28 @@ public class VFXController : MonoBehaviour
         _explosionFader.ExplodeIn();
     }
 
+    public void PlayWakeUpOut()
+    {
+        _OutAfterIn = false;
+        _useInOutSecGap = false;
+        _blackScreenFader.InitToMaxEffect();
+        _wakeUpFader.InitToMaxEffects();
+        _blackScreenFader.FadeOut();
+        _wakeUpFader.ExplodeOut();
+    }
+
     private void HandleOnFadeInEnd()
     {
         if (_OutAfterIn)
         {
-            if(_useInOutSecGap) DOVirtual.DelayedCall(_fadeInOutSecGap, _blackScreenFader.FadeOut);
+            if(_useInOutSecGap) DOVirtual.DelayedCall(_fadeInOutSecGap, () => {_blackScreenFader.InitToMaxEffect(); _blackScreenFader.FadeOut();});
             else _blackScreenFader.FadeOut();  
         } 
     }
 
     private void HandleOnFadeOutEnd()
     {
-        // nulla per ora
+        _blackScreenFader.InitToMinEffect();
     }
 
     private void HandleOnExplosionInEnd()
@@ -82,5 +98,10 @@ public class VFXController : MonoBehaviour
     private void HandleOnExplosionOutEnd()
     {
         _explosionFader.DisableEffects();
+    }
+
+    private void HandleOnWakeUpOutEnd()
+    {
+        _wakeUpFader.DisableEffects();
     }
 }

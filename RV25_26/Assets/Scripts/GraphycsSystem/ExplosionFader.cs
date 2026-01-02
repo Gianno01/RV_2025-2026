@@ -134,7 +134,7 @@ public class ExplosionFader : MonoBehaviour
         _sequence.Join(DOTween.To(() => _depthOfField.focusDistance.value, (f) => _depthOfField.focusDistance.value = f, _minFocusDistance, _depthOfFieldInDuration));
         _sequence.Join(DOTween.To(() => _lensDistortion.intensity.value, (d) => _lensDistortion.intensity.value = d, _maxDistortionIntensity, _lensDistortionInDuration));
         _sequence.Join(DOTween.To(() => _chromaticAberration.intensity.value, (a) => _chromaticAberration.intensity.value = a, _maxAberrationIntensity, _chromaticAberrationInDuration));
-        _sequence.onComplete += () => _onExplosionInEnd.Raise();
+        if(_onExplosionInEnd != null) _sequence.onComplete += () => _onExplosionInEnd.Raise();
         _sequence.Play();
     }
 
@@ -156,7 +156,7 @@ public class ExplosionFader : MonoBehaviour
         _sequence.Join(DOTween.To(() => _depthOfField.focusDistance.value, (f) => _depthOfField.focusDistance.value = f, _maxFocusDistance, _depthOfFieldOutDuration));
         _sequence.Join(DOTween.To(() => _lensDistortion.intensity.value, (d) => _lensDistortion.intensity.value = d, _minDistortionIntensity, _lensDistortionOutDuration));
         _sequence.Join(DOTween.To(() => _chromaticAberration.intensity.value, (a) => _chromaticAberration.intensity.value = a, _minAberationIntensity, _chromaticAberrationOutDuration));
-        _sequence.onComplete += () => _onExplosionOutEnd.Raise();
+        if(_onExplosionOutEnd != null) _sequence.onComplete += () => _onExplosionOutEnd.Raise();
         _sequence.Play();
     }
 }
