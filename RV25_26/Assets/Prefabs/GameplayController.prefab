@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12f2666165a4de44b05613579637b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameplayController
+  _onFadeInEnd: {fileID: 11400000, guid: 94a7ffad887dfb84c91d7a63799c95e3, type: 2}
+  _onGameplayExit: {fileID: 11400000, guid: 36491070bb97dbf44b134956eed94856, type: 2}

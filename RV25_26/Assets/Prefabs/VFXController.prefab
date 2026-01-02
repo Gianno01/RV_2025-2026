@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2909635697983710299}
   - component: {fileID: 3611391170019248863}
   - component: {fileID: 4172990476290487392}
+  - component: {fileID: 8498369833732532915}
   m_Layer: 0
   m_Name: VFXController
   m_TagString: Untagged
@@ -49,8 +50,8 @@ MonoBehaviour:
   _blackScreen: {fileID: 0}
   _fadeInDuration: 2
   _fadeInEase: 1
-  _fadeOutDuration: 2
-  _fadeOutEase: 1
+  _fadeOutDuration: 3
+  _fadeOutEase: 17
   _onEndFadeIn: {fileID: 11400000, guid: 94a7ffad887dfb84c91d7a63799c95e3, type: 2}
   _onEndFadeOut: {fileID: 11400000, guid: 2bc22b63b40cfc94780de0c673e42aa2, type: 2}
 --- !u!114 &3611391170019248863
@@ -104,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db812c7f6c3ac4547bbab504ca24d722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VFXController
+  _VFXCamera: {fileID: 0}
   _blackScreenFader: {fileID: 2909635697983710299}
   _fadeInOutSecGap: 2
   _onFadeInEnd: {fileID: 11400000, guid: 94a7ffad887dfb84c91d7a63799c95e3, type: 2}
@@ -112,3 +114,44 @@ MonoBehaviour:
   _explosionInOutSecGap: 1
   _onExplosionInEnd: {fileID: 11400000, guid: 25fe9342121ce084ca55def290e936c9, type: 2}
   _onExplosionOutEnd: {fileID: 11400000, guid: bd8acf6656034614999792219f953b32, type: 2}
+  _wakeUpFader: {fileID: 8498369833732532915}
+  _onWakeUpOutEnd: {fileID: 11400000, guid: 8426035ed916f9b489d41e2c05b209d9, type: 2}
+--- !u!114 &8498369833732532915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8939722334837097460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7545d71401700e5418730d8d936d7579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExplosionFader
+  _screenVfxVolume: {fileID: 0}
+  _whitePoint: {fileID: 0}
+  _scaleInEase: 17
+  _scaleOutEase: 17
+  _minPointScale: {x: 0, y: 0, z: 1}
+  _maxPointScale: {x: 0, y: 0, z: 1}
+  _scaleInDuration: 0
+  _scaleOutDuration: 0
+  _baseColor: {r: 0, g: 0, b: 0, a: 1}
+  _minHDRIntensity: 0
+  _maxHDRIntensity: 0
+  _bloomInDuration: 0
+  _bloomOutDuration: 0
+  _minFocusDistance: 0
+  _maxFocusDistance: 3
+  _depthOfFieldInDuration: 2
+  _depthOfFieldOutDuration: 5
+  _minDistortionIntensity: 0
+  _maxDistortionIntensity: 0.6
+  _lensDistortionInDuration: 1
+  _lensDistortionOutDuration: 4
+  _minAberationIntensity: 0
+  _maxAberrationIntensity: 1
+  _chromaticAberrationInDuration: 2
+  _chromaticAberrationOutDuration: 2
+  _onExplosionInEnd: {fileID: 0}
+  _onExplosionOutEnd: {fileID: 11400000, guid: 8426035ed916f9b489d41e2c05b209d9, type: 2}
