@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1390708916580851911}
   - component: {fileID: 422622969502894925}
-  - component: {fileID: 8525031139776801713}
   m_Layer: 0
   m_Name: AmbienceTrigger
   m_TagString: Untagged
@@ -49,24 +48,3 @@ MonoBehaviour:
   _onSpatialAudio: {fileID: 0}
   _onAudio: {fileID: 11400000, guid: e0c45183597c1cb4faa3ed9911c9da8c, type: 2}
   _clip: {fileID: 8300000, guid: ca73f2ca62866aa47bbc60c5fdd43339, type: 3}
---- !u!65 &8525031139776801713
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8766911050285508909}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
