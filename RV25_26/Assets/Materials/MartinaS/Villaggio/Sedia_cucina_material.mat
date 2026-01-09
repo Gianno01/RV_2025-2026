@@ -7,17 +7,16 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Staccionata_material
+  m_Name: Sedia_cucina_material
   m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
-  m_Parent: {fileID: 2100000, guid: 61f2d4a14d4ee0d429f8a8669e2222f9, type: 2}
+  m_Parent: {fileID: 2100000, guid: 95c92bb5a4c74df429dfd1beb1176417, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _EMISSIVE_SIMPLE
   - _IS_CLIPPING_OFF
   - _IS_OUTLINE_CLIPPING_NO
   - _OUTLINE_NML
-  m_InvalidKeywords:
-  - _NORMALMAP
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -31,32 +30,22 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _1st_ShadeMap:
-        m_Texture: {fileID: 2800000, guid: 4694c4a607659d744b39dc5682f99aff, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 4694c4a607659d744b39dc5682f99aff, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: cd3d559cb937a66498f7280ae139a421, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4694c4a607659d744b39dc5682f99aff, type: 3}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: b8f4e9a905b6f32458f3f3d55ea7c447, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _StencilComp: 0
+    - _BumpScale: 0.575
+    - _Is_NormalMapToBase: 1
     m_Colors:
-    - _1st_ShadeColor: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 1}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _1st_ShadeColor: {r: 0.3509434, g: 0.1789123, b: 0, a: 1}
+    - _2nd_ShadeColor: {r: 0.2679245, g: 0.18659027, b: 0, a: 1}
+    - _BaseColor: {r: 0.5018867, g: 0.2571153, b: 0, a: 1}
+    - _Color: {r: 0.50188667, g: 0.25711524, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &5005710472292381531
+--- !u!114 &8554814342270094630
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
