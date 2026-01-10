@@ -49,6 +49,7 @@ public class AreaTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if(!this.enabled) return;
         if(((1 << other.gameObject.layer) & _collisionLayer.value) != 0)
         {
             if(_paramNumber == 1) _method.Invoke(_obj, new object[]{_param});
