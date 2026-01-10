@@ -173,7 +173,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 6
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1345,7 +1345,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 3
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1888,7 +1888,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 30
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -3386,7 +3386,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3e0a28092016a12448bc170a2300a293, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.57768
+      value: -17.74
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e0a28092016a12448bc170a2300a293, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3542,8 +3542,8 @@ Transform:
   m_GameObject: {fileID: 1217691792}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.15, z: -0.5}
-  m_LocalScale: {x: 5.06, y: 1, z: 2.42}
+  m_LocalPosition: {x: 1.5768, y: -1.15, z: -1.6321}
+  m_LocalScale: {x: 5.534318, y: 1, z: 2.9376938}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3821,7 +3821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7838727367893698286, guid: 5eb6b15f93f594a41b8c131dc9a0c081, type: 3}
       propertyPath: m_Size.x
-      value: 9
+      value: 11.68
       objectReference: {fileID: 0}
     - target: {fileID: 7838727367893698286, guid: 5eb6b15f93f594a41b8c131dc9a0c081, type: 3}
       propertyPath: m_Size.y
@@ -4484,15 +4484,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7838727367893698286, guid: 5eb6b15f93f594a41b8c131dc9a0c081, type: 3}
       propertyPath: m_Size.x
-      value: 9
+      value: 11.17
       objectReference: {fileID: 0}
     - target: {fileID: 7838727367893698286, guid: 5eb6b15f93f594a41b8c131dc9a0c081, type: 3}
       propertyPath: m_Size.y
-      value: 3
+      value: 2.31
       objectReference: {fileID: 0}
     - target: {fileID: 7838727367893698286, guid: 5eb6b15f93f594a41b8c131dc9a0c081, type: 3}
       propertyPath: m_Size.z
-      value: 4
+      value: 5.08
       objectReference: {fileID: 0}
     - target: {fileID: 7838727367893698286, guid: 5eb6b15f93f594a41b8c131dc9a0c081, type: 3}
       propertyPath: m_Center.x
@@ -4781,7 +4781,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -5121,7 +5121,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 30
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -5250,7 +5250,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -6391,7 +6391,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -6954,15 +6954,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7838727367893698286, guid: 5eb6b15f93f594a41b8c131dc9a0c081, type: 3}
       propertyPath: m_Size.x
-      value: 9
+      value: 11.02
       objectReference: {fileID: 0}
     - target: {fileID: 7838727367893698286, guid: 5eb6b15f93f594a41b8c131dc9a0c081, type: 3}
       propertyPath: m_Size.y
-      value: 3
+      value: 2.79
       objectReference: {fileID: 0}
     - target: {fileID: 7838727367893698286, guid: 5eb6b15f93f594a41b8c131dc9a0c081, type: 3}
       propertyPath: m_Size.z
-      value: 4
+      value: 4.47
       objectReference: {fileID: 0}
     - target: {fileID: 7838727367893698286, guid: 5eb6b15f93f594a41b8c131dc9a0c081, type: 3}
       propertyPath: m_Center.x
