@@ -21,9 +21,14 @@ public class QuestController : MonoBehaviour
     [SerializeField] private AppEventData _onCurrentQuestChange;
     [HideInInspector] public int _currentQuestIndex {get; private set;}
 
+    void Awake()
+    {
+        _currentQuestIndex = -1;
+        _onStartQuest.OnEvent += HandleOnStartQuest;
+    }
     void Start()
     {
-        _onStartQuest.OnParamEvent += HandleOnStartQuest;
+        HandleOnStartQuest();
         // commenta se non vuoi testare il quest system nella scena QuestSystem
         //_onStartQuest.RaiseWithParam(1);
         //DOVirtual.DelayedCall(10, () => _onStartQuest.RaiseWithParam(0),false);
@@ -31,13 +36,15 @@ public class QuestController : MonoBehaviour
 
     void OnDisable()
     {
-        _onStartQuest.OnParamEvent -= HandleOnStartQuest;
+        _onStartQuest.OnEvent -= HandleOnStartQuest;
     }
 
-    private void HandleOnStartQuest(object param)
+    private void HandleOnStartQuest()
     {
-        _currentQuestIndex = (int) param;
+        _currentQuestIndex++;
         _onCurrentQuestChange.RaiseWithParam(_currentQuestIndex);
+
+        if(_currentQuestIndex >= _questDatas.Length) return; // tutte le quest sono state completate
 
         QuestData questData = _questDatas[_currentQuestIndex];
         if(questData.SecToWait != -1)
