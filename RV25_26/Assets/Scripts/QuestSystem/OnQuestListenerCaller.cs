@@ -25,7 +25,7 @@ public class OnQuestListenerCaller : OnQuestListener
             _method = type.GetMethod(_methodName);
             _paramNumber = _method.GetParameters().Length;
 
-            if (_isReferenceToOtherGameobject || _gameObjectName != null)
+            if (_isReferenceToOtherGameobject && _gameObjectName != null)
             {
                 _obj = (MonoBehaviour) GameObject.Find(_gameObjectName).GetComponent(_componentName);
             }
