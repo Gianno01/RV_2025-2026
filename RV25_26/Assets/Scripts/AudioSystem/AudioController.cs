@@ -51,17 +51,12 @@ public class AudioController : MonoBehaviour
     private void HandleOnSpatialAudio(object param)
     {
         SpatialParam spatialParam = (SpatialParam) param;
-        
-        if(spatialParam.audioClip == null) return;
-        spatialParam.audioSource.Stop();
         spatialParam.audioSource.PlayOneShot(spatialParam.audioClip);
     }
 
     private void HandleOnAudio(object param)
     {
         AudioClip clip = (AudioClip) param;
-
-        if(clip == null) return;
         _noSpatialAudioSource.PlayOneShot(clip);
     }
 }

@@ -29,9 +29,6 @@ public class VFXController : MonoBehaviour
         mainCam = Camera.main.GetComponent<UniversalAdditionalCameraData>();
         mainCam.cameraStack.Add(_VFXCamera);
 
-        _blackScreenFader.InitToMaxEffect();
-        _wakeUpFader.InitToMaxEffects();
-
         _onFadeInEnd.OnEvent += HandleOnFadeInEnd;
         _onFadeOutEnd.OnEvent += HandleOnFadeOutEnd;
         _onExplosionInEnd.OnEvent += HandleOnExplosionInEnd;
