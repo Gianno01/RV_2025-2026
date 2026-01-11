@@ -41,7 +41,7 @@ public class AreaTrigger : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if(!this.enabled) return;
         
