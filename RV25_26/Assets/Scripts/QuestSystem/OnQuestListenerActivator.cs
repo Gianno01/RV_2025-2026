@@ -12,7 +12,6 @@ public class OnQuestListenerActivator : OnQuestListener
     protected override void HandleOnQuestChange(object param)
     {
         int questIndex = (int) param;
-        Debug.Log(questIndex);
         if (_startQuests.Contains(questIndex))
         {
             SetActivation(true);
@@ -20,7 +19,7 @@ public class OnQuestListenerActivator : OnQuestListener
         }
         else if (_endQuests.Contains(questIndex))
         {
-            if(_onActivate != null) _onDeactivate.Raise();
+            if(_onDeactivate != null){_onDeactivate.Raise();}
             SetActivation(false);
         }
     }

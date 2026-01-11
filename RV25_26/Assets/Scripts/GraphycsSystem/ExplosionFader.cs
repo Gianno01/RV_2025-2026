@@ -156,7 +156,7 @@ public class ExplosionFader : MonoBehaviour
         _sequence.Join(DOTween.To(() => _depthOfField.focusDistance.value, (f) => _depthOfField.focusDistance.value = f, _maxFocusDistance, _depthOfFieldOutDuration));
         _sequence.Join(DOTween.To(() => _lensDistortion.intensity.value, (d) => _lensDistortion.intensity.value = d, _minDistortionIntensity, _lensDistortionOutDuration));
         _sequence.Join(DOTween.To(() => _chromaticAberration.intensity.value, (a) => _chromaticAberration.intensity.value = a, _minAberationIntensity, _chromaticAberrationOutDuration));
-        if(_onExplosionOutEnd != null) _sequence.onComplete += () => _onExplosionOutEnd.Raise();
+        if(_onExplosionOutEnd != null) _sequence.onComplete += () => { _onExplosionOutEnd.Raise();};
         _sequence.Play();
     }
 }

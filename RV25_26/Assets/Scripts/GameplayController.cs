@@ -32,8 +32,11 @@ public class GameplayController : MonoBehaviour
         _player.SetActive(true);
 
         if(appState == AppState.Home)
+        {
+            _questController.Init();
             return;
-        
+        }   
+
         _VFXController.PlayChangeAppStateFadeOut();
     }
 

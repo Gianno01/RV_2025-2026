@@ -26,12 +26,10 @@ public class QuestController : MonoBehaviour
         _currentQuestIndex = -1;
         _onStartQuest.OnEvent += HandleOnStartQuest;
     }
-    void Start()
+
+    public void Init()
     {
         HandleOnStartQuest();
-        // commenta se non vuoi testare il quest system nella scena QuestSystem
-        //_onStartQuest.RaiseWithParam(1);
-        //DOVirtual.DelayedCall(10, () => _onStartQuest.RaiseWithParam(0),false);
     }
 
     void OnDisable()
@@ -42,9 +40,9 @@ public class QuestController : MonoBehaviour
     private void HandleOnStartQuest()
     {
         _currentQuestIndex++;
-        _onCurrentQuestChange.RaiseWithParam(_currentQuestIndex);
-
         if(_currentQuestIndex >= _questDatas.Length) return; // tutte le quest sono state completate
+
+        _onCurrentQuestChange.RaiseWithParam(_currentQuestIndex);
 
         QuestData questData = _questDatas[_currentQuestIndex];
         if(questData.SecToWait != -1)

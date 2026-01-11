@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62db42db795c12e46a2cf8772894841b, type: 3}
-  m_Name: Quest_0
+  m_Name: Quest_2
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
-  QuestName: Quest_0
+  QuestName: Quest_1
   hintAudio: {fileID: 0}
   SecToWait: 0

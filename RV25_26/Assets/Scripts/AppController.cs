@@ -32,6 +32,7 @@ public class AppController : MonoBehaviour
         if(Instance == null){
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            _currentAppState = AppState.Home;
         }else{
             Destroy(gameObject);
         }

@@ -18,7 +18,6 @@ public class QuestStarter : MonoBehaviour
 
     private void HandleOnEvent()
     {
-        Debug.Log("ciao");
         _onQuestStart.Raise();
     }
 }

@@ -11,6 +11,8 @@ public class TalkingCharacter : MonoBehaviour, IsInteractable, IClipChangeable /
     [Header("Configurazione Animazione")]
     [SerializeField] private string _animationTriggerName = "Talk"; 
 
+    [SerializeField] private AppEventData _onDialogueStart;
+
     private AudioSource _myAudioSource;
     private Animator _myAnimator; 
 
@@ -51,5 +53,6 @@ public class TalkingCharacter : MonoBehaviour, IsInteractable, IClipChangeable /
         dialogueParam.audioClip = _dialogueClip;
 
         _onSpatialAudioEvent.RaiseWithParam(dialogueParam);
+        if(_onDialogueStart != null) _onDialogueStart.Raise();
     }
 }

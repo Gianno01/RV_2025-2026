@@ -13,9 +13,6 @@ public class AnimateItem : MonoBehaviour, IsInteractable
         _director = GetComponent<PlayableDirector>();
     }
     public void Interact() {
-        //Debug.Log("Ho interagito con l'oggetto!");
-        // Qui metterai il codice per raccogliere/aprire
-        //Destroy(gameObject); // Esempio: distrugge l'oggetto
         _toggleState = !_toggleState;
         _director.Play(timelines[_toggleState ? 1 : 0]);
     }

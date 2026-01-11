@@ -2,35 +2,30 @@ using System;
 using System.Reflection;
 using UnityEngine;
 
-/// <summary>
-/// AreaTrigger è pensato per invocare una callback al momento della collisione tra un AreaTrigger e un oggetto del layer scelto 
-/// La callback è da specificare via inspector, specificando GameObject, Componente e metodo.
-/// </summary>
-
-[RequireComponent(typeof(Collider))]
-public class AreaTrigger : MonoBehaviour
+public class OnQuestListenerCaller : OnQuestListener
 {
+    [SerializeField] private int _questIndex;
     [SerializeField] private bool _isReferenceToOtherGameobject;
     [SerializeField] private string _gameObjectName;
     [SerializeField] private string _componentName;
     [SerializeField] private string _methodName;
     [Tooltip("Ammesso un unico parametro intero")]
     [SerializeField] private int _param;
-    [SerializeField] private LayerMask _collisionLayer;
+    
     private MonoBehaviour _obj;
     private MethodInfo _method;
     private int _paramNumber;
     private bool init = false;
 
-    private void Init()
+    void Init()
     {
-        if(_gameObjectName != null)
+        if(_componentName != null && _methodName != null)
         {
             Type type = Type.GetType(_componentName);
             _method = type.GetMethod(_methodName);
             _paramNumber = _method.GetParameters().Length;
 
-            if (_isReferenceToOtherGameobject)
+            if (_isReferenceToOtherGameobject || _gameObjectName != null)
             {
                 _obj = (MonoBehaviour) GameObject.Find(_gameObjectName).GetComponent(_componentName);
             }
@@ -39,19 +34,26 @@ public class AreaTrigger : MonoBehaviour
                 _obj = (MonoBehaviour) gameObject.GetComponent(_componentName);
             }
         }
+        init = true;
     }
 
-    void OnTriggerEnter(Collider other)
+    protected override void HandleOnQuestChange(object param)
     {
-        if(!this.enabled) return;
-        
         if(!init) Init();
 
-        if(((1 << other.gameObject.layer) & _collisionLayer.value) != 0)
+        int quest = (int) param;
+        if(_questIndex == quest)
         {
-            if(_paramNumber == 1) _method.Invoke(_obj, new object[]{_param});
-            else if(_paramNumber == 0) _method.Invoke(_obj, new object[]{});
-            else{Debug.LogWarning("IL METODO DA INVOCARE HA PIù DI UN PARAMETRO. NON SUPPORTATO");}
+            Call();
         }
+    }
+
+    private void Call()
+    {
+        if(!this.enabled || _method == null || _obj == null) return;
+
+        if(_paramNumber == 1) _method.Invoke(_obj, new object[]{_param});
+        else if(_paramNumber == 0) _method.Invoke(_obj, new object[]{});
+        else{Debug.LogWarning("IL METODO DA INVOCARE HA PIù DI UN PARAMETRO. NON SUPPORTATO");}
     }
 }

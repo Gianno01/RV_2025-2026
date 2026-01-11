@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Quest_1
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
   QuestName: Quest_1
-  hintAudio: {fileID: 8300000, guid: ca73f2ca62866aa47bbc60c5fdd43339, type: 3}
-  SecToWait: -1
+  hintAudio: {fileID: 0}
+  SecToWait: 0

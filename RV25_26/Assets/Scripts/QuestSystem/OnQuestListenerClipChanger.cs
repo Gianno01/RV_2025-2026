@@ -13,6 +13,7 @@ public struct QuestClip
 public class OnQuestListenerClipChanger : OnQuestListener
 {
     [SerializeField] private List<QuestClip> _questClips;
+    [SerializeField] private AppEventData _onClipChange;
     protected override void HandleOnQuestChange(object param)
     {
         int questIndex = (int) param;
@@ -31,5 +32,6 @@ public class OnQuestListenerClipChanger : OnQuestListener
 
         IClipChangeable clipChangeable = GetComponent<IClipChangeable>();
         clipChangeable.ChangeClip(clip);
+        if(_onClipChange != null) _onClipChange.Raise();
     }
 }
