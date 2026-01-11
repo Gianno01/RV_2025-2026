@@ -20,23 +20,37 @@ public class GameplayController : MonoBehaviour
         this.enabled = false;
     }
 
-    public void ExitGameplay()
+    public void ExitGameplay(AppState nextAppState)
     {
-        _onFadeInEnd.OnEvent += HandleFadeInEnd;
+        if(nextAppState == AppState.Cutscene) _onFadeInEnd.OnEvent += HandleFadeInEnd;
+        if(nextAppState == AppState.Gate)
+        {
+            _player.GetComponent<MotionController>().enabled = false;
+            _player.GetComponent<InteractionController>().enabled = false;
+            CompleteToExitGameplay(nextAppState);
+        }
+
         _VFXController.PlayChangeAppStateFadeIn();
     }
 
     public void EnterGameplay(AppState appState)
     {
         this.enabled = true;
+
         _player.SetActive(true);
+
+        if(appState == AppState.Gate)
+        {
+            _player.GetComponent<MotionController>().enabled = true;
+            _player.GetComponent<InteractionController>().enabled = true;
+        }
 
         if(appState == AppState.Home)
         {
             _questController.Init();
             return;
-        }   
-
+        }
+        
         _VFXController.PlayChangeAppStateFadeOut();
     }
 
@@ -44,7 +58,12 @@ public class GameplayController : MonoBehaviour
     {
         _onFadeInEnd.OnEvent -= HandleFadeInEnd;
         _player.SetActive(false);
-        _onGameplayExit.Raise();
+        CompleteToExitGameplay(AppState.Cutscene);
+    }
+
+    private void CompleteToExitGameplay(AppState nextAppState)
+    {
+        _onGameplayExit.RaiseWithParam(nextAppState);
         this.enabled = false;
     }
 }

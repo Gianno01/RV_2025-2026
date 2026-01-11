@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum AppState{Gameplay, Cutscene, Home}
+public enum AppState{Gameplay, Cutscene, Home, Gate}
 
 /// <summary>
 /// AppController non si distrugge al caricamento delle scene. Va istanziato nella prima scena.
@@ -20,10 +20,13 @@ public class AppController : MonoBehaviour
     [SerializeField] private string[] _additiveScenes;
     [SerializeField] private AppEventData _onCutsceneStart;
     [SerializeField] private AppEventData _onGameplayResume;
+    [SerializeField] private AppEventData _onGateStart;
+    [SerializeField] private AppEventData _onGateExit;
     [SerializeField] private AppEventData _onGameplayExit;
     [SerializeField] private AppEventData _onCutsceneExit;
     private GameplayController _gameplayController;
     private CutsceneController _cutsceneController;
+    private TransitionController _transitionController;
     private MenuController _menuController;
     private AppState _currentAppState;
 
@@ -70,35 +73,63 @@ public class AppController : MonoBehaviour
 
         _gameplayController = GameObject.FindAnyObjectByType<GameplayController>();
         _cutsceneController = GameObject.FindAnyObjectByType<CutsceneController>();
+        _transitionController = GameObject.FindAnyObjectByType<TransitionController>();
+
         _gameplayController.Init();
         _cutsceneController.Init();
         ToGameplayState();
     }
 
+    private void HandleGateStart()
+    {
+        if(_currentAppState != AppState.Gameplay) return;
+
+        _onGameplayExit.OnParamEvent += HandleOnGameplayExit;
+        _gameplayController.ExitGameplay(AppState.Gate);
+    }
+
     private void HandleCutsceneStart()
     {
-        _onGameplayExit.OnEvent += HandleOnGameplayExit;
-        _gameplayController.ExitGameplay();
+        _onGameplayExit.OnParamEvent += HandleOnGameplayExit;
+        _gameplayController.ExitGameplay(AppState.Cutscene);
     }
 
     private void HandleOnGameplayResume()
     {
-        _onCutsceneExit.OnEvent += HandleOnCutsceneExit;
-        _cutsceneController.ExitCutscene();
+        if(_currentAppState == AppState.Cutscene)
+        {
+            _onCutsceneExit.OnEvent += HandleOnCutsceneExit;
+            _cutsceneController.ExitCutscene();
+        }else if(_currentAppState == AppState.Gate)
+        {
+            _transitionController.ExitGate();
+        }
     }
 
-    private void HandleOnGameplayExit()
+    private void HandleOnGameplayExit(object param)
     {
-        _onGameplayExit.OnEvent -= HandleOnGameplayExit;
+        if(_currentAppState != AppState.Gameplay) return;
+        AppState nextState = (AppState) param;
+        _onGameplayExit.OnParamEvent -= HandleOnGameplayExit;
 
-        ToCutsceneState();
-        _cutsceneController.PlayCurrentTimeline();
+        if(nextState == AppState.Cutscene)
+        {
+            ToCutsceneState();
+            _cutsceneController.PlayCurrentTimeline();
+        }
+        else if(nextState == AppState.Gate) ToGateState();
     }
 
     private void HandleOnCutsceneExit()
     {
         _onCutsceneExit.OnEvent -= HandleOnCutsceneExit;
 
+        ToGameplayState();
+    }
+
+    private void HandleOnGateExit()
+    {
+        if(_currentAppState != AppState.Gate) return;
         ToGameplayState();
     }
 
@@ -110,6 +141,7 @@ public class AppController : MonoBehaviour
 
         if(_onGameplayResume.OnEvent != null) _onGameplayResume.OnEvent -= HandleOnGameplayResume;
         _onCutsceneStart.OnEvent += HandleCutsceneStart;
+        _onGateStart.OnEvent += HandleGateStart;
     }
     private void ToCutsceneState()
     {
@@ -123,5 +155,16 @@ public class AppController : MonoBehaviour
     {
         _currentAppState = AppState.Home;
         _menuController.enabled = true;
+    }
+
+    private void ToGateState()
+    {
+        _currentAppState = AppState.Gate;
+        _transitionController.EnterGate();
+        
+        if(_onGateStart.OnEvent != null) _onGateStart.OnEvent -= HandleGateStart;
+        _onGateExit.OnEvent += HandleOnGateExit;
+        
+        _onGameplayResume.OnEvent += HandleOnGameplayResume;
     }
 }

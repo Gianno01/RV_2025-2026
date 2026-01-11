@@ -5,10 +5,10 @@ public enum SoundType{Ambience, SFX, Voice}
 
 public class MixerSpot : MonoBehaviour
 {
-    [SerializeField] private AudioMixerSnapshot snapshotToActivate;
+    [SerializeField] protected AudioMixerSnapshot snapshotToActivate;
     [SerializeField] private AppEventData OnSnapshotToChange;
 
-    public void ChangeAudioSnapshot()
+    public virtual void ChangeAudioSnapshot()
     {
         OnSnapshotToChange.RaiseWithParam(snapshotToActivate);
     }

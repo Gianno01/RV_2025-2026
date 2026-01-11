@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5238791605544631467
+--- !u!1 &7658101968082373612
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,54 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4838728242953982512}
-  - component: {fileID: 1360515886933925742}
+  - component: {fileID: 3699603538590044183}
+  - component: {fileID: 8447716646544158376}
   m_Layer: 0
-  m_Name: AppController
+  m_Name: TransitionController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4838728242953982512
+--- !u!4 &3699603538590044183
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5238791605544631467}
+  m_GameObject: {fileID: 7658101968082373612}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 830.03033, y: 477.31952, z: 0}
+  m_LocalPosition: {x: 160.46036, y: 0.51966, z: -194.13435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1360515886933925742
+--- !u!114 &8447716646544158376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5238791605544631467}
+  m_GameObject: {fileID: 7658101968082373612}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57860a8670792bb4cb58d0142b6f67d6, type: 3}
+  m_Script: {fileID: 11500000, guid: fad71d804d041f942b4b384ed6c0bdf4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AppController
-  _scenes:
-  - HomeScene
-  - MasterScene
-  _additiveScenes:
-  - EnvironmentScene
-  - UserScene
-  - NPCScene
-  - SoundScene
-  - VFXScene
-  _onCutsceneStart: {fileID: 11400000, guid: c833f77d13cb40e48a97ee9d83774660, type: 2}
-  _onGameplayResume: {fileID: 11400000, guid: 3e6c25369ad99704cb3e9862b46b3ce6, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::TransitionController
   _onGateStart: {fileID: 11400000, guid: 8f8a54d5d1d9afb40a359df17920bd38, type: 2}
   _onGateExit: {fileID: 11400000, guid: b408b658b46eef1418e0aee198b79bc8, type: 2}
-  _onGameplayExit: {fileID: 11400000, guid: 36491070bb97dbf44b134956eed94856, type: 2}
-  _onCutsceneExit: {fileID: 11400000, guid: 3e6c25369ad99704cb3e9862b46b3ce6, type: 2}
+  _onFadeInEnd: {fileID: 11400000, guid: 94a7ffad887dfb84c91d7a63799c95e3, type: 2}
