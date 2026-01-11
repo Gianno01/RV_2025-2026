@@ -309,10 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1399561110}
-  - component: {fileID: 1399561111}
-  - component: {fileID: 1399561117}
-  - component: {fileID: 1399561118}
-  - component: {fileID: 1399561119}
+  - component: {fileID: 1399561112}
   m_Layer: 0
   m_Name: madre_scena1
   m_TagString: Untagged
@@ -335,80 +332,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1399561111
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1399561109}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.5059357, y: 2.0293238, z: 4.8453064}
-  m_Center: {x: 0.29921722, y: 0.5146619, z: 1.9226532}
---- !u!114 &1399561117
+--- !u!114 &1399561112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399561109}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 811937216f37e3a409594db124b8b54f, type: 3}
+  m_Script: {fileID: 11500000, guid: b352af0f010e70a4881fbcfdf2812fe1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AreaTrigger
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerCaller
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _questIndex: 1
   _isReferenceToOtherGameobject: 1
   _gameObjectName: madre_Idle1
   _componentName: TalkingCharacter
   _methodName: Interact
   _param: 0
-  _collisionLayer:
-    serializedVersion: 2
-    m_Bits: 64
---- !u!114 &1399561118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1399561109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acff8dd27787d5343ad0f9282cb45cc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::QuestStarter
-  _onEvent: {fileID: 11400000, guid: b0e606c5479cf8b4f88082198fcda6d6, type: 2}
-  _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
---- !u!114 &1399561119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1399561109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
-  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
-  _startQuests: 01000000
-  _endQuests: 02000000
-  _effectOnOneComponent: 1
-  _componentName: AreaTrigger
-  _onActivate: {fileID: 0}
-  _onDeactivate: {fileID: 11400000, guid: b0e606c5479cf8b4f88082198fcda6d6, type: 2}
 --- !u!1001 &6156577556450626724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -417,6 +359,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2411573304991345336, guid: 5cb98127622a27a4eb0cb20b72236e23, type: 3}
+      propertyPath: _dialogueClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411573304991345336, guid: 5cb98127622a27a4eb0cb20b72236e23, type: 3}
+      propertyPath: _onDialogueStart
+      value: 
+      objectReference: {fileID: 11400000, guid: f71929e5e39b2f64f9cc46fca70ac087, type: 2}
+    - target: {fileID: 5259924394051486404, guid: 5cb98127622a27a4eb0cb20b72236e23, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259924394051486404, guid: 5cb98127622a27a4eb0cb20b72236e23, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 4751844569400289678, guid: af85ee41901bd3e4ab76bcfd8b736562, type: 2}
     - target: {fileID: 8592509699807240865, guid: 5cb98127622a27a4eb0cb20b72236e23, type: 3}
       propertyPath: m_LocalPosition.x
       value: 186.22
@@ -472,6 +430,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8968191470966913051, guid: 5cb98127622a27a4eb0cb20b72236e23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6156577556450626726}
+    - targetCorrespondingSourceObject: {fileID: 8968191470966913051, guid: 5cb98127622a27a4eb0cb20b72236e23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6156577556450626727}
   m_SourcePrefab: {fileID: 100100000, guid: 5cb98127622a27a4eb0cb20b72236e23, type: 3}
 --- !u!1 &6156577556450626725 stripped
 GameObject:
@@ -492,10 +453,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerClipChanger
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _questClips:
-  - questIndex: 1
+  - questIndex: 0
     clip: {fileID: 8300000, guid: ae043191cf1737c49a9d03d978b6d943, type: 3}
   - questIndex: 2
     clip: {fileID: 8300000, guid: 8de640c2b58873549bb666c9b743df25, type: 3}
+  _onClipChange: {fileID: 0}
+--- !u!114 &6156577556450626727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156577556450626725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acff8dd27787d5343ad0f9282cb45cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestStarter
+  _onEvent: {fileID: 11400000, guid: f71929e5e39b2f64f9cc46fca70ac087, type: 2}
+  _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
