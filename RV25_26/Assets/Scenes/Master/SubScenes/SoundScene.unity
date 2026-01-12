@@ -5783,7 +5783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioSnapshotChanger
   snapshotTransitionTime: 1.01
-  OnSnapshotToChange: {fileID: 0}
+  OnSnapshotToChange: {fileID: 11400000, guid: 935d5446470f0ee4088e7311b5ea19cd, type: 2}
 --- !u!1001 &1713734925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7271,7 +7271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioSnapshotChanger
   snapshotTransitionTime: 0.66
-  OnSnapshotToChange: {fileID: 0}
+  OnSnapshotToChange: {fileID: 11400000, guid: 935d5446470f0ee4088e7311b5ea19cd, type: 2}
 --- !u!1 &1894145549
 GameObject:
   m_ObjectHideFlags: 0
@@ -7844,7 +7844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioSnapshotChanger
   snapshotTransitionTime: 0.66
-  OnSnapshotToChange: {fileID: 0}
+  OnSnapshotToChange: {fileID: 11400000, guid: 935d5446470f0ee4088e7311b5ea19cd, type: 2}
 --- !u!1001 &1984667921
 PrefabInstance:
   m_ObjectHideFlags: 0
