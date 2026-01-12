@@ -1288,7 +1288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &598320768
 Transform:
   m_ObjectHideFlags: 0
@@ -2210,7 +2210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805941235410677516, guid: f1a9286e8c44c8c40a3a33332e6c89da, type: 3}
       propertyPath: snapshotTransitionTime
-      value: 0.58
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 7079893338070816466, guid: f1a9286e8c44c8c40a3a33332e6c89da, type: 3}
       propertyPath: m_Name
@@ -5736,9 +5736,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3578923839786761343, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1650928735}
-    - targetCorrespondingSourceObject: {fileID: 3578923839786761343, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1650928736}
   m_SourcePrefab: {fileID: 100100000, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
 --- !u!4 &1650928733 stripped
 Transform:
@@ -5770,20 +5767,6 @@ MonoBehaviour:
   _collisionLayer:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &1650928736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650928734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e24da3c80f94f4599edca55dd22fef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioSnapshotChanger
-  snapshotTransitionTime: 1.01
-  OnSnapshotToChange: {fileID: 11400000, guid: 935d5446470f0ee4088e7311b5ea19cd, type: 2}
 --- !u!1001 &1713734925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6227,9 +6210,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3578923839786761343, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1763438734}
-    - targetCorrespondingSourceObject: {fileID: 3578923839786761343, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1763438733}
   m_SourcePrefab: {fileID: 100100000, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
 --- !u!4 &1763438731 stripped
 Transform:
@@ -6241,20 +6221,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3578923839786761343, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
   m_PrefabInstance: {fileID: 1763438730}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1763438733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763438732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e24da3c80f94f4599edca55dd22fef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioSnapshotChanger
-  snapshotTransitionTime: 0.66
-  OnSnapshotToChange: {fileID: 0}
 --- !u!114 &1763438734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7224,9 +7190,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3578923839786761343, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1885013454}
-    - targetCorrespondingSourceObject: {fileID: 3578923839786761343, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1885013455}
   m_SourcePrefab: {fileID: 100100000, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
 --- !u!4 &1885013452 stripped
 Transform:
@@ -7258,20 +7221,6 @@ MonoBehaviour:
   _collisionLayer:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &1885013455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885013453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e24da3c80f94f4599edca55dd22fef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioSnapshotChanger
-  snapshotTransitionTime: 0.66
-  OnSnapshotToChange: {fileID: 11400000, guid: 935d5446470f0ee4088e7311b5ea19cd, type: 2}
 --- !u!1 &1894145549
 GameObject:
   m_ObjectHideFlags: 0
@@ -7797,9 +7746,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3578923839786761343, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1967683851}
-    - targetCorrespondingSourceObject: {fileID: 3578923839786761343, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1967683852}
   m_SourcePrefab: {fileID: 100100000, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
 --- !u!4 &1967683849 stripped
 Transform:
@@ -7831,20 +7777,6 @@ MonoBehaviour:
   _collisionLayer:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &1967683852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967683850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e24da3c80f94f4599edca55dd22fef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioSnapshotChanger
-  snapshotTransitionTime: 0.66
-  OnSnapshotToChange: {fileID: 11400000, guid: 935d5446470f0ee4088e7311b5ea19cd, type: 2}
 --- !u!1001 &1984667921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8525,72 +8457,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b04af129e71fdc479ff2be5bf199ff3, type: 3}
---- !u!1001 &7780656111314999089
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 893028883630193963, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 160.31999
-      objectReference: {fileID: 0}
-    - target: {fileID: 893028883630193963, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 893028883630193963, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -194.82999
-      objectReference: {fileID: 0}
-    - target: {fileID: 893028883630193963, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 893028883630193963, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 893028883630193963, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 893028883630193963, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 893028883630193963, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 893028883630193963, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 893028883630193963, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3578923839786761343, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      propertyPath: m_Name
-      value: MixerSpot_Village_Hospital
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535447476456388626, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      propertyPath: '_snapshots.Array.data[0]'
-      value: 
-      objectReference: {fileID: -569715062786218208, guid: 2772d71d151d4c94f880c65e21a75498, type: 2}
-    - target: {fileID: 7535447476456388626, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-      propertyPath: '_snapshots.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8005296454481685911, guid: 2772d71d151d4c94f880c65e21a75498, type: 2}
-    m_RemovedComponents:
-    - {fileID: 2314464815704619076, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
 --- !u!4 &7822450080924248154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3715768300090356844, guid: 415453cf4c696134cb0a0011c3a31ec2, type: 3}
@@ -8604,7 +8470,6 @@ SceneRoots:
   - {fileID: 2239405567725468083}
   - {fileID: 752065733}
   - {fileID: 7040155636904172540}
-  - {fileID: 7780656111314999089}
   - {fileID: 650509301}
   - {fileID: 598320768}
   - {fileID: 197109043}
