@@ -15,13 +15,15 @@ public class TalkingCharacter : MonoBehaviour, IsInteractable, IClipChangeable /
 
     private AudioSource _myAudioSource;
     private Animator _myAnimator; 
-
+private Outline _outline;
     void Awake() 
     {
         _myAudioSource = GetComponent<AudioSource>();
         _myAnimator = GetComponent<Animator>(); 
 
         _myAudioSource.spatialBlend = 1.0f; 
+        _outline = GetComponent<Outline>();
+    if (_outline != null) _outline.enabled = false; // Partiamo con l'effetto spento
     }
 
     // --- IMPLEMENTAZIONE IClipChangeable ---
@@ -55,4 +57,14 @@ public class TalkingCharacter : MonoBehaviour, IsInteractable, IClipChangeable /
         _onSpatialAudioEvent.RaiseWithParam(dialogueParam);
         if(_onDialogueStart != null) _onDialogueStart.Raise();
     }
+
+    public void OnFocus() 
+{
+    if (_outline != null) _outline.enabled = true;
+}
+
+public void OnLostFocus() 
+{
+    if (_outline != null) _outline.enabled = false;
+}
 }
