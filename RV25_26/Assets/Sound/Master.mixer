@@ -52,6 +52,18 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &-4410111743392090627
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Indoor_Tent
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: e2a743d2a09cb97419ed44a32958ec12
+  m_FloatValues:
+    570688e61b6318440b55ba49ec5df542: -39.883694
+  m_TransitionOverrides: {}
 --- !u!243 &-4065500510752364576
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -95,6 +107,7 @@ AudioMixerController:
   m_Snapshots:
   - {fileID: 24500006}
   - {fileID: -3922071583850495214}
+  - {fileID: -4410111743392090627}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -109,7 +122,7 @@ AudioMixerController:
     - 03d2eb15709bb50488a6e626c4d24693
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: -4410111743392090627}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
