@@ -4,7 +4,7 @@ public class InteractionController : MonoBehaviour
 {
     [Header("Settings")]
     [Tooltip("Distanza massima per interagire")]
-    public float interactionDistance = 10f;
+    public float interactionDistance = 5f;
     [Tooltip("Layer degli oggetti interattivi")]
     public LayerMask interactionLayer;
 
