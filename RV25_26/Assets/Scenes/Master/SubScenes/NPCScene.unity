@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acff8dd27787d5343ad0f9282cb45cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestStarter
-  _onEvent: {fileID: 11400000, guid: f71929e5e39b2f64f9cc46fca70ac087, type: 2}
+  _onEvent: {fileID: 11400000, guid: e0f49d89f91e8124a8c97e0cf88112d1, type: 2}
   _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
 --- !u!114 &6305236145464274899
 MonoBehaviour:
@@ -554,7 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerClipChanger
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _questClips:
-  - questIndex: 3
+  - questIndex: 2
     clip: {fileID: 8300000, guid: 2389cedf486c1d14e98007343cfa1a29, type: 3}
   _onClipChange: {fileID: 0}
 --- !u!114 &6305236145464274900
@@ -572,7 +572,7 @@ MonoBehaviour:
   _dialogueClip: {fileID: 0}
   _onSpatialAudioEvent: {fileID: 11400000, guid: 39caf63f6077823488ca6294971900b4, type: 2}
   _animationTriggerName: Talk
-  _onDialogueStart: {fileID: 11400000, guid: f71929e5e39b2f64f9cc46fca70ac087, type: 2}
+  _onDialogueStart: {fileID: 11400000, guid: e0f49d89f91e8124a8c97e0cf88112d1, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

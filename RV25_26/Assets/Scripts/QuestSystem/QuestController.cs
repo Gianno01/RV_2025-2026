@@ -42,6 +42,7 @@ public class QuestController : MonoBehaviour
         _currentQuestIndex++;
         if(_currentQuestIndex >= _questDatas.Length) return; // tutte le quest sono state completate
 
+        Debug.Log("QUEST NUMBER: " + _currentQuestIndex);
         _onCurrentQuestChange.RaiseWithParam(_currentQuestIndex);
 
         QuestData questData = _questDatas[_currentQuestIndex];

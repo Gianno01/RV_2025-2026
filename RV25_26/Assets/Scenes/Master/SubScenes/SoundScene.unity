@@ -632,6 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerCaller
   _onCurrentQuestChange: {fileID: 0}
   _questIndex: 3
+  _secToWaitBeforeCall: 0
   _isReferenceToOtherGameobject: 0
   _gameObjectName: 
   _componentName: AudioSpot
@@ -1323,7 +1324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &623475492
 Transform:
   m_ObjectHideFlags: 0
@@ -1447,6 +1448,10 @@ PrefabInstance:
     - target: {fileID: 4601577699364491798, guid: 3688a28c6e108d34690dff1d962de39c, type: 3}
       propertyPath: m_Name
       value: MixerSpot_Village_SFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601577699364491798, guid: 3688a28c6e108d34690dff1d962de39c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4906222830388672349, guid: 3688a28c6e108d34690dff1d962de39c, type: 3}
       propertyPath: snapshotToActivate
@@ -2960,7 +2965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &902451957
 Transform:
   m_ObjectHideFlags: 0
@@ -4537,6 +4542,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1430513337}
   - component: {fileID: 1430513338}
+  - component: {fileID: 1430513339}
+  - component: {fileID: 1430513340}
   m_Layer: 0
   m_Name: SFX_Laughs
   m_TagString: Untagged
@@ -4568,13 +4575,13 @@ AudioSource:
   m_GameObject: {fileID: 1430513336}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1181354033568771466, guid: 9ac2c6b9220913644af8e26f9b029638, type: 2}
+  OutputAudioMixerGroup: {fileID: -5518195975160408736, guid: af85ee41901bd3e4ab76bcfd8b736562, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 3e1346c3016ec0c449a7eb8435228ed6, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.806
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.644
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4616,7 +4623,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4656,6 +4663,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1430513339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430513336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca91019b6e9de94ea047726fb71f192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioSpot
+  _isSpatialAudio: 1
+  _onSpatialAudio: {fileID: 11400000, guid: 06de42c25d427aa4ba121e000bc34f6a, type: 2}
+  _onAudio: {fileID: 0}
+  _clip: {fileID: 8300000, guid: 3e1346c3016ec0c449a7eb8435228ed6, type: 3}
+--- !u!114 &1430513340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430513336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b352af0f010e70a4881fbcfdf2812fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerCaller
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _questIndex: 3
+  _secToWaitBeforeCall: 9
+  _isReferenceToOtherGameobject: 0
+  _gameObjectName: 
+  _componentName: AudioSpot
+  _methodName: PlayAudio
+  _param: 0
 --- !u!1 &1445810623
 GameObject:
   m_ObjectHideFlags: 0
@@ -5391,7 +5434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1643873804
 Transform:
   m_ObjectHideFlags: 0
@@ -7366,7 +7409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1894906527
 Transform:
   m_ObjectHideFlags: 0
@@ -7530,7 +7573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1951837688
 Transform:
   m_ObjectHideFlags: 0
@@ -7886,7 +7929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1986447706
 Transform:
   m_ObjectHideFlags: 0
@@ -8077,6 +8120,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 783538547135958406, guid: ffd2b23a17dd37941bc0e2d0d95bdee3, type: 3}
+      propertyPath: _onAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: 88e49caa5260ff8458c281cc02a203d9, type: 2}
     - target: {fileID: 2137877383869609280, guid: ffd2b23a17dd37941bc0e2d0d95bdee3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

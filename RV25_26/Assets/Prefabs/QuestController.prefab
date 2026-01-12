@@ -47,6 +47,9 @@ MonoBehaviour:
   _questDatas:
   - {fileID: 11400000, guid: 9b71dad306e84fa4eaf0aa4eea4dac92, type: 2}
   - {fileID: 11400000, guid: d1845810b61968e4c84b0142ea370c61, type: 2}
+  - {fileID: 11400000, guid: ad09be785ec5dd34b9199b24ff05cf24, type: 2}
+  - {fileID: 11400000, guid: 22e66f6b9c37a404c9c6b9bef9ad1d52, type: 2}
+  - {fileID: 11400000, guid: d0d673af432734c45acf8f8586fadce2, type: 2}
   _onStartQuest: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
   _onHint: {fileID: 11400000, guid: ac4837d110398b949898dc90c88644c0, type: 2}
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}

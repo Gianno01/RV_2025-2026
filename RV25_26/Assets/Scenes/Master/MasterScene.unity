@@ -355,18 +355,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestController
       objectReference: {fileID: 0}
-    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
-      propertyPath: _questDatas.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
-      propertyPath: '_questDatas.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: ad09be785ec5dd34b9199b24ff05cf24, type: 2}
-    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
-      propertyPath: '_questDatas.Array.data[3]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 22e66f6b9c37a404c9c6b9bef9ad1d52, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

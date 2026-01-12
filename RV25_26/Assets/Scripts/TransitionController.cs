@@ -10,7 +10,6 @@ public class TransitionController : MonoBehaviour
     {
         this.enabled = true;
         _onFadeInEnd.OnEvent += HandleOnFadeInEnd;
-        Debug.Log("ENTERGATE");
     }
 
     public void ExitGate()
@@ -25,7 +24,6 @@ public class TransitionController : MonoBehaviour
 
     private void HandleOnFadeInEnd()
     {
-        Debug.Log("HANDLEFADEIN");
         _onFadeInEnd.OnEvent -= HandleOnFadeInEnd;
         _onGateExit.Raise();
     }

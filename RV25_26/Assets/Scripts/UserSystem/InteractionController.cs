@@ -52,7 +52,7 @@ public class InteractionController : MonoBehaviour
                     _currentInteractable = interactable;
                     _currentInteractable.OnFocus();
                     
-                    Debug.Log("Focus su: " + _currentInteractable.GetDescription());
+                    //Debug.Log("Focus su: " + _currentInteractable.GetDescription());
                 }
 
                 // Esegui l'interazione se viene premuto il tasto

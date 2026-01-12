@@ -1,10 +1,12 @@
 using System;
 using System.Reflection;
+using DG.Tweening;
 using UnityEngine;
 
 public class OnQuestListenerCaller : OnQuestListener
 {
     [SerializeField] private int _questIndex;
+    [SerializeField] private float _secToWaitBeforeCall;
     [SerializeField] private bool _isReferenceToOtherGameobject;
     [SerializeField] private string _gameObjectName;
     [SerializeField] private string _componentName;
@@ -52,6 +54,12 @@ public class OnQuestListenerCaller : OnQuestListener
     {
         if(!this.enabled || _method == null || _obj == null) return;
 
+        if(_secToWaitBeforeCall != 0) DOVirtual.DelayedCall(_secToWaitBeforeCall, CallNow);
+        else CallNow();
+    }
+
+    private void CallNow()
+    {
         if(_paramNumber == 1) _method.Invoke(_obj, new object[]{_param});
         else if(_paramNumber == 0) _method.Invoke(_obj, new object[]{});
         else{Debug.LogWarning("IL METODO DA INVOCARE HA PIù DI UN PARAMETRO. NON SUPPORTATO");}
