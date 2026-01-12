@@ -3,7 +3,17 @@ guid: 748324ddc9de0b34390bb603e84b6eed
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muro_material
+    second: {fileID: 2100000, guid: 4ecdfc03cfd4d0541a35770ae9f6256b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pavimento_material
+    second: {fileID: 2100000, guid: 2e8fa2a2b8b59b444be5f98e4b7924ce, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
