@@ -372,6 +372,8 @@ GameObject:
   - component: {fileID: 7578633721492413910}
   - component: {fileID: 481295539876712664}
   - component: {fileID: 6542956386778436104}
+  - component: {fileID: 1119092696155788909}
+  - component: {fileID: 7772754220407219921}
   m_Layer: 0
   m_Name: porta_animata
   m_TagString: Untagged
@@ -416,6 +418,10 @@ PlayableDirector:
     value: {fileID: 481295539876712664}
   - key: {fileID: -8717337400420077183, guid: 398a258503629e54390f2e8f15ae114e, type: 2}
     value: {fileID: 481295539876712664}
+  - key: {fileID: -2572023981337805184, guid: 4ee005b8f22e02842b79828a0875c8b1, type: 2}
+    value: {fileID: 1119092696155788909}
+  - key: {fileID: -3353893570617126051, guid: 398a258503629e54390f2e8f15ae114e, type: 2}
+    value: {fileID: 1119092696155788909}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &7578633721492413910
@@ -476,6 +482,52 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.10663958, y: 2.0985365, z: 1.307788}
   m_Center: {x: 0.024896005, y: 0.0559721, z: 0.6053046}
+--- !u!114 &1119092696155788909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5301347540385834915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 08260f72fe85777408fca5b9ab11e4d7, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7772754220407219921}
+          m_TargetAssemblyTypeName: AudioSpot, Assembly-CSharp
+          m_MethodName: PlayAudio
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &7772754220407219921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5301347540385834915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca91019b6e9de94ea047726fb71f192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioSpot
+  _isSpatialAudio: 1
+  _onSpatialAudio: {fileID: 11400000, guid: 06de42c25d427aa4ba121e000bc34f6a, type: 2}
+  _onAudio: {fileID: 0}
+  _clip: {fileID: 0}
 --- !u!1 &6803121262013728251
 GameObject:
   m_ObjectHideFlags: 0
