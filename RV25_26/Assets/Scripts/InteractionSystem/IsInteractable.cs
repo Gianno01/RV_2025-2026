@@ -1,8 +1,9 @@
 using UnityEngine;
 
-// Questa interfaccia è il contratto comune per tutto ciò che è interattivo
 public interface IsInteractable
 {
     void Interact();
-    string GetDescription(); // Utile per mostrare "Premi E per aprire"
+    string GetDescription();
+    void OnFocus();     // Chiamato quando guardi l'oggetto
+    void OnLostFocus(); // Chiamato quando distogli lo sguardo
 }

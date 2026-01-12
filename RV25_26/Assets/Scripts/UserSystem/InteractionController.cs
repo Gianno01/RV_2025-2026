@@ -5,51 +5,71 @@ public class InteractionController : MonoBehaviour
     [Header("Settings")]
     [Tooltip("Distanza massima per interagire")]
     public float interactionDistance = 10f;
-    [Tooltip("Layer degli oggetti interattivi (per non colpire il player stesso)")]
+    [Tooltip("Layer degli oggetti interattivi")]
     public LayerMask interactionLayer;
 
     [Header("References")]
-    public Transform playerCamera; // Trascina qui la Main Camera
-    public GameObject tutorialPanel; // Trascina qui il pannello UI del tutorial
+    public Transform playerCamera; 
+    public GameObject tutorialPanel; 
 
     [Header("Keys")]
     public KeyCode interactKey = KeyCode.E;
     public KeyCode tutorialKey = KeyCode.H;
 
+    // Riferimento all'oggetto che stiamo guardando attualmente
+    private IsInteractable _currentInteractable;
+
     private void Update()
     {
-        // 1. GESTIONE INTERAZIONE (Tasto E)
+        // 1. GESTIONE INTERAZIONE E FEEDBACK VISIVO
         HandleInteraction();
 
-        // 2. GESTIONE TUTORIAL (Tasto H)
+        // 2. GESTIONE TUTORIAL
         HandleTutorial();
     }
 
     void HandleInteraction()
     {
-        // Crea un raggio che parte dalla camera e va in avanti
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
         RaycastHit hit;
 
-        // Disegna una linea rossa nella scena (visibile solo in Scene view) per debug
+        // Debug visivo del raggio nella scena
         Debug.DrawRay(ray.origin, ray.direction * interactionDistance, Color.red);
 
-        // Se il raggio colpisce qualcosa entro la distanza e nel layer giusto
         if (Physics.Raycast(ray, out hit, interactionDistance, interactionLayer))
         {
-            // Cerchiamo se l'oggetto colpito ha il componente IsInteractable
             IsInteractable interactable = hit.collider.GetComponent<IsInteractable>();
 
             if (interactable != null)
             {
-                // Qui potresti mostrare una UI tipo "Premi E per interagire"
-                Debug.Log("Posso interagire con: " + interactable.GetDescription());
+                // Se l'oggetto che stiamo guardando è DIVERSO da quello del frame precedente
+                if (interactable != _currentInteractable)
+                {
+                    // Se stavamo guardando qualcos'altro prima, spegniamo il suo feedback
+                    _currentInteractable?.OnLostFocus();
 
+                    // Aggiorniamo l'oggetto corrente e attiviamo il suo feedback
+                    _currentInteractable = interactable;
+                    _currentInteractable.OnFocus();
+                    
+                    Debug.Log("Focus su: " + _currentInteractable.GetDescription());
+                }
+
+                // Esegui l'interazione se viene premuto il tasto
                 if (Input.GetKeyDown(interactKey))
                 {
-                    interactable.Interact();
+                    _currentInteractable.Interact();
                 }
+
+                return; // Esce dalla funzione per non resettare il focus
             }
+        }
+
+        // Se il raggio non colpisce nulla o non colpisce un oggetto interattivo
+        if (_currentInteractable != null)
+        {
+            _currentInteractable.OnLostFocus();
+            _currentInteractable = null;
         }
     }
 
@@ -59,25 +79,19 @@ public class InteractionController : MonoBehaviour
         {
             if (tutorialPanel != null)
             {
-                // Inverte lo stato attivo (se è acceso lo spegne, e viceversa)
                 bool isActive = tutorialPanel.activeSelf;
                 tutorialPanel.SetActive(!isActive);
 
-                // Opzionale: Blocca/Sblocca il cursore se apri il tutorial
-                if (!isActive) // Se lo stiamo aprendo
+                if (!isActive)
                 {
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
                 }
-                else // Se lo stiamo chiudendo
+                else
                 {
                     Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
                 }
-            }
-            else
-            {
-                Debug.LogWarning("Nessun pannello tutorial assegnato nell'Inspector!");
             }
         }
     }

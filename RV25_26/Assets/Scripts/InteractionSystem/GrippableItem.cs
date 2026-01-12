@@ -13,7 +13,14 @@ public class GrippableItem : MonoBehaviour, IsInteractable
     private bool _isGrabbed = false;
     private bool _canDrop = false; // Variabile di sicurezza
     private Transform _playerTransform;
+    private Outline _outline;
 
+void Awake() 
+{
+    // Recupera il componente Outline che deve essere presente sull'oggetto
+    _outline = GetComponent<Outline>();
+    if (_outline != null) _outline.enabled = false; // Partiamo con l'effetto spento
+}
     void Start() 
     {
         _rb = GetComponent<Rigidbody>();
@@ -81,6 +88,15 @@ public class GrippableItem : MonoBehaviour, IsInteractable
     }
 
     public string GetDescription() => _isGrabbed ? $"Lascia {_itemName}" : $"Prendi {_itemName}";
-    public void OnFocus() { }
-    public void OnLostFocus() { }
+
+    public void OnFocus() 
+{
+    if (_outline != null) _outline.enabled = true;
+}
+
+public void OnLostFocus() 
+{
+    if (_outline != null) _outline.enabled = false;
+}
+
 }
