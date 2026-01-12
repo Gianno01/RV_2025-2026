@@ -239,6 +239,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 563135840907159602, guid: 5cb98127622a27a4eb0cb20b72236e23, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 07802d6bba174a4499ec197a35d0f40a, type: 2}
+    - target: {fileID: 1159845306467638743, guid: 5cb98127622a27a4eb0cb20b72236e23, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 37443cb0e491a5349ae0bce68c85ab31, type: 2}
     - target: {fileID: 2411573304991345336, guid: 5cb98127622a27a4eb0cb20b72236e23, type: 3}
       propertyPath: _dialogueClip
       value: 
@@ -255,6 +263,14 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 4751844569400289678, guid: af85ee41901bd3e4ab76bcfd8b736562, type: 2}
+    - target: {fileID: 5832391922481576746, guid: 5cb98127622a27a4eb0cb20b72236e23, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a85186a012a02b48b421c1849bfc3fb, type: 2}
+    - target: {fileID: 7411717900316812622, guid: 5cb98127622a27a4eb0cb20b72236e23, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aab734bf65715ab499ce856272b982ee, type: 2}
     - target: {fileID: 8592509699807240865, guid: 5cb98127622a27a4eb0cb20b72236e23, type: 3}
       propertyPath: m_LocalPosition.x
       value: 186.22
@@ -382,6 +398,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1373451180662716270, guid: aa8e549a2eb9b414eb510a0fd3cbab2e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 006203eb3a5125f45af6c55230a169db, type: 2}
     - target: {fileID: 2818325229351178865, guid: aa8e549a2eb9b414eb510a0fd3cbab2e, type: 3}
       propertyPath: m_Name
       value: bambino
@@ -426,6 +446,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3362678391915738918, guid: aa8e549a2eb9b414eb510a0fd3cbab2e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 181f930cf6466c94590daa0bc2102c2a, type: 2}
+    - target: {fileID: 5804431318934357478, guid: aa8e549a2eb9b414eb510a0fd3cbab2e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cc2657f5598abbb45866a9c2ce7a10f5, type: 2}
+    - target: {fileID: 5891771986233752132, guid: aa8e549a2eb9b414eb510a0fd3cbab2e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 02a901b5c73bd1a4bbf98386661562c4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
