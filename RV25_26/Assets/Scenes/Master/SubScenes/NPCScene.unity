@@ -426,9 +426,7 @@ MonoBehaviour:
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _questClips:
   - questIndex: 0
-    clip: {fileID: 8300000, guid: ae043191cf1737c49a9d03d978b6d943, type: 3}
-  - questIndex: 2
-    clip: {fileID: 8300000, guid: 8de640c2b58873549bb666c9b743df25, type: 3}
+    clip: {fileID: 8300000, guid: b0c1856b94220254c856b3bb03417a74, type: 3}
   _onClipChange: {fileID: 0}
 --- !u!114 &6156577556450626727
 MonoBehaviour:

@@ -2108,7 +2108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805941235410677516, guid: f1a9286e8c44c8c40a3a33332e6c89da, type: 3}
       propertyPath: snapshotTransitionTime
-      value: 2.5
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 7079893338070816466, guid: f1a9286e8c44c8c40a3a33332e6c89da, type: 3}
       propertyPath: m_Name
@@ -5622,11 +5622,11 @@ PrefabInstance:
     - target: {fileID: 7535447476456388626, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
       propertyPath: '_snapshots.Array.data[0]'
       value: 
-      objectReference: {fileID: 24500006, guid: af85ee41901bd3e4ab76bcfd8b736562, type: 2}
+      objectReference: {fileID: -3922071583850495214, guid: af85ee41901bd3e4ab76bcfd8b736562, type: 2}
     - target: {fileID: 7535447476456388626, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
       propertyPath: '_snapshots.Array.data[1]'
       value: 
-      objectReference: {fileID: -3922071583850495214, guid: af85ee41901bd3e4ab76bcfd8b736562, type: 2}
+      objectReference: {fileID: 24500006, guid: af85ee41901bd3e4ab76bcfd8b736562, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5634,6 +5634,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3578923839786761343, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1650928735}
+    - targetCorrespondingSourceObject: {fileID: 3578923839786761343, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1650928736}
   m_SourcePrefab: {fileID: 100100000, guid: 7850fcd1dce00914a8f336e929d81014, type: 3}
 --- !u!4 &1650928733 stripped
 Transform:
@@ -5665,6 +5668,20 @@ MonoBehaviour:
   _collisionLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1650928736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650928734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e24da3c80f94f4599edca55dd22fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioSnapshotChanger
+  snapshotTransitionTime: 0.63
+  OnSnapshotToChange: {fileID: 0}
 --- !u!1001 &1713734925
 PrefabInstance:
   m_ObjectHideFlags: 0
