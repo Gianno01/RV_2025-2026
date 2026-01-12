@@ -53,6 +53,7 @@ MonoBehaviour:
   - NPCScene
   - SoundScene
   - VFXScene
+  - LightScene
   _onCutsceneStart: {fileID: 11400000, guid: c833f77d13cb40e48a97ee9d83774660, type: 2}
   _onGameplayResume: {fileID: 11400000, guid: 3e6c25369ad99704cb3e9862b46b3ce6, type: 2}
   _onGateStart: {fileID: 11400000, guid: 8f8a54d5d1d9afb40a359df17920bd38, type: 2}

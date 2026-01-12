@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Master/SubScenes/VFXScene.unity
     guid: e639edfa61c83bb42b1bfd1f0ad4622d
+  - enabled: 1
+    path: Assets/Scenes/Master/SubScenes/LightScene.unity
+    guid: deec351edb6d8b141ad04483f207bf4e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 98316a8f7841b5b4fa6aa5e45f10ff70, type: 2}
