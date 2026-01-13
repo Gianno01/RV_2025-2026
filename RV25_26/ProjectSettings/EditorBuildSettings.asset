@@ -29,6 +29,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Master/SubScenes/LightScene.unity
     guid: deec351edb6d8b141ad04483f207bf4e
+  - enabled: 1
+    path: Assets/Scenes/SceneTest/TommasoTest.unity
+    guid: cf3997c5512895b41af59f89a3fcd29f
+  - enabled: 1
+    path: Assets/Scenes/SceneTest/HomeSceneTommaso.unity
+    guid: 458008477b2cdea4694a07b466d194b2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 98316a8f7841b5b4fa6aa5e45f10ff70, type: 2}
