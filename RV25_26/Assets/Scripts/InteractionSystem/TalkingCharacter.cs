@@ -50,7 +50,7 @@ private Outline _outline;
 
         if (_dialogueClip == null || _onSpatialAudioEvent == null) return;
 
-        SpatialParam dialogueParam;
+        AudioParam dialogueParam;
         dialogueParam.audioSource = _myAudioSource;
         dialogueParam.audioClip = _dialogueClip;
 

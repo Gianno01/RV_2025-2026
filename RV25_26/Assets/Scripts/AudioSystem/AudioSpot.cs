@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class AudioSpot : MonoBehaviour
 {
-    [SerializeField] private bool _isSpatialAudio;
-    [SerializeField] private AppEventData _onSpatialAudio;
     [SerializeField] private AppEventData _onAudio;
 
     [SerializeField] private AudioClip _clip;
@@ -11,26 +9,15 @@ public class AudioSpot : MonoBehaviour
 
     private void Awake()
     {
-        if (_isSpatialAudio)
-        {
-            _audioSource = gameObject.GetComponent<AudioSource>();
-            _audioSource.spatialBlend = 1.0f;
-        }
+        _audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     public void PlayAudio()
     {
-        if (_isSpatialAudio)
-        {
-            SpatialParam spatialParam;
-            spatialParam.audioClip = _clip;
-            spatialParam.audioSource = _audioSource;
+        AudioParam audioParam;
+        audioParam.audioClip = _clip;
+        audioParam.audioSource = _audioSource;
 
-            _onSpatialAudio.RaiseWithParam(spatialParam);
-        }
-        else
-        {
-            _onAudio.RaiseWithParam(_clip);
-        }
+        _onAudio.RaiseWithParam(audioParam);
     }
 }

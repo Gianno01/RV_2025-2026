@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public struct SpatialParam{
+public struct AudioParam{
     public AudioSource audioSource;
     public AudioClip audioClip; 
 }
@@ -16,52 +16,30 @@ public struct SpatialParam{
 [RequireComponent(typeof(AudioSource))]
 public class AudioController : MonoBehaviour
 {
-    [SerializeField] private AppEventData _onSpatialAudio;
     [SerializeField] private AppEventData _onAudio;
-    private AudioSource _noSpatialAudioSource;
 
     void Awake()
     {
-        if (_onSpatialAudio)
-        {
-            _onSpatialAudio.OnParamEvent += HandleOnSpatialAudio;
-        }
-
         if (_onAudio)
         {
             _onAudio.OnParamEvent += HandleOnAudio;
-            _noSpatialAudioSource = gameObject.GetComponent<AudioSource>();
-            _noSpatialAudioSource.spatialBlend = 0;
         }
     }
 
     void OnDisable()
     {
-        if (_onSpatialAudio)
-        {
-            _onSpatialAudio.OnParamEvent -= HandleOnSpatialAudio;
-        }
-
         if (_onAudio)
         {
             _onAudio.OnParamEvent -= HandleOnAudio;
         }
     }
 
-    private void HandleOnSpatialAudio(object param)
-    {
-        SpatialParam spatialParam = (SpatialParam) param;
-        
-        if(spatialParam.audioClip == null) return;
-        spatialParam.audioSource.Stop();
-        spatialParam.audioSource.PlayOneShot(spatialParam.audioClip);
-    }
-
     private void HandleOnAudio(object param)
     {
-        AudioClip clip = (AudioClip) param;
+        AudioParam audioParam = (AudioParam) param;
+        if(audioParam.audioClip == null) return;
 
-        if(clip == null) return;
-        _noSpatialAudioSource.PlayOneShot(clip);
+        audioParam.audioSource.Stop();
+        audioParam.audioSource.PlayOneShot(audioParam.audioClip);
     }
 }
