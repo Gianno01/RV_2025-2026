@@ -27,6 +27,14 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
     private NavMeshAgent agent;
     private Transform playerTransform;
     private NpcState previousState; 
+    private Outline _outline; // Riferimento per il feedback visivo
+
+    void Awake()
+    {
+        // Recupera il componente Outline e lo disattiva all'avvio
+        _outline = GetComponent<Outline>();
+        if (_outline != null) _outline.enabled = false;
+    }
 
     void Start()
     {
@@ -47,15 +55,12 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
     // implementazione di IStateChangeable 
     public void ChangeState(string state)
     {
-        // Converte la stringa in Enum (ignora maiuscole/minuscole)
         if (Enum.TryParse(state, true, out NpcState newState))
         {
-            // Interrompiamo eventuali routine di attesa in corso per evitare sovrapposizioni
             StopAllCoroutines();
             
             currentState = newState;
 
-            // Logica di attivazione immediata basata sul nuovo stato
             switch (currentState)
             {
                 case NpcState.Patrol:
@@ -69,7 +74,6 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
             }
         }
     }
-
 
     void Update()
     {
@@ -99,7 +103,6 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
         currentState = NpcState.Idle;
         yield return new WaitForSeconds(waitTimeAtPoint);
         
-        // Se nel frattempo lo stato non è stato cambiato da una quest o interazione
         if (currentState == NpcState.Idle)
         {
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
@@ -152,8 +155,18 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
     }
 
     public string GetDescription() => $"{actionVerb} {npcName}";
-    public void OnFocus() {}
-    public void OnLostFocus() {}
+
+    // --- IMPLEMENTAZIONE FEEDBACK VISIVO ---
+
+    public void OnFocus() 
+    {
+        if (_outline != null) _outline.enabled = true;
+    }
+
+    public void OnLostFocus() 
+    {
+        if (_outline != null) _outline.enabled = false;
+    }
 
     void OnDrawGizmos()
     {
