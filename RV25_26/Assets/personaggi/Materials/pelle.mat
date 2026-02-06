@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1964509418441800826
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: scarpe_bambino_material
+  m_Name: pelle
   m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -31,11 +44,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _1st_ShadeMap:
-        m_Texture: {fileID: 2800000, guid: 16a3beaadfd02894ab8ceb27a361c109, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2c340c70e058f2e4590a786705a14c36, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _2nd_ShadeMap:
-        m_Texture: {fileID: 2800000, guid: 16a3beaadfd02894ab8ceb27a361c109, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2c340c70e058f2e4590a786705a14c36, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AngelRing_Sampler:
@@ -55,7 +68,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 2c340c70e058f2e4590a786705a14c36, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -127,7 +140,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 16a3beaadfd02894ab8ceb27a361c109, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2c340c70e058f2e4590a786705a14c36, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
@@ -401,7 +414,7 @@ Material:
     - _Offset_Z: 0
     - _OutlineOverridden: 0
     - _OutlineVisible: 1
-    - _Outline_Width: 0.1
+    - _Outline_Width: 0
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
@@ -503,8 +516,8 @@ Material:
     - _simpleUI: 0
     - _utsTechnique: 0
     m_Colors:
-    - _1st_ShadeColor: {r: 0.554717, g: 0.554717, b: 0.554717, a: 1}
-    - _2nd_ShadeColor: {r: 0.13962269, g: 0.13883238, b: 0.13883238, a: 1}
+    - _1st_ShadeColor: {r: 0.69803923, g: 0.69803923, b: 0.69803923, a: 1}
+    - _2nd_ShadeColor: {r: 0.5411765, g: 0.5411765, b: 0.5411765, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
@@ -526,8 +539,8 @@ Material:
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineMaskColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Outline_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _RimLightColor: {r: 0.9764706, g: 0.76862746, b: 0.40392157, a: 1}
+    - _Outline_Color: {r: 0, g: 0, b: 0, a: 1}
+    - _RimLightColor: {r: 1, g: 0.78619105, b: 0.5943396, a: 1}
     - _RimLightMaskColor: {r: 1, g: 0, b: 1, a: 1}
     - _SecondShadeMaskColor: {r: 0, g: 0, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
@@ -541,16 +554,3 @@ Material:
     - emissive: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &861043825091908037
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
-  version: 10
