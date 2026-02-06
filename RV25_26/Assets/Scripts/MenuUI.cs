@@ -21,6 +21,7 @@ public class MenuUI : MonoBehaviour
 
     private void HandleStartButtonClick()
     {
+        Debug.Log("STEP -4");
         _onStart.Raise();
     }
 }
