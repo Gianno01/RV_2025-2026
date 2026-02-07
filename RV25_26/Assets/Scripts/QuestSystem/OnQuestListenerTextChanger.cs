@@ -9,7 +9,7 @@ public struct QuestText
     public SubtitleData subtitleData;
 }
 
-[RequireComponent(typeof(IClipChangeable))]
+[RequireComponent(typeof(ITextChangeable))]
 public class OnQuestListenerTextChanger : OnQuestListener
 {
     [SerializeField] private List<QuestText> _questTexts;
