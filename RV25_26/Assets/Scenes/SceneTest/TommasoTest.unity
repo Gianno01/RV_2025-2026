@@ -119,80 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &5254621
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 941867018}
-    m_Modifications:
-    - target: {fileID: 1690299121536176372, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690299121536176372, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690299121536176372, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690299121536176372, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690299121536176372, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690299121536176372, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690299121536176372, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690299121536176372, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690299121536176372, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690299121536176372, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4585331565929152499, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 4751844569400289678, guid: af85ee41901bd3e4ab76bcfd8b736562, type: 2}
-    - target: {fileID: 7129265973951883963, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-      propertyPath: m_Name
-      value: VoiceController
-      objectReference: {fileID: 0}
-    - target: {fileID: 8865116521119571287, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-      propertyPath: _onAudio
-      value: 
-      objectReference: {fileID: 11400000, guid: ac4837d110398b949898dc90c88644c0, type: 2}
-    - target: {fileID: 8865116521119571287, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-      propertyPath: _onSpatialAudio
-      value: 
-      objectReference: {fileID: 11400000, guid: 39caf63f6077823488ca6294971900b4, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
---- !u!4 &5254622 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1690299121536176372, guid: baaf8a92aa1dc34408e46d6b8fb5d00a, type: 3}
-  m_PrefabInstance: {fileID: 5254621}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &89461369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2454,7 +2380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerCaller
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _questIndex: 1
-  _secToWaitBeforeCall: 10
+  _secToWaitBeforeCall: 2
   _isReferenceToOtherGameobject: 0
   _gameObjectName: 
   _componentName: AudioSpot
@@ -2489,7 +2415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca91019b6e9de94ea047726fb71f192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioSpot
-  _onAudio: {fileID: 11400000, guid: ac4837d110398b949898dc90c88644c0, type: 2}
+  _onAudioStart: {fileID: 0}
+  _onAudioEnd: {fileID: 0}
   _clip: {fileID: 0}
 --- !u!82 &580358121
 AudioSource:
@@ -2772,7 +2699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerCaller
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _questIndex: 1
-  _secToWaitBeforeCall: 10
+  _secToWaitBeforeCall: 2
   _isReferenceToOtherGameobject: 0
   _gameObjectName: 
   _componentName: TextSpot
@@ -3234,6 +3161,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 550781983458328569, guid: 6ddc3752cae5bae4db8c1dfd106dde4a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2134447700}
+    - targetCorrespondingSourceObject: {fileID: 550781983458328569, guid: 6ddc3752cae5bae4db8c1dfd106dde4a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2134447702}
   m_SourcePrefab: {fileID: 100100000, guid: 6ddc3752cae5bae4db8c1dfd106dde4a, type: 3}
 --- !u!4 &756912946 stripped
 Transform:
@@ -4488,7 +4418,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 828409820}
-  - {fileID: 5254622}
   m_Father: {fileID: 1004497597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &946599073
@@ -7138,6 +7067,10 @@ PrefabInstance:
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3071845611290331339, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+      propertyPath: _onEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d9273e56ce01ba43a9ef0060176e516, type: 2}
     - target: {fileID: 3493343380296273000, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
       propertyPath: _onAudio
       value: 
@@ -7169,11 +7102,23 @@ PrefabInstance:
     - target: {fileID: 6640465326879250696, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
       propertyPath: _audioSpot
       value: 
-      objectReference: {fileID: 1467016357}
+      objectReference: {fileID: 0}
     - target: {fileID: 6640465326879250696, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
       propertyPath: _myAnimator
       value: 
       objectReference: {fileID: 1467016355}
+    - target: {fileID: 6640465326879250696, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+      propertyPath: _timelineSpot
+      value: 
+      objectReference: {fileID: 1467016360}
+    - target: {fileID: 6640465326879250696, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+      propertyPath: _animationSpot
+      value: 
+      objectReference: {fileID: 1467016360}
+    - target: {fileID: 7232572571911935257, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 48a52cc97f17b474ba7663a00b28b10d, type: 2}
     - target: {fileID: 8172343469959323708, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7218,16 +7163,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: madre
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2850350247631639002, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+    - {fileID: 5697622373908626036, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8800649101501332102, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
-      insertIndex: 8
+      insertIndex: 7
       addedObject: {fileID: 1467016358}
+    - targetCorrespondingSourceObject: {fileID: 8800649101501332102, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+      insertIndex: 8
+      addedObject: {fileID: 1467016361}
+    - targetCorrespondingSourceObject: {fileID: 8800649101501332102, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1467016360}
+    - targetCorrespondingSourceObject: {fileID: 8800649101501332102, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1467016359}
     - targetCorrespondingSourceObject: {fileID: 8800649101501332102, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1467016354}
+    - targetCorrespondingSourceObject: {fileID: 8800649101501332102, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1763972460}
   m_SourcePrefab: {fileID: 100100000, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
 --- !u!4 &1467016352 stripped
 Transform:
@@ -7273,17 +7232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1a576c4172dca4fb5f9644fd5f5508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextSpot
---- !u!114 &1467016357 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3493343380296273000, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
-  m_PrefabInstance: {fileID: 1467016351}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467016353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ca91019b6e9de94ea047726fb71f192, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioSpot
 --- !u!114 &1467016358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7301,6 +7249,62 @@ MonoBehaviour:
   - questIndex: 0
     subtitleData: {fileID: 11400000, guid: ec818732ade0c8244a4c2f5ced5d03fb, type: 2}
   _onTextChange: {fileID: 0}
+--- !u!320 &1467016359
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467016353}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 952ef3f9911dd2d448de66d05d686c49, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -1037316066518806385, guid: 952ef3f9911dd2d448de66d05d686c49, type: 2}
+    value: {fileID: 1467016355}
+  - key: {fileID: -2364291673880071121, guid: 952ef3f9911dd2d448de66d05d686c49, type: 2}
+    value: {fileID: 1763972459}
+  - key: {fileID: -4717915789588825720, guid: 952ef3f9911dd2d448de66d05d686c49, type: 2}
+    value: {fileID: 1763972460}
+  m_ExposedReferences:
+    m_References: []
+--- !u!114 &1467016360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467016353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d51a9c6cb0c197c4d8513b9e118f0948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationSpot
+  _currentTimeline: {fileID: 0}
+  _playableDirector: {fileID: 1467016359}
+  _onTimelineStart: {fileID: 11400000, guid: f71929e5e39b2f64f9cc46fca70ac087, type: 2}
+  _onTimelineEnd: {fileID: 11400000, guid: 5d9273e56ce01ba43a9ef0060176e516, type: 2}
+--- !u!114 &1467016361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467016353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb03969ed3815b34cb21a905a3c2f74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerTimelineChanger
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _questTimelines:
+  - questIndex: 0
+    timeline: {fileID: 11400000, guid: 952ef3f9911dd2d448de66d05d686c49, type: 2}
+  _onTimelineChange: {fileID: 0}
 --- !u!1001 &1476983715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8639,6 +8643,56 @@ Transform:
   - {fileID: 495003512}
   m_Father: {fileID: 1004497597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1763972459 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1734180608373281299, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+  m_PrefabInstance: {fileID: 1467016351}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1763972460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467016353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 08260f72fe85777408fca5b9ab11e4d7, type: 2}
+    - {fileID: 11400000, guid: fb9f7a40a7162d8498b3c72984571cec, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1467016360}
+          m_TargetAssemblyTypeName: TimelineSpot, Assembly-CSharp
+          m_MethodName: HandleSignalOnTimelineStart
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1467016360}
+          m_TargetAssemblyTypeName: TimelineSpot, Assembly-CSharp
+          m_MethodName: HandleSignalOnTimelineEnd
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1773085384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10374,11 +10428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51a33c5623c052448e51b5538b1a061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TalkingCharacter
-  _audioSpot: {fileID: 0}
   _textSpot: {fileID: 0}
-  _animationTriggerName: Talk
-  _myAnimator: {fileID: 0}
-  _onDialogueStart: {fileID: 0}
+  _timelineSpot: {fileID: 0}
   _outline: {fileID: 0}
 --- !u!82 &2134447694
 AudioSource:
@@ -10544,8 +10595,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca91019b6e9de94ea047726fb71f192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioSpot
-  _onAudio: {fileID: 0}
+  _onAudioStart: {fileID: 0}
+  _onAudioEnd: {fileID: 0}
   _clip: {fileID: 0}
+--- !u!114 &2134447702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134447689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d51a9c6cb0c197c4d8513b9e118f0948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimelineSpot
+  _currentTimeline: {fileID: 0}
+  _playableDirector: {fileID: 0}
+  _onTimelineStart: {fileID: 0}
+  _onTimelineEnd: {fileID: 0}
 --- !u!4 &543450653303613723
 Transform:
   m_ObjectHideFlags: 0
@@ -11067,6 +11135,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1026542564137100614, guid: 1ee9887448cdcb04aa1c7ab5c65e42b7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3453469135525555607}
+    - targetCorrespondingSourceObject: {fileID: 1026542564137100614, guid: 1ee9887448cdcb04aa1c7ab5c65e42b7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3453469135525555609}
   m_SourcePrefab: {fileID: 100100000, guid: 1ee9887448cdcb04aa1c7ab5c65e42b7, type: 3}
 --- !u!1 &3453469135525555599 stripped
 GameObject:
@@ -11182,11 +11253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51a33c5623c052448e51b5538b1a061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TalkingCharacter
-  _audioSpot: {fileID: 0}
   _textSpot: {fileID: 0}
-  _animationTriggerName: Talk
-  _myAnimator: {fileID: 0}
-  _onDialogueStart: {fileID: 0}
+  _timelineSpot: {fileID: 0}
   _outline: {fileID: 0}
 --- !u!65 &3453469135525555602
 BoxCollider:
@@ -11257,8 +11325,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca91019b6e9de94ea047726fb71f192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioSpot
-  _onAudio: {fileID: 0}
+  _onAudioStart: {fileID: 0}
+  _onAudioEnd: {fileID: 0}
   _clip: {fileID: 0}
+--- !u!114 &3453469135525555609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3453469135525555599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d51a9c6cb0c197c4d8513b9e118f0948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimelineSpot
+  _currentTimeline: {fileID: 0}
+  _playableDirector: {fileID: 0}
+  _onTimelineStart: {fileID: 0}
+  _onTimelineEnd: {fileID: 0}
 --- !u!4 &3635585737814978873 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8618640752499648319, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}

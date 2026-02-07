@@ -1,9 +1,11 @@
+using DG.Tweening;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioSpot : MonoBehaviour, IClipChangeable
 {
-    [SerializeField] private AppEventData _onAudio;
+    [SerializeField] private AppEventData _onAudioStart;
+    [SerializeField] private AppEventData _onAudioEnd;
 
     [SerializeField] private AudioClip _clip;
     private AudioSource _audioSource;
@@ -15,11 +17,16 @@ public class AudioSpot : MonoBehaviour, IClipChangeable
 
     public void PlayAudio()
     {
-        AudioParam audioParam;
-        audioParam.audioClip = _clip;
-        audioParam.audioSource = _audioSource;
+        if(_clip == null) return;
 
-        _onAudio.RaiseWithParam(audioParam);
+        _audioSource.Stop();
+        _audioSource.PlayOneShot(_clip);
+
+        if(_onAudioStart != null) _onAudioStart.Raise();
+        DOVirtual.DelayedCall(_clip.length, () =>
+        {
+            if(_onAudioEnd != null) _onAudioEnd.Raise();
+        });
     }
 
     public void ChangeClip(AudioClip clip)

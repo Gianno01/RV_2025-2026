@@ -1,21 +1,14 @@
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSpot))] 
 [RequireComponent(typeof(TextSpot))] 
-[RequireComponent(typeof(Animator))] 
+[RequireComponent(typeof(TimelineSpot))] 
 public class TalkingCharacter : MonoBehaviour, IsInteractable
 {
-    [Header("Configurazione Audio")]
-    [SerializeField] private AudioSpot _audioSpot;
-    
     [Header("Configurazione Sottotitoli")]
     [SerializeField] private TextSpot _textSpot;
 
     [Header("Configurazione Animazione")]
-    [SerializeField] private string _animationTriggerName = "Talk";
-    [SerializeField] private Animator _myAnimator;  
-
-    [SerializeField] private AppEventData _onDialogueStart;
+    [SerializeField] private TimelineSpot _timelineSpot;
 
     [SerializeField] private Outline _outline;
 
@@ -33,14 +26,8 @@ public class TalkingCharacter : MonoBehaviour, IsInteractable
 
     public void Interact()
     {
-        if (_myAnimator != null)
-        {
-            _myAnimator.SetTrigger(_animationTriggerName);
-        }
-
-        _audioSpot.PlayAudio();
+        _timelineSpot.PlayTimeline();
         _textSpot.ShowText();
-        if(_onDialogueStart != null) _onDialogueStart.Raise();
     }
 
     public void OnFocus() 
