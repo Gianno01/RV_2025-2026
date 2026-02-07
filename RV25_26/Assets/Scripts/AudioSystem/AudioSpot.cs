@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class AudioSpot : MonoBehaviour
+[RequireComponent(typeof(AudioSource))]
+public class AudioSpot : MonoBehaviour, IClipChangeable
 {
     [SerializeField] private AppEventData _onAudio;
 
@@ -19,5 +20,13 @@ public class AudioSpot : MonoBehaviour
         audioParam.audioSource = _audioSource;
 
         _onAudio.RaiseWithParam(audioParam);
+    }
+
+    public void ChangeClip(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            _clip = clip;
+        }
     }
 }

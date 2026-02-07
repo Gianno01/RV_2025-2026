@@ -7,5 +7,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SubtitleData", menuName = "Scriptable Objects/SubtitleData")]
 public class SubtitleData : ScriptableObject
 {
+    [TextArea(10, 10)]
     public string text;
 }

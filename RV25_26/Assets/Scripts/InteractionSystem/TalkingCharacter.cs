@@ -1,40 +1,30 @@
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(AudioSpot))] 
+[RequireComponent(typeof(TextSpot))] 
 [RequireComponent(typeof(Animator))] 
-public class TalkingCharacter : MonoBehaviour, IsInteractable, IClipChangeable // Aggiunta l'interfaccia IClipChangeable
+public class TalkingCharacter : MonoBehaviour, IsInteractable
 {
     [Header("Configurazione Audio")]
-    [SerializeField] private AudioClip _dialogueClip;
-    [SerializeField] private AppEventData _onSpatialAudioEvent;
+    [SerializeField] private AudioSpot _audioSpot;
+    
+    [Header("Configurazione Sottotitoli")]
+    [SerializeField] private TextSpot _textSpot;
 
     [Header("Configurazione Animazione")]
-    [SerializeField] private string _animationTriggerName = "Talk"; 
+    [SerializeField] private string _animationTriggerName = "Talk";
+    [SerializeField] private Animator _myAnimator;  
 
     [SerializeField] private AppEventData _onDialogueStart;
 
-    private AudioSource _myAudioSource;
-    private Animator _myAnimator; 
-private Outline _outline;
+    [SerializeField] private Outline _outline;
+
     void Awake() 
     {
-        _myAudioSource = GetComponent<AudioSource>();
-        _myAnimator = GetComponent<Animator>(); 
-
-        _myAudioSource.spatialBlend = 1.0f; 
-        _outline = GetComponent<Outline>();
-    if (_outline != null) _outline.enabled = false; // Partiamo con l'effetto spento
+        if (_outline != null) _outline.enabled = false; // Partiamo con l'effetto spento
     }
 
     // --- IMPLEMENTAZIONE IClipChangeable ---
-
-    public void ChangeClip(AudioClip clip) // Implementazione del metodo dell'interfaccia
-    {
-        if (clip != null)
-        {
-            _dialogueClip = clip; // Aggiorna la clip con quella nuova ricevuta
-        }
-    }
 
     public string GetDescription()
     {
@@ -48,23 +38,18 @@ private Outline _outline;
             _myAnimator.SetTrigger(_animationTriggerName);
         }
 
-        if (_dialogueClip == null || _onSpatialAudioEvent == null) return;
-
-        AudioParam dialogueParam;
-        dialogueParam.audioSource = _myAudioSource;
-        dialogueParam.audioClip = _dialogueClip;
-
-        _onSpatialAudioEvent.RaiseWithParam(dialogueParam);
+        _audioSpot.PlayAudio();
+        _textSpot.ShowText();
         if(_onDialogueStart != null) _onDialogueStart.Raise();
     }
 
     public void OnFocus() 
-{
-    if (_outline != null) _outline.enabled = true;
-}
+    {
+        if (_outline != null) _outline.enabled = true;
+    }
 
-public void OnLostFocus() 
-{
-    if (_outline != null) _outline.enabled = false;
-}
+    public void OnLostFocus() 
+    {
+        if (_outline != null) _outline.enabled = false;
+    }
 }

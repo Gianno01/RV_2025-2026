@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 public class SubtitleUI : MonoBehaviour
 {
@@ -15,11 +16,11 @@ public class SubtitleUI : MonoBehaviour
     private IEnumerator ShowText(string text)
     {
         canvasGroup.alpha = 1;
-        string[] periods = text.Split(".");
+        string[] periods = Regex.Split(text, @"(?<=[.;!?]+)");
         
         foreach(string s in periods)
         {
-            textBox.text = periods[0];
+            textBox.text = s;
             yield return new WaitForSeconds(timeToWaitBetweenPeriod);
         }
 
