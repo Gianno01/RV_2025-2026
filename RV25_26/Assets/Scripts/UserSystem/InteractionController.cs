@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI; // Necessario per gestire l'immagine della UI
 
 public class InteractionController : MonoBehaviour
 {
     [Header("Settings")]
     [Tooltip("Distanza massima per interagire")]
-    public float interactionDistance = 5f;
+    public float interactionDistance = 3f; // Ridotta per interazioni ravvicinate
+    [Tooltip("Larghezza del fascio di interazione (raggio della sfera)")]
+    public float interactionRadius = 0.2f; 
     [Tooltip("Layer degli oggetti interattivi")]
     public LayerMask interactionLayer;
 
@@ -12,60 +15,77 @@ public class InteractionController : MonoBehaviour
     public Transform playerCamera; 
     public GameObject tutorialPanel; 
 
+    [Header("UI Pointer")]
+    [Tooltip("Trascina qui l'immagine del puntatore UI")]
+    public Image pointerImage; 
+    public Color normalColor = Color.white;
+    public Color interactColor = Color.green;
+
     [Header("Keys")]
     public KeyCode interactKey = KeyCode.E;
     public KeyCode tutorialKey = KeyCode.H;
 
-    // Riferimento all'oggetto che stiamo guardando attualmente
     private IsInteractable _currentInteractable;
 
     private void Update()
     {
-        // 1. GESTIONE INTERAZIONE E FEEDBACK VISIVO
         HandleInteraction();
-
-        // 2. GESTIONE TUTORIAL
         HandleTutorial();
     }
 
     void HandleInteraction()
     {
+        // Definiamo il raggio partendo dalla camera
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
         RaycastHit hit;
 
-        // Debug visivo del raggio nella scena
-        Debug.DrawRay(ray.origin, ray.direction * interactionDistance, Color.red);
+        // Utilizziamo SphereCast invece di Raycast per creare un "fascio" di volume
+        // ray: origine e direzione
+        // interactionRadius: quanto è largo il fascio
+        // interactionDistance: quanto va lontano
+        bool hitSomething = Physics.SphereCast(ray, interactionRadius, out hit, interactionDistance, interactionLayer);
 
-        if (Physics.Raycast(ray, out hit, interactionDistance, interactionLayer))
+        if (hitSomething)
         {
-            IsInteractable interactable = hit.collider.GetComponent<IsInteractable>();
+            // Usiamo GetComponentInParent per intercettare script su oggetti complessi (come gli NPC)
+            IsInteractable interactable = hit.collider.GetComponentInParent<IsInteractable>();
 
             if (interactable != null)
             {
-                // Se l'oggetto che stiamo guardando è DIVERSO da quello del frame precedente
+                // Cambia colore al puntatore UI
+                UpdatePointerColor(interactColor);
+
                 if (interactable != _currentInteractable)
                 {
-                    // Se stavamo guardando qualcos'altro prima, spegniamo il suo feedback
                     _currentInteractable?.OnLostFocus();
-
-                    // Aggiorniamo l'oggetto corrente e attiviamo il suo feedback
                     _currentInteractable = interactable;
                     _currentInteractable.OnFocus();
-                    
-                    //Debug.Log("Focus su: " + _currentInteractable.GetDescription());
                 }
 
-                // Esegui l'interazione se viene premuto il tasto
                 if (Input.GetKeyDown(interactKey))
                 {
                     _currentInteractable.Interact();
                 }
-
-                return; // Esce dalla funzione per non resettare il focus
+                return; 
             }
         }
 
-        // Se il raggio non colpisce nulla o non colpisce un oggetto interattivo
+        // Se non colpiamo nulla o l'oggetto non è interattivo
+        ResetInteraction();
+    }
+
+    private void UpdatePointerColor(Color newColor)
+    {
+        if (pointerImage != null)
+        {
+            pointerImage.color = newColor;
+        }
+    }
+
+    private void ResetInteraction()
+    {
+        UpdatePointerColor(normalColor);
+
         if (_currentInteractable != null)
         {
             _currentInteractable.OnLostFocus();
@@ -82,17 +102,18 @@ public class InteractionController : MonoBehaviour
                 bool isActive = tutorialPanel.activeSelf;
                 tutorialPanel.SetActive(!isActive);
 
-                if (!isActive)
-                {
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
-                }
-                else
-                {
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Cursor.visible = false;
-                }
+                Cursor.lockState = !isActive ? CursorLockMode.None : CursorLockMode.Locked;
+                Cursor.visible = !isActive;
             }
         }
+    }
+
+    // Disegna il fascio nella Scene View per aiutarti a regolarlo
+    private void OnDrawGizmosSelected()
+    {
+        if (playerCamera == null) return;
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawRay(playerCamera.position, playerCamera.forward * interactionDistance);
+        Gizmos.DrawWireSphere(playerCamera.position + playerCamera.forward * interactionDistance, interactionRadius);
     }
 }
