@@ -597,9 +597,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 36491070bb97dbf44b134956eed94856, type: 2}
     - target: {fileID: 1360515886933925742, guid: 6498cee03736c4248af13854a7be0f0e, type: 3}
+      propertyPath: _scenes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360515886933925742, guid: 6498cee03736c4248af13854a7be0f0e, type: 3}
       propertyPath: _onAsyncSceneLoaded
       value: 
       objectReference: {fileID: 11400000, guid: c7836186f056ae447960a558808f9da0, type: 2}
+    - target: {fileID: 1360515886933925742, guid: 6498cee03736c4248af13854a7be0f0e, type: 3}
+      propertyPath: '_scenes.Array.data[1]'
+      value: BootstrapScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360515886933925742, guid: 6498cee03736c4248af13854a7be0f0e, type: 3}
+      propertyPath: '_scenes.Array.data[2]'
+      value: MasterScene
+      objectReference: {fileID: 0}
     - target: {fileID: 1360515886933925742, guid: 6498cee03736c4248af13854a7be0f0e, type: 3}
       propertyPath: _additiveScenes.Array.size
       value: 7
