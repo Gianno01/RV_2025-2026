@@ -33,5 +33,12 @@ public class AnimateItem : MonoBehaviour, IsInteractable
         if (_outline != null) _outline.enabled = false;
     }
 
+    // Aggiungi questo in TalkingCharacter.cs e AnimateItem.cs
+    public void ReceiveItem(GrippableItem item) 
+    {
+    // Se vuoi che l'NPC reagisca alla consegna, chiama Interact() o distruggi l'oggetto
+    Debug.Log("l'oggetto viene distrutto!");
+    }
+
 }
 

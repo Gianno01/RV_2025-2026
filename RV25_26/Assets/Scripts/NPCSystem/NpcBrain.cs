@@ -173,4 +173,10 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position + Vector3.up, transform.forward * 2);
     }
+
+      public void ReceiveItem(GrippableItem item) 
+    {
+    // Se vuoi che l'NPC reagisca alla consegna, chiama Interact() o distruggi l'oggetto
+    Debug.Log("l'oggetto viene distrutto!");
+    }
 }
