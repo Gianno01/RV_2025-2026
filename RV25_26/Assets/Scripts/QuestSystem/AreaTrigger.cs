@@ -11,6 +11,7 @@ using UnityEngine;
 public class AreaTrigger : MonoBehaviour
 {
     [SerializeField] private bool _isReferenceToOtherGameobject;
+    [SerializeField] private GameObject _gameObject;
     [SerializeField] private string _gameObjectName;
     [SerializeField] private string _componentName;
     [SerializeField] private string _methodName;
@@ -24,20 +25,18 @@ public class AreaTrigger : MonoBehaviour
 
     private void Init()
     {
-        if(_gameObjectName != null)
-        {
-            Type type = Type.GetType(_componentName);
-            _method = type.GetMethod(_methodName);
-            _paramNumber = _method.GetParameters().Length;
+        Type type = Type.GetType(_componentName);
+        _method = type.GetMethod(_methodName);
+        _paramNumber = _method.GetParameters().Length;
 
-            if (_isReferenceToOtherGameobject)
-            {
-                _obj = (MonoBehaviour) GameObject.Find(_gameObjectName).GetComponent(_componentName);
-            }
-            else
-            {
-                _obj = (MonoBehaviour) gameObject.GetComponent(_componentName);
-            }
+        if (_isReferenceToOtherGameobject)
+        {
+            if(_gameObject == null) _gameObject = GameObject.Find(_gameObjectName);
+            _obj = (MonoBehaviour) _gameObject.GetComponent(_componentName);
+        }
+        else
+        {
+            _obj = (MonoBehaviour) gameObject.GetComponent(_componentName);
         }
     }
 
