@@ -2382,7 +2382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerClipChanger
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _questClips:
-  - questIndex: 1
+  - questIndex: 2
     clip: {fileID: 8300000, guid: 7818870831e01ea4ea275078fb7806ce, type: 3}
   _onClipChange: {fileID: 0}
 --- !u!114 &556115382
@@ -2506,6 +2506,7 @@ GameObject:
   - component: {fileID: 580358120}
   - component: {fileID: 580358119}
   - component: {fileID: 580358118}
+  - component: {fileID: 580358122}
   - component: {fileID: 580358121}
   m_Layer: 0
   m_Name: AudioSpot
@@ -2542,13 +2543,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerCaller
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _isNotInTheScene: 0
   _questIndex: 1
   _secToWaitBeforeCall: 2
-  _isReferenceToOtherGameobject: 0
-  _gameObjectName: 
-  _componentName: AudioSpot
+  _component: {fileID: 580358120}
   _methodName: PlayAudio
   _param: 0
+  _gameObjectName: 
+  _componentName: 
 --- !u!114 &580358119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2579,7 +2581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioSpot
   _onAudioStart: {fileID: 0}
-  _onAudioEnd: {fileID: 0}
+  _onAudioEnd: {fileID: 11400000, guid: 9075992e90655f04b9431fd677da944a, type: 2}
   _clip: {fileID: 0}
 --- !u!82 &580358121
 AudioSource:
@@ -2678,6 +2680,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &580358122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580358116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acff8dd27787d5343ad0f9282cb45cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestStarter
+  _onEvent: {fileID: 11400000, guid: 9075992e90655f04b9431fd677da944a, type: 2}
+  _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
 --- !u!1001 &603142057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2861,13 +2877,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerCaller
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _isNotInTheScene: 0
   _questIndex: 1
   _secToWaitBeforeCall: 2
-  _isReferenceToOtherGameobject: 0
-  _gameObjectName: 
-  _componentName: TextSpot
+  _component: {fileID: 650588251}
   _methodName: ShowText
   _param: 0
+  _gameObjectName: 
+  _componentName: 
 --- !u!114 &650588250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3149,7 +3166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerTextChanger
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _questTexts:
-  - questIndex: 1
+  - questIndex: 2
     subtitleData: {fileID: 11400000, guid: ec818732ade0c8244a4c2f5ced5d03fb, type: 2}
   _onTextChange: {fileID: 0}
 --- !u!114 &723667902
@@ -5815,6 +5832,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1694372189082594122, guid: e229e806b03eeaa409acb27a276b6403, type: 3}
   m_PrefabInstance: {fileID: 1108361820}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1121745656 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3071845611290331339, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+  m_PrefabInstance: {fileID: 1467016351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467016353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acff8dd27787d5343ad0f9282cb45cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestStarter
+--- !u!114 &1121745657 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6640465326879250696, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+  m_PrefabInstance: {fileID: 1467016351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467016353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51a33c5623c052448e51b5538b1a061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TalkingCharacter
 --- !u!1001 &1124074093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5923,12 +5962,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811937216f37e3a409594db124b8b54f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaTrigger
-  _isReferenceToOtherGameobject: 0
-  _gameObject: {fileID: 0}
-  _gameObjectName: 
-  _componentName: MixerSpot
+  _isNotInTheScene: 0
+  _component: {fileID: 0}
   _methodName: ChangeAudioSnapshot
   _param: 0
+  _gameObjectName: 
+  _componentName: MixerSpot
   _collisionLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -7058,12 +7097,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811937216f37e3a409594db124b8b54f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaTrigger
-  _isReferenceToOtherGameobject: 1
-  _gameObject: {fileID: 0}
-  _gameObjectName: CutsceneController
-  _componentName: CutsceneController
+  _isNotInTheScene: 0
+  _component: {fileID: 0}
   _methodName: StartCutscene
   _param: 0
+  _gameObjectName: CutsceneController
+  _componentName: CutsceneController
   _collisionLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -7310,8 +7349,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3874260518696402185, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+      propertyPath: _component
+      value: 
+      objectReference: {fileID: 1121745657}
+    - target: {fileID: 3874260518696402185, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
       propertyPath: _questIndex
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874260518696402185, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+      propertyPath: _componentName
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3874260518696402185, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
       propertyPath: _secToWaitBeforeCall
@@ -7492,7 +7539,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 952ef3f9911dd2d448de66d05d686c49, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -8941,7 +8988,11 @@ MonoBehaviour:
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _startQuests: 
   _endQuests: 01000000
+  _isNotInTheScene: 0
+  _gameObject: {fileID: 0}
+  _gameObjectName: 
   _effectOnOneComponent: 1
+  _component: {fileID: 1121745656}
   _componentName: QuestStarter
   _onActivate: {fileID: 0}
   _onDeactivate: {fileID: 0}
@@ -9428,6 +9479,7 @@ GameObject:
   - component: {fileID: 1877683286}
   - component: {fileID: 1877683285}
   - component: {fileID: 1877683288}
+  - component: {fileID: 1877683289}
   m_Layer: 0
   m_Name: HintSpotTrigger
   m_TagString: Untagged
@@ -9464,12 +9516,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811937216f37e3a409594db124b8b54f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaTrigger
-  _isReferenceToOtherGameobject: 1
-  _gameObject: {fileID: 723667899}
-  _gameObjectName: 
-  _componentName: TextSpot
+  _isNotInTheScene: 0
+  _component: {fileID: 723667902}
   _methodName: ShowText
   _param: 0
+  _gameObjectName: 
+  _componentName: 
   _collisionLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -9485,12 +9537,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811937216f37e3a409594db124b8b54f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaTrigger
-  _isReferenceToOtherGameobject: 1
-  _gameObject: {fileID: 556115378}
-  _gameObjectName: 
-  _componentName: AudioSpot
+  _isNotInTheScene: 0
+  _component: {fileID: 556115382}
   _methodName: PlayAudio
   _param: 0
+  _gameObjectName: 
+  _componentName: 
   _collisionLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -9528,9 +9580,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
-  _startQuests: 01000000
-  _endQuests: 02000000
-  _effectOnOneComponent: 0
+  _startQuests: 02000000
+  _endQuests: 0000000003000000
+  _isNotInTheScene: 0
+  _gameObject: {fileID: 0}
+  _gameObjectName: 
+  _effectOnOneComponent: 1
+  _component: {fileID: 1877683286}
+  _componentName: 
+  _onActivate: {fileID: 0}
+  _onDeactivate: {fileID: 0}
+--- !u!114 &1877683289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877683283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _startQuests: 02000000
+  _endQuests: 0000000003000000
+  _isNotInTheScene: 0
+  _gameObject: {fileID: 0}
+  _gameObjectName: 
+  _effectOnOneComponent: 1
+  _component: {fileID: 1877683285}
   _componentName: 
   _onActivate: {fileID: 0}
   _onDeactivate: {fileID: 0}
@@ -10753,12 +10832,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811937216f37e3a409594db124b8b54f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaTrigger
-  _isReferenceToOtherGameobject: 0
-  _gameObject: {fileID: 0}
-  _gameObjectName: 
-  _componentName: MixerSpot
+  _isNotInTheScene: 0
+  _component: {fileID: 0}
   _methodName: ChangeAudioSnapshot
   _param: 0
+  _gameObjectName: 
+  _componentName: MixerSpot
   _collisionLayer:
     serializedVersion: 2
     m_Bits: 64

@@ -24,6 +24,6 @@ public class SubtitlesController: MonoBehaviour
     {
         SubtitleData subtitleData = (SubtitleData) param;
 
-        _subtitleUI.Show(subtitleData.text);
+        if(subtitleData != null) _subtitleUI.Show(subtitleData.text);
     }
 }

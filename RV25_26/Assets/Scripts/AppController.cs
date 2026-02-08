@@ -47,19 +47,15 @@ public class AppController : MonoBehaviour
         //HandleOnSceneLoaded(SceneManager.GetActiveScene(),LoadSceneMode.Single);
 
         _onStartScene.OnParamEvent += HandleOnAsyncSceneLoaded;
-        Debug.Log("STEP -5");
     }
 
     private void HandleOnAsyncSceneLoaded(object param)
     {
-        Debug.Log("STEP -2");
-
         string sceneName = (string) param;
-        if(sceneName == _scenes[1])
+        if(sceneName == _scenes[2])
         {
-            Debug.Log("STEP -1");
             _onHomeExit.OnEvent += HandleOnHomeExit;
-            _menuController = GameObject.FindAnyObjectByType<MenuController>();
+            _menuController = FindAnyObjectByType<MenuController>();
             _menuController.ExitHome();
         }
     }
@@ -67,13 +63,14 @@ public class AppController : MonoBehaviour
     private void HandleOnHomeExit()
     {
         _onHomeExit.OnEvent -= HandleOnHomeExit;
+        SceneManager.LoadScene(_scenes[1], LoadSceneMode.Single);
         StartCoroutine(LoadAdditiveScenes());
     }
 
     private void HandleOnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if(scene.name == _scenes[0]){
-            _menuController = GameObject.FindAnyObjectByType<MenuController>();
+            _menuController = FindAnyObjectByType<MenuController>();
             ToHomeState();
         }
     }
@@ -86,20 +83,14 @@ public class AppController : MonoBehaviour
             ops.Add(op);
         }
 
-        Debug.Log("STEP 0");
-
         foreach (var op in ops) { 
             while (op.progress < 0.9f) 
                 yield return null; 
         }
 
-        Debug.Log("STEP 1");
-
         ops[0].allowSceneActivation = true;
         while (!ops[0].isDone) 
                 yield return null; 
-        
-        Debug.Log("STEP 2");
 
         for (int i = 1; i < ops.Count; i++)
         {
@@ -112,13 +103,9 @@ public class AppController : MonoBehaviour
                 yield return null; 
         }
 
-        Debug.Log("STEP 3");
-
         string activeScene = SceneManager.GetActiveScene().name;
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(_additiveScenes[0]));
         SceneManager.UnloadSceneAsync(activeScene);
-
-        Debug.Log("STEP 4");
 
         _gameplayController = GameObject.FindAnyObjectByType<GameplayController>();
         _cutsceneController = GameObject.FindAnyObjectByType<CutsceneController>();

@@ -15,18 +15,15 @@ public class MenuController : MonoBehaviour
     void Awake()
     {
         _onStart.OnEvent += HandleOnStart;
-        Debug.Log("STEP -6");
     }
 
     void OnDisable()
     {
-        Debug.Log("DISABLED");
         _onStart.OnEvent -= HandleOnStart;
     }
 
     private void HandleOnStart()
     {
-        Debug.Log("STEP -3");
         _onStartScene.RaiseWithParam(_mainScene);
     }
 

@@ -7,6 +7,9 @@ public class TimelineSpot : MonoBehaviour, ITimelineChangeable
     [SerializeField] private PlayableDirector _playableDirector;
     [SerializeField] private AppEventData _onTimelineStart;
     [SerializeField] private AppEventData _onTimelineEnd;
+
+    [Header("Se attivo, ferma la timeline in esecuzione e avvia la nuova, altrimenti il viceversa")]
+    [SerializeField] private bool _stopCurrentClip;
     public void ChangeTimeline(PlayableAsset timeline)
     {
         _currentTimeline = timeline;
@@ -14,6 +17,7 @@ public class TimelineSpot : MonoBehaviour, ITimelineChangeable
 
     public void PlayTimeline()
     {
+        if(_playableDirector.state == PlayState.Playing && !_stopCurrentClip) return;
         if(_currentTimeline != null) _playableDirector.Play(_currentTimeline);
     }
 
