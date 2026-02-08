@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Master/HomeScene.unity
     guid: 70b0247a0aa7be0428e20e4736099934
   - enabled: 1
+    path: Assets/Scenes/Master/BootstrapScene.unity
+    guid: 2ca87530c21abd947ae180b3a8473197
+  - enabled: 1
     path: Assets/Scenes/Master/MasterScene.unity
     guid: 63243192b89f1094b9e68301c15b5e17
   - enabled: 1
