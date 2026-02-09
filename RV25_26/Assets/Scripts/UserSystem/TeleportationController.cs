@@ -2,7 +2,17 @@ using UnityEngine;
 
 public class TeleportationController : MonoBehaviour
 {
-    [SerializeField] private Transform[] spotPos;
+    [SerializeField] private string[] spotPosNames;
+    private Transform[] spotPos;
+
+    void Start()
+    {
+        spotPos = new Transform[spotPosNames.Length];
+        for(int i = 0; i < spotPosNames.Length; i++)
+        {
+            spotPos[i] = GameObject.Find(spotPosNames[i]).transform;
+        }
+    }
     void Update()
     {
         HandleTeleport();
