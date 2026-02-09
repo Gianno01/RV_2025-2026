@@ -3,10 +3,13 @@ using UnityEngine;
 public class ItemReceiver : MonoBehaviour, IsInteractable
 {
     [Header("Consegna")]
-    public string receiverName = "Tavolo";
+    public string receiverName = "receiver";
     public bool destroyOnDelivery = false; // Scompare?
     public Transform deliveryPoint;        // O si piazza qui?
 
+    [Header("Eventi (Opzionale)")]
+    [Tooltip("Trascina qui l'evento se vuoi far avanzare la quest, altrimenti lascia vuoto.")]
+    [SerializeField] private AppEventData _onDeliveryObject;
     private Outline _outline;
 
     void Awake() 
@@ -29,7 +32,15 @@ public class ItemReceiver : MonoBehaviour, IsInteractable
             item.PlaceOnTarget(deliveryPoint);
             Debug.Log(item.name + " piazzato su " + receiverName);
         }
-        
+
+        // 3. INVIO EVENTO (Solo se assegnato nell'Inspector)
+        if (_onDeliveryObject != null)
+        {
+            _onDeliveryObject.Raise();
+            Debug.Log($"Evento quest lanciato da {gameObject.name}.");
+        }
+        else
+             Debug.Log($"nessun evento associato alla consegna.");    
         // Se l'oggetto è stato consegnato, togliamo il focus per resettare l'outline
         OnLostFocus();
     }
