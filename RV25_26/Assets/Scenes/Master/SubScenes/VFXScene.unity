@@ -872,6 +872,10 @@ PrefabInstance:
       propertyPath: _gameObjectName
       value: TransitionController
       objectReference: {fileID: 0}
+    - target: {fileID: 6450477247712667057, guid: 6421e4e86a0dea145b3b157ecc725ac2, type: 3}
+      propertyPath: _isNotInTheScene
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
