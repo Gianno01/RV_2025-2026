@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
-using System; // Necessario per il parsing degli Enum
+using System; 
 
-public enum NpcState { Idle, Patrol, Talk }
+public enum NpcState { Idle, Patrol, Talk, Follow }
 
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(BoxCollider))] 
@@ -13,6 +13,10 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
     public NpcState currentState = NpcState.Idle;
     private TalkingCharacter _talkingVoice; 
 
+    [Header("Inseguimento Temporaneo")]
+    [Tooltip("Distanza alla quale l'NPC si ferma per iniziare a parlare")]
+    public float talkDistance = 2.0f;
+
     [Header("Pattugliamento")]
     public Transform[] waypoints;
     public float waitTimeAtPoint = 2f;
@@ -21,26 +25,23 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
     [Header("Configurazione")]
     public float lookSpeed = 5f; 
     [Header("Info Ui")]
-    public string npcName = "Nome NPC";
+    public string npcName = "Dottore";
     public string actionVerb = "Parla con";
 
     private NavMeshAgent agent;
     private Transform playerTransform;
-    private NpcState previousState; 
-    private Outline _outline; // Riferimento per il feedback visivo
+    private Outline _outline;
 
     void Awake()
     {
-        // Recupera il componente Outline e lo disattiva all'avvio
         _outline = GetComponent<Outline>();
         if (_outline != null) _outline.enabled = false;
+        agent = GetComponent<NavMeshAgent>();
     }
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
         _talkingVoice = GetComponent<TalkingCharacter>();
-
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null) playerTransform = player.transform;
         
@@ -52,20 +53,23 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
         }
     }
 
-    // implementazione di IStateChangeable 
     public void ChangeState(string state)
     {
         if (Enum.TryParse(state, true, out NpcState newState))
         {
             StopAllCoroutines();
-            
             currentState = newState;
 
             switch (currentState)
             {
                 case NpcState.Patrol:
                     agent.isStopped = false;
+                    agent.stoppingDistance = 0.5f;
                     MoveToNextWaypoint();
+                    break;
+                case NpcState.Follow:
+                    agent.isStopped = false;
+                    agent.stoppingDistance = talkDistance; 
                     break;
                 case NpcState.Idle:
                 case NpcState.Talk:
@@ -85,9 +89,39 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
             case NpcState.Talk:
                 TalkLogic();
                 break;
+            case NpcState.Follow:
+                MoveToPlayerLogic();
+                break;
         }
     }
 
+    // --- NUOVA LOGICA: SI AVVICINA E PARLA ---
+    void MoveToPlayerLogic()
+    {
+        if (playerTransform == null) return;
+
+        agent.SetDestination(playerTransform.position);
+
+        // Se ha raggiunto il player, avvia automaticamente la conversazione
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        {
+            StartConversation();
+        }
+    }
+
+    void StartConversation()
+    {
+        ChangeState("Talk");
+        if (_talkingVoice != null) _talkingVoice.Interact();
+    }
+
+    public void EndConversation()
+    {
+        // Una volta finito di parlare, resta in Idle come richiesto
+        ChangeState("Idle");
+    }
+
+    // --- LOGICHE STANDARD ---
     void PatrolLogic()
     {
         agent.updateRotation = true; 
@@ -122,7 +156,11 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
     {
         agent.isStopped = true;
         agent.updateRotation = false;
+        RotateTowardsPlayer();
+    }
 
+    private void RotateTowardsPlayer()
+    {
         if (playerTransform != null)
         {
             Vector3 direction = (playerTransform.position - transform.position).normalized;
@@ -135,48 +173,15 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
         }
     }
 
-    public void Interact()
+    // --- INTERFACCIA ---
+    public void Interact() 
     {
         if (currentState != NpcState.Talk) StartConversation();
         else EndConversation();
     }
 
-    public void StartConversation()
-    {
-        previousState = currentState;
-        ChangeState("Talk");
-
-        if (_talkingVoice != null) _talkingVoice.Interact();
-    }
-
-    public void EndConversation()
-    {
-        ChangeState(previousState.ToString());
-    }
-
     public string GetDescription() => $"{actionVerb} {npcName}";
-
-    // --- IMPLEMENTAZIONE FEEDBACK VISIVO ---
-
-    public void OnFocus() 
-    {
-        if (_outline != null) _outline.enabled = true;
-    }
-
-    public void OnLostFocus() 
-    {
-        if (_outline != null) _outline.enabled = false;
-    }
-
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position + Vector3.up, transform.forward * 2);
-    }
-
-      public void ReceiveItem(GrippableItem item) 
-    {
-    // Se vuoi che l'NPC reagisca alla consegna, chiama Interact() o distruggi l'oggetto
-    Debug.Log("l'oggetto viene distrutto!");
-    }
+    public void OnFocus() { if (_outline != null) _outline.enabled = true; }
+    public void OnLostFocus() { if (_outline != null) _outline.enabled = false; }
+    public void ReceiveItem(GrippableItem item) { }
 }
