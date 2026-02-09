@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 702587604}
   - component: {fileID: 702587603}
   - component: {fileID: 702587605}
+  - component: {fileID: 702587606}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -274,8 +275,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 0.9012885, b: 0.63207537, a: 1}
+  m_Intensity: 0.56
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -337,13 +338,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702587602}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.31686455, y: -0.24449675, z: 0.08490359, w: 0.91247445}
+  m_LocalRotation: {x: 0.301875, y: -0.36971626, z: 0.12838715, w: 0.869309}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 38.3, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 38.3, y: -46.08, z: 0}
 --- !u!114 &702587605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +374,21 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &702587606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702587602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec346eee9db5984dbf6b1beca0bf884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkyboxController
+  _skyboxSpeed: 1
+  _sunSpeed: 0.2
+  _directionalLight: {fileID: 702587604}
 --- !u!1 &1619805311
 GameObject:
   m_ObjectHideFlags: 0
