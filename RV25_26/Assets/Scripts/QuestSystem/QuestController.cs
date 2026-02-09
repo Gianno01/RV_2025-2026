@@ -17,7 +17,6 @@ public class QuestController : MonoBehaviour
 {
     [SerializeField] private QuestData[] _questDatas;
     [SerializeField] private AppEventData _onStartQuest;
-    [SerializeField] private AppEventData _onHint;
     [SerializeField] private AppEventData _onCurrentQuestChange;
     [HideInInspector] public int _currentQuestIndex {get; private set;}
 
@@ -45,15 +44,5 @@ public class QuestController : MonoBehaviour
         Debug.Log("QUEST NUMBER: " + _currentQuestIndex);
         _onCurrentQuestChange.RaiseWithParam(_currentQuestIndex);
 
-        QuestData questData = _questDatas[_currentQuestIndex];
-        if(questData.SecToWait != -1)
-        {
-            DOVirtual.DelayedCall(questData.SecToWait, PlayHint, false);
-        }
-    }
-
-    public void PlayHint()
-    {
-        _onHint.RaiseWithParam(_questDatas[_currentQuestIndex].hintAudio);
     }
 }

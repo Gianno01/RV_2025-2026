@@ -1,36 +1,52 @@
+using DG.Tweening;
 using UnityEngine;
 
-public class AudioSpot : MonoBehaviour
+[RequireComponent(typeof(AudioSource))]
+public class AudioSpot : MonoBehaviour, IClipChangeable
 {
-    [SerializeField] private bool _isSpatialAudio;
-    [SerializeField] private AppEventData _onSpatialAudio;
-    [SerializeField] private AppEventData _onAudio;
+    [SerializeField] private AppEventData _onAudioStart;
+    [SerializeField] private AppEventData _onAudioEnd;
 
     [SerializeField] private AudioClip _clip;
+
+    [Header("Se attivo, ferma la clip in esecuzione e avvia la nuova, altrimenti il viceversa")]
+    [SerializeField] private bool _stopCurrentClip;
+    [Header("Se attivo, permette la riproduzione di più clip in contemporanea. In genere non si vuole")]
+    [SerializeField] private bool _playMoreThanOne;
     private AudioSource _audioSource;
 
     private void Awake()
     {
-        if (_isSpatialAudio)
-        {
-            _audioSource = gameObject.GetComponent<AudioSource>();
-            _audioSource.spatialBlend = 1.0f;
-        }
+        _audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     public void PlayAudio()
     {
-        if (_isSpatialAudio)
+        if(_clip == null) return;
+        
+        if (_playMoreThanOne)
         {
-            SpatialParam spatialParam;
-            spatialParam.audioClip = _clip;
-            spatialParam.audioSource = _audioSource;
-
-            _onSpatialAudio.RaiseWithParam(spatialParam);
+            _audioSource.PlayOneShot(_clip);
         }
         else
         {
-            _onAudio.RaiseWithParam(_clip);
+            if(!_stopCurrentClip && _audioSource.isPlaying) return;
+            _audioSource.clip = _clip;
+            _audioSource.Play();
+        }
+
+        if(_onAudioStart != null) _onAudioStart.Raise();
+        DOVirtual.DelayedCall(_clip.length, () =>
+        {
+            if(_onAudioEnd != null) _onAudioEnd.Raise();
+        });
+    }
+
+    public void ChangeClip(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            _clip = clip;
         }
     }
 }

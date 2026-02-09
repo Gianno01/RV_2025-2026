@@ -24,6 +24,8 @@ public class AppController : MonoBehaviour
     [SerializeField] private AppEventData _onGateExit;
     [SerializeField] private AppEventData _onGameplayExit;
     [SerializeField] private AppEventData _onCutsceneExit;
+    [SerializeField] private AppEventData _onHomeExit;
+    [SerializeField] private AppEventData _onStartScene;
     private GameplayController _gameplayController;
     private CutsceneController _cutsceneController;
     private TransitionController _transitionController;
@@ -39,23 +41,37 @@ public class AppController : MonoBehaviour
         }else{
             Destroy(gameObject);
         }
-    }
 
-    void Start()
-    {
         SceneManager.sceneLoaded += HandleOnSceneLoaded;
         //per test, da commentare
         //HandleOnSceneLoaded(SceneManager.GetActiveScene(),LoadSceneMode.Single);
+
+        _onStartScene.OnParamEvent += HandleOnAsyncSceneLoaded;
+    }
+
+    private void HandleOnAsyncSceneLoaded(object param)
+    {
+        string sceneName = (string) param;
+        if(sceneName == _scenes[2])
+        {
+            _onHomeExit.OnEvent += HandleOnHomeExit;
+            _menuController = FindAnyObjectByType<MenuController>();
+            _menuController.ExitHome();
+        }
+    }
+
+    private void HandleOnHomeExit()
+    {
+        _onHomeExit.OnEvent -= HandleOnHomeExit;
+        SceneManager.LoadScene(_scenes[1], LoadSceneMode.Single);
+        StartCoroutine(LoadAdditiveScenes());
     }
 
     private void HandleOnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if(scene.name == _scenes[0]){
-            _menuController = GameObject.FindAnyObjectByType<MenuController>();
-            _menuController.enabled = false;
+            _menuController = FindAnyObjectByType<MenuController>();
             ToHomeState();
-        }else if(scene.name == _scenes[1]){
-            StartCoroutine(LoadAdditiveScenes());
         }
     }
 
@@ -63,13 +79,33 @@ public class AppController : MonoBehaviour
         List<AsyncOperation> ops = new List<AsyncOperation>();
         foreach (string s in _additiveScenes) {
             AsyncOperation op = SceneManager.LoadSceneAsync(s, LoadSceneMode.Additive);
-            op.allowSceneActivation = true; 
-            ops.Add(op); 
-        } 
+            op.allowSceneActivation = false; 
+            ops.Add(op);
+        }
+
         foreach (var op in ops) { 
-            while (!op.isDone) 
+            while (op.progress < 0.9f) 
                 yield return null; 
-        } 
+        }
+
+        ops[0].allowSceneActivation = true;
+        while (!ops[0].isDone) 
+                yield return null; 
+
+        for (int i = 1; i < ops.Count; i++)
+        {
+            ops[i].allowSceneActivation = true;
+        }
+
+        for (int i = 1; i < ops.Count; i++)
+        { 
+            while (!ops[i].isDone) 
+                yield return null; 
+        }
+
+        string activeScene = SceneManager.GetActiveScene().name;
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(_additiveScenes[0]));
+        SceneManager.UnloadSceneAsync(activeScene);
 
         _gameplayController = GameObject.FindAnyObjectByType<GameplayController>();
         _cutsceneController = GameObject.FindAnyObjectByType<CutsceneController>();
@@ -153,8 +189,8 @@ public class AppController : MonoBehaviour
     }
     private void ToHomeState()
     {
+        _menuController.EnterHome();
         _currentAppState = AppState.Home;
-        _menuController.enabled = true;
     }
 
     private void ToGateState()

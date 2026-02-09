@@ -10,35 +10,39 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class AreaTrigger : MonoBehaviour
 {
-    [SerializeField] private bool _isReferenceToOtherGameobject;
-    [SerializeField] private string _gameObjectName;
-    [SerializeField] private string _componentName;
+    [SerializeField] private bool _isNotInTheScene;
+    
+    [SerializeField] private MonoBehaviour _component;
     [SerializeField] private string _methodName;
     [Tooltip("Ammesso un unico parametro intero")]
     [SerializeField] private int _param;
+
+    [Header("Se il componente non è nella scena, compila questa sezione")]
+    [SerializeField] private string _gameObjectName;
+    [SerializeField] private string _componentName;
     [SerializeField] private LayerMask _collisionLayer;
+
     private MonoBehaviour _obj;
     private MethodInfo _method;
     private int _paramNumber;
     private bool init = false;
 
-    private void Init()
+    void Init()
     {
-        if(_gameObjectName != null)
+        if(_component != null && _methodName != null)
         {
-            Type type = Type.GetType(_componentName);
-            _method = type.GetMethod(_methodName);
-            _paramNumber = _method.GetParameters().Length;
-
-            if (_isReferenceToOtherGameobject)
-            {
-                _obj = (MonoBehaviour) GameObject.Find(_gameObjectName).GetComponent(_componentName);
-            }
-            else
-            {
-                _obj = (MonoBehaviour) gameObject.GetComponent(_componentName);
-            }
+            _obj = _component;
         }
+        else if(_isNotInTheScene && _gameObjectName != null && _componentName != null && _methodName != null)
+        {
+            _obj = (MonoBehaviour) GameObject.Find(_gameObjectName).GetComponent(_componentName);
+        }
+
+        Type type = _obj.GetType();
+        _method = type.GetMethod(_methodName);
+        _paramNumber = _method.GetParameters().Length;
+
+        init = true;
     }
 
     protected virtual void OnTriggerEnter(Collider other)
