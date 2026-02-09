@@ -779,8 +779,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimelineSpot
   _currentTimeline: {fileID: 0}
   _playableDirector: {fileID: 6305236145464274905}
-  _onTimelineStart: {fileID: 11400000, guid: 063b6422bac6e77478b230d1ee01ca3c, type: 2}
-  _onTimelineEnd: {fileID: 11400000, guid: 8addf1ae4b5fde345823f4ec0832d2b2, type: 2}
+  _onTimelineStart: {fileID: 11400000, guid: e0f49d89f91e8124a8c97e0cf88112d1, type: 2}
+  _onTimelineEnd: {fileID: 11400000, guid: 9f0e2b6c8d4669c47911d0a70671566f, type: 2}
   _stopCurrentClip: 0
 --- !u!114 &6305236145464274902
 MonoBehaviour:
