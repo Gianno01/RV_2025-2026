@@ -178,8 +178,48 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5082097235873229177, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 499736447}
+    - targetCorrespondingSourceObject: {fileID: 5082097235873229177, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 499736448}
   m_SourcePrefab: {fileID: 100100000, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
+--- !u!1 &499736446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5082097235873229177, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
+  m_PrefabInstance: {fileID: 499736445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &499736447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499736446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3fc00fe74b7449418b5d4589a5cb637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeleportationController
+  spotPosNames:
+  - CheatSpotVillaggio
+  - CheatSpotOspedale
+  - CheatSpotAccampamento
+--- !u!114 &499736448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499736446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452703f47cea6e4458dbed27ac60591c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestAdder
+  _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
