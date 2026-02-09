@@ -21,6 +21,9 @@ public class InteractionController : MonoBehaviour
     public KeyCode interactKey = KeyCode.E;
     public KeyCode tutorialKey = KeyCode.H;
 
+    [Header("Events")]
+    [SerializeField] private AppEventData _onHelpRequest;
+
     private IsInteractable _currentInteractable;
 
     private void Update()
@@ -93,12 +96,16 @@ public class InteractionController : MonoBehaviour
 
     void HandleTutorial()
     {
-        if (Input.GetKeyDown(tutorialKey) && tutorialPanel != null)
+        if (Input.GetKeyDown(tutorialKey))
+        {
+            _onHelpRequest.Raise();
+        }
+        /*if (Input.GetKeyDown(tutorialKey) && tutorialPanel != null)
         {
             bool isActive = tutorialPanel.activeSelf;
             tutorialPanel.SetActive(!isActive);
             Cursor.lockState = !isActive ? CursorLockMode.None : CursorLockMode.Locked;
             Cursor.visible = !isActive;
-        }
+        }*/
     }
 }

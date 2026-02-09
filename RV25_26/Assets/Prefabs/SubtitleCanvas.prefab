@@ -46,7 +46,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3248511650855225791}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -62,9 +62,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78b944604cf58f4f8b21456b627d412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleUI
-  canvasGroup: {fileID: 4995816736615920062}
-  textBox: {fileID: 5234555899862486680}
-  timeToWaitBetweenPeriod: 2
+  _canvasGroup: {fileID: 4995816736615920062}
+  _textBox: {fileID: 5234555899862486680}
+  _timeToWaitBetweenPeriod: 3
+  _onTextEnd: {fileID: 11400000, guid: f0196f8d5d299fd49860840f6623e4a6, type: 2}
 --- !u!1 &4821557489021643167
 GameObject:
   m_ObjectHideFlags: 0

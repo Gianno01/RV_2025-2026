@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SubtitlesController
   _onSubtitleShow: {fileID: 11400000, guid: 758569c885bad534c8e24685446bb6bd, type: 2}
+  _onTextEnd: {fileID: 11400000, guid: f0196f8d5d299fd49860840f6623e4a6, type: 2}
