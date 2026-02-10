@@ -3,7 +3,17 @@ guid: ae766e3a96a0cb543b30c7a7935c561d
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Botticino_vaccino_material
+    second: {fileID: 2100000, guid: b7e889ed1802b1b4c94f27ebf9cc64f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tappo_botticino_vaccino_material
+    second: {fileID: 2100000, guid: ab2aa22fd1298854b8f72f831305c5f8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
