@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: _onHelpRequest
       value: 
       objectReference: {fileID: 11400000, guid: a5dc3523006616948908e8f0ec7db983, type: 2}
+    - target: {fileID: 8359993448146854829, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
+      propertyPath: _onHomeSceneRequest
+      value: 
+      objectReference: {fileID: 11400000, guid: c7836186f056ae447960a558808f9da0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
