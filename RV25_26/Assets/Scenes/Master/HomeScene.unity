@@ -597,8 +597,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 36491070bb97dbf44b134956eed94856, type: 2}
     - target: {fileID: 1360515886933925742, guid: 6498cee03736c4248af13854a7be0f0e, type: 3}
+      propertyPath: _onSceneRequest
+      value: 
+      objectReference: {fileID: 11400000, guid: c7836186f056ae447960a558808f9da0, type: 2}
+    - target: {fileID: 1360515886933925742, guid: 6498cee03736c4248af13854a7be0f0e, type: 3}
+      propertyPath: _onSceneLoadReady
+      value: 
+      objectReference: {fileID: 11400000, guid: 58fd2c5d0eadb2945987f48dddc581d8, type: 2}
+    - target: {fileID: 1360515886933925742, guid: 6498cee03736c4248af13854a7be0f0e, type: 3}
       propertyPath: _scenes.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1360515886933925742, guid: 6498cee03736c4248af13854a7be0f0e, type: 3}
       propertyPath: _onAsyncSceneLoaded
@@ -611,6 +619,10 @@ PrefabInstance:
     - target: {fileID: 1360515886933925742, guid: 6498cee03736c4248af13854a7be0f0e, type: 3}
       propertyPath: '_scenes.Array.data[2]'
       value: MasterScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360515886933925742, guid: 6498cee03736c4248af13854a7be0f0e, type: 3}
+      propertyPath: '_scenes.Array.data[3]'
+      value: EndCreditsScene
       objectReference: {fileID: 0}
     - target: {fileID: 1360515886933925742, guid: 6498cee03736c4248af13854a7be0f0e, type: 3}
       propertyPath: _additiveScenes.Array.size
@@ -719,6 +731,10 @@ PrefabInstance:
       objectReference: {fileID: 6875919810522429822}
     - target: {fileID: 6994410241939090790, guid: 7efa3f8fb2a07a643a0c437b61b6a9ff, type: 3}
       propertyPath: _onAsyncSceneLoaded
+      value: 
+      objectReference: {fileID: 11400000, guid: c7836186f056ae447960a558808f9da0, type: 2}
+    - target: {fileID: 6994410241939090790, guid: 7efa3f8fb2a07a643a0c437b61b6a9ff, type: 3}
+      propertyPath: _onMasterSceneRequest
       value: 
       objectReference: {fileID: 11400000, guid: c7836186f056ae447960a558808f9da0, type: 2}
     - target: {fileID: 7731640138898271254, guid: 7efa3f8fb2a07a643a0c437b61b6a9ff, type: 3}
