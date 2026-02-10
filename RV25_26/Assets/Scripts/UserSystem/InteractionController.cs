@@ -20,9 +20,11 @@ public class InteractionController : MonoBehaviour
     [Header("Keys")]
     public KeyCode interactKey = KeyCode.E;
     public KeyCode tutorialKey = KeyCode.H;
+    public KeyCode homeKey = KeyCode.U;
 
     [Header("Events")]
     [SerializeField] private AppEventData _onHelpRequest;
+    [SerializeField] private AppEventData _onHomeSceneRequest;
 
     private IsInteractable _currentInteractable;
 
@@ -30,6 +32,7 @@ public class InteractionController : MonoBehaviour
     {
         HandleInteraction();
         HandleTutorial();
+        HandleHome();
     }
 
     void HandleInteraction()
@@ -107,5 +110,16 @@ public class InteractionController : MonoBehaviour
             Cursor.lockState = !isActive ? CursorLockMode.None : CursorLockMode.Locked;
             Cursor.visible = !isActive;
         }*/
+    }
+
+    private void HandleHome()
+    {
+        if (Input.GetKeyDown(homeKey))
+        {
+            FromSceneToScene fromSceneToScene;
+            fromSceneToScene.from = "MasterScene";
+            fromSceneToScene.to = "HomeScene";
+            _onHomeSceneRequest.RaiseWithParam(fromSceneToScene);
+        }
     }
 }

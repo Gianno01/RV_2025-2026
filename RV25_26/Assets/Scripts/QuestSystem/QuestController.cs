@@ -18,6 +18,7 @@ public class QuestController : MonoBehaviour
     [SerializeField] private QuestData[] _questDatas;
     [SerializeField] private AppEventData _onStartQuest;
     [SerializeField] private AppEventData _onCurrentQuestChange;
+    [SerializeField] private AppEventData _onEndCreditsSceneRequest;
     [HideInInspector] public int _currentQuestIndex {get; private set;}
 
     void Awake()
@@ -39,7 +40,13 @@ public class QuestController : MonoBehaviour
     private void HandleOnStartQuest()
     {
         _currentQuestIndex++;
-        if(_currentQuestIndex >= _questDatas.Length) return; // tutte le quest sono state completate
+        if(_currentQuestIndex >= _questDatas.Length)
+        {
+            FromSceneToScene fromSceneToScene;
+            fromSceneToScene.from = "MasterScene";
+            fromSceneToScene.to = "EndCreditsScene";
+            _onEndCreditsSceneRequest.RaiseWithParam(fromSceneToScene);
+        }
 
         Debug.Log("QUEST NUMBER: " + _currentQuestIndex);
         _onCurrentQuestChange.RaiseWithParam(_currentQuestIndex);

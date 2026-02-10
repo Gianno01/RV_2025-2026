@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum AppState{Gameplay, Cutscene, Home, Gate}
+public enum AppState{Gameplay, Cutscene, Home, Gate, End}
+public struct FromSceneToScene{
+    public string from;
+    public string to;
+}
 
 /// <summary>
 /// AppController non si distrugge al caricamento delle scene. Va istanziato nella prima scena.
@@ -24,12 +28,13 @@ public class AppController : MonoBehaviour
     [SerializeField] private AppEventData _onGateExit;
     [SerializeField] private AppEventData _onGameplayExit;
     [SerializeField] private AppEventData _onCutsceneExit;
-    [SerializeField] private AppEventData _onHomeExit;
-    [SerializeField] private AppEventData _onStartScene;
+    [SerializeField] private AppEventData _onSceneLoadReady;
+    [SerializeField] private AppEventData _onSceneRequest;
     private GameplayController _gameplayController;
     private CutsceneController _cutsceneController;
     private TransitionController _transitionController;
     private MenuController _menuController;
+    private EndCreditsController _endCreditsController;
     private AppState _currentAppState;
 
     void Awake()
@@ -40,31 +45,60 @@ public class AppController : MonoBehaviour
             _currentAppState = AppState.Home;
         }else{
             Destroy(gameObject);
+            return;
         }
 
         SceneManager.sceneLoaded += HandleOnSceneLoaded;
         //per test, da commentare
         //HandleOnSceneLoaded(SceneManager.GetActiveScene(),LoadSceneMode.Single);
 
-        _onStartScene.OnParamEvent += HandleOnAsyncSceneLoaded;
+        _onSceneRequest.OnParamEvent += HandleOnSceneLoadRequest;
     }
 
-    private void HandleOnAsyncSceneLoaded(object param)
+    private void HandleOnSceneLoadRequest(object param)
     {
-        string sceneName = (string) param;
-        if(sceneName == _scenes[2])
+        FromSceneToScene fromSceneToScene = (FromSceneToScene) param;
+        _onSceneLoadReady.OnParamEvent += HandleOnSceneLoadReady;
+
+        if(fromSceneToScene.from == _scenes[0] && fromSceneToScene.to == _scenes[2])
         {
-            _onHomeExit.OnEvent += HandleOnHomeExit;
             _menuController = FindAnyObjectByType<MenuController>();
             _menuController.ExitHome();
+        }else if(fromSceneToScene.from == _scenes[2] && fromSceneToScene.to == _scenes[0])
+        {
+            if(_currentAppState != AppState.Gameplay) return;
+            _gameplayController.ExitGameplay(AppState.Home);
+        }else if(fromSceneToScene.from == _scenes[2] && fromSceneToScene.to == _scenes[3])
+        {
+            if(_currentAppState != AppState.Gameplay) return;
+            _gameplayController.ExitGameplay(AppState.End);
+        }else if(fromSceneToScene.from == _scenes[3] && fromSceneToScene.to == _scenes[0])
+        {
+            _endCreditsController = FindAnyObjectByType<EndCreditsController>();
+            _endCreditsController.ExitEnd();
         }
     }
 
-    private void HandleOnHomeExit()
+    private void HandleOnSceneLoadReady(object param)
     {
-        _onHomeExit.OnEvent -= HandleOnHomeExit;
-        SceneManager.LoadScene(_scenes[1], LoadSceneMode.Single);
-        StartCoroutine(LoadAdditiveScenes());
+        _onSceneLoadReady.OnParamEvent -= HandleOnSceneLoadReady;
+        FromSceneToScene fromSceneToScene = (FromSceneToScene) param;
+
+        if(fromSceneToScene.from == _scenes[0] && fromSceneToScene.to == _scenes[2])
+        {
+            StartCoroutine(LoadMasterSceneFromHome());
+        }else if(fromSceneToScene.from == _scenes[2] && fromSceneToScene.to == _scenes[0])
+        {
+            if(_currentAppState != AppState.Gameplay) return;
+            StartCoroutine(LoadHomeSceneFromMaster());
+        }else if(fromSceneToScene.from == _scenes[2] && fromSceneToScene.to == _scenes[3])
+        {
+            if(_currentAppState != AppState.Gameplay) return;
+            StartCoroutine(LoadEndCreditsSceneFromMaster());
+        }else if(fromSceneToScene.from == _scenes[3] && fromSceneToScene.to == _scenes[0])
+        {
+            SceneManager.LoadScene(_scenes[0], LoadSceneMode.Single);
+        }
     }
 
     private void HandleOnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -72,6 +106,51 @@ public class AppController : MonoBehaviour
         if(scene.name == _scenes[0]){
             _menuController = FindAnyObjectByType<MenuController>();
             ToHomeState();
+        }
+    }
+
+    private IEnumerator LoadMasterSceneFromHome()
+    {
+        SceneManager.LoadScene(_scenes[1], LoadSceneMode.Single);
+        yield return LoadAdditiveScenes();
+    }
+
+    private IEnumerator LoadHomeSceneFromMaster()
+    {
+        AsyncOperation op = SceneManager.LoadSceneAsync(_scenes[1], LoadSceneMode.Additive);
+        op.allowSceneActivation = true;
+        while (!op.isDone) 
+            yield return null; 
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(_scenes[1]));
+        yield return UnloadAdditiveScenes();
+        SceneManager.LoadScene(_scenes[0], LoadSceneMode.Single);
+    }
+
+    private IEnumerator LoadEndCreditsSceneFromMaster()
+    {
+        AsyncOperation op = SceneManager.LoadSceneAsync(_scenes[1], LoadSceneMode.Additive);
+        op.allowSceneActivation = true;
+        while (!op.isDone) 
+            yield return null; 
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(_scenes[1]));
+        yield return UnloadAdditiveScenes();
+        SceneManager.LoadScene(_scenes[3], LoadSceneMode.Single);
+    }
+
+    private IEnumerator UnloadAdditiveScenes()
+    {
+        List<AsyncOperation> ops = new List<AsyncOperation>();
+        List<string> _additiveScenesReversed = new List<string>(_additiveScenes);
+        _additiveScenesReversed.Reverse();
+
+        foreach (string s in _additiveScenesReversed) {
+            AsyncOperation op = SceneManager.UnloadSceneAsync(s);
+            ops.Add(op);
+        }
+
+        foreach (var op in ops) { 
+            while (!op.isDone) 
+                yield return null; 
         }
     }
 
@@ -107,9 +186,9 @@ public class AppController : MonoBehaviour
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(_additiveScenes[0]));
         SceneManager.UnloadSceneAsync(activeScene);
 
-        _gameplayController = GameObject.FindAnyObjectByType<GameplayController>();
-        _cutsceneController = GameObject.FindAnyObjectByType<CutsceneController>();
-        _transitionController = GameObject.FindAnyObjectByType<TransitionController>();
+        _gameplayController = FindAnyObjectByType<GameplayController>();
+        _cutsceneController = FindAnyObjectByType<CutsceneController>();
+        _transitionController = FindAnyObjectByType<TransitionController>();
 
         _gameplayController.Init();
         _cutsceneController.Init();

@@ -3,45 +3,41 @@ using UnityEngine;
 /// <summary>
 /// MenuController reagisce all'evento _onStart e carica la main scene scelta. L'evento _onStart è invocato dal MenuUI.
 /// </summary>
-public class MenuController : MonoBehaviour
+public class EndCreditsController : MonoBehaviour
 {
-    [SerializeField] private AppEventData _onStart;
-    [SerializeField] private string _mainScene;
-    [SerializeField] private AppEventData _onMasterSceneRequest;
-    [SerializeField] private AppEventData _onHomeExit;
+    [SerializeField] private string _homeScene;
+    [SerializeField] private AppEventData _onStartScene;
+    [SerializeField] private AppEventData _onEndCreditsExit;
     [SerializeField] private AppEventData _onFadeInEnd;
     [SerializeField] private BlackScreenFader _blackScreenFader;
 
     void Awake()
     {
-        _onStart.OnEvent += HandleOnStart;
+
     }
 
     void OnDisable()
     {
-        _onStart.OnEvent -= HandleOnStart;
+
     }
 
     private void HandleOnStart()
     {
         FromSceneToScene fromSceneToScene;
-        fromSceneToScene.from = "HomeScene";
-        fromSceneToScene.to = _mainScene;
-        _onMasterSceneRequest.RaiseWithParam(fromSceneToScene);
+        fromSceneToScene.from = "EndCreditsScene";
+        fromSceneToScene.to = _homeScene;
+        _onStartScene.RaiseWithParam(fromSceneToScene);
     }
 
-    public void ExitHome()
+    public void ExitEnd()
     {
         _blackScreenFader.InitToMinEffect();
         _blackScreenFader.FadeIn();
         this.enabled = false;
     }
 
-    public void EnterHome()
+    public void EnterEnd()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
         _onFadeInEnd.OnEvent += HandleFadeInEnd;
         _blackScreenFader.InitToMaxEffect();
         _blackScreenFader.FadeOut();
@@ -53,8 +49,8 @@ public class MenuController : MonoBehaviour
         _onFadeInEnd.OnEvent -= HandleFadeInEnd;
 
         FromSceneToScene fromSceneToScene;
-        fromSceneToScene.from = "HomeScene";
-        fromSceneToScene.to = _mainScene;
-        _onHomeExit.RaiseWithParam(fromSceneToScene);
+        fromSceneToScene.from = "EndCreditsScene";
+        fromSceneToScene.to = _homeScene;
+        _onEndCreditsExit.RaiseWithParam(fromSceneToScene);
     }
 }
