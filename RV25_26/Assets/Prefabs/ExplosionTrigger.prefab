@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3635585736219883913}
   - component: {fileID: 1989608515752946066}
   - component: {fileID: 4963970768671156409}
+  - component: {fileID: 5456992562356868138}
+  - component: {fileID: 1275355592485688345}
   m_Layer: 0
   m_Name: ExplosionTrigger
   m_TagString: Untagged
@@ -26,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3708051770686479285}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.27, y: 0.33, z: 2.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -45,11 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811937216f37e3a409594db124b8b54f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaTrigger
-  _isReferenceToOtherGameobject: 1
-  _gameObjectName: VFXController
-  _componentName: VFXController
+  _isNotInTheScene: 0
+  _component: {fileID: 0}
   _methodName: PlayExplosionIn
   _param: 0
+  _gameObjectName: VFXController
+  _componentName: VFXController
   _collisionLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -74,3 +77,40 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.9756117, z: 3.0944915}
   m_Center: {x: 0, y: 0.9878061, z: -1.0472455}
+--- !u!114 &5456992562356868138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3708051770686479285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acff8dd27787d5343ad0f9282cb45cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestStarter
+  _onEvent: {fileID: 11400000, guid: bd8acf6656034614999792219f953b32, type: 2}
+  _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
+--- !u!114 &1275355592485688345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3708051770686479285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _startQuests: 
+  _endQuests: 00000000
+  _isNotInTheScene: 0
+  _gameObject: {fileID: 0}
+  _gameObjectName: 
+  _effectOnOneComponent: 1
+  _component: {fileID: 1989608515752946066}
+  _componentName: 
+  _onActivate: {fileID: 0}
+  _onDeactivate: {fileID: 0}
