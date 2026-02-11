@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8618640752499648319}
-  - component: {fileID: 3975259369235304107}
-  - component: {fileID: 783654648843848764}
+  - component: {fileID: 1754676565968404421}
+  - component: {fileID: 6038182722565172448}
   m_Layer: 0
   m_Name: WakeUpTrigger
   m_TagString: Untagged
@@ -26,14 +26,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656879241717481802}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3975259369235304107
+--- !u!114 &1754676565968404421
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,35 +42,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 656879241717481802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 811937216f37e3a409594db124b8b54f, type: 3}
+  m_Script: {fileID: 11500000, guid: acff8dd27787d5343ad0f9282cb45cc4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AreaTrigger
-  _isReferenceToOtherGameobject: 1
-  _gameObjectName: VFXController
-  _componentName: VFXController
-  _methodName: PlayWakeUpOut
-  _param: 0
-  _collisionLayer:
-    serializedVersion: 2
-    m_Bits: 64
---- !u!65 &783654648843848764
-BoxCollider:
+  m_EditorClassIdentifier: Assembly-CSharp::QuestStarter
+  _onEvent: {fileID: 11400000, guid: 8426035ed916f9b489d41e2c05b209d9, type: 2}
+  _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
+--- !u!114 &6038182722565172448
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656879241717481802}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 2.9756117, z: 3.0944915}
-  m_Center: {x: 0, y: 0.9878061, z: -1.0472455}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b352af0f010e70a4881fbcfdf2812fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerCaller
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _isNotInTheScene: 0
+  _questIndex: 0
+  _secToWaitBeforeCall: 0
+  _component: {fileID: 0}
+  _methodName: PlayWakeUpOut
+  _param: 0
+  _gameObjectName: VFXController
+  _componentName: VFXController
