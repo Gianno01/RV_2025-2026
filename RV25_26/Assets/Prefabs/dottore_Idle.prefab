@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7043438
+      value: 0.88604
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000011920929
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.06613541
+      value: -1.54
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -102,6 +102,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6887531216943672756}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2251487523263401161}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5095391301371061432}
   m_SourcePrefab: {fileID: 100100000, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
 --- !u!1 &2458966311550221970 stripped
 GameObject:
@@ -263,8 +269,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TalkingCharacter
   _textSpot: {fileID: 0}
-  _timelineSpot: {fileID: 0}
-  _outline: {fileID: 0}
+  _timelineSpot: {fileID: 3814085678230457489}
+  _outline: {fileID: 5358630153602340731}
 --- !u!114 &8628856110308936369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +278,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2458966311550221970}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cae7cf4c455d1ff4f801e106cd3ac500, type: 3}
   m_Name: 
@@ -312,7 +318,7 @@ MonoBehaviour:
   _isNotInTheScene: 0
   _questIndex: 2
   _secToWaitBeforeCall: 0
-  _component: {fileID: 0}
+  _component: {fileID: 4512099039105808629}
   _methodName: Interact
   _param: 0
   _gameObjectName: 
@@ -345,8 +351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51a9c6cb0c197c4d8513b9e118f0948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimelineSpot
-  _currentTimeline: {fileID: 0}
-  _playableDirector: {fileID: 0}
+  _currentTimeline: {fileID: 11400000, guid: 680fa20156821424f9601d0c6abf98f2, type: 2}
+  _playableDirector: {fileID: 2251487523263401161}
   _onTimelineStart: {fileID: 0}
   _onTimelineEnd: {fileID: 0}
   _stopCurrentClip: 0
@@ -446,3 +452,58 @@ MonoBehaviour:
   _questStates:
   - questIndex: 0
     state: Follow
+--- !u!320 &2251487523263401161
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2458966311550221970}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 680fa20156821424f9601d0c6abf98f2, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -3014143085409804810, guid: 394efeca88e1fad40b1975ad0d268f6b, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 4625035630791778927, guid: 680fa20156821424f9601d0c6abf98f2, type: 2}
+    value: {fileID: 3906740572073258025}
+  - key: {fileID: -8345826530165455216, guid: 680fa20156821424f9601d0c6abf98f2, type: 2}
+    value: {fileID: 1935874413393961534}
+  - key: {fileID: 6641826204825411004, guid: 680fa20156821424f9601d0c6abf98f2, type: 2}
+    value: {fileID: 5095391301371061432}
+  m_ExposedReferences:
+    m_References: []
+--- !u!114 &5095391301371061432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2458966311550221970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: fb9f7a40a7162d8498b3c72984571cec, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8636875757733532717}
+          m_TargetAssemblyTypeName: NpcBrain, Assembly-CSharp
+          m_MethodName: ChangeState
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Idle
+            m_BoolArgument: 0
+          m_CallState: 2
