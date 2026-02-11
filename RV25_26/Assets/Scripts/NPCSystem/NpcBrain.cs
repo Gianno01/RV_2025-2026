@@ -7,6 +7,7 @@ public enum NpcState { Idle, Patrol, Talk, Follow }
 
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(BoxCollider))] 
+[RequireComponent(typeof(Animator))] // Assicura che ci sia un Animator
 public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
 {
     [Header("Stato")]
@@ -31,12 +32,15 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
     private NavMeshAgent agent;
     private Transform playerTransform;
     private Outline _outline;
+    private Animator _animator; // Riferimento all'Animator
 
     void Awake()
     {
         _outline = GetComponent<Outline>();
         if (_outline != null) _outline.enabled = false;
+        
         agent = GetComponent<NavMeshAgent>();
+        _animator = GetComponent<Animator>(); // Inizializzazione Animator
     }
 
     void Start()
@@ -66,16 +70,28 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
                     agent.isStopped = false;
                     agent.stoppingDistance = 0.5f;
                     MoveToNextWaypoint();
+                    UpdateAnimation(true); // Cammina
                     break;
                 case NpcState.Follow:
                     agent.isStopped = false;
                     agent.stoppingDistance = talkDistance; 
+                    UpdateAnimation(true); // Cammina
                     break;
                 case NpcState.Idle:
                 case NpcState.Talk:
                     agent.isStopped = true;
+                    UpdateAnimation(false); // Fermo
                     break;
             }
+        }
+    }
+
+    // Metodo helper per gestire il parametro "walk" dell'animator
+    private void UpdateAnimation(bool isWalking)
+    {
+        if (_animator != null)
+        {
+            _animator.SetBool("walking", isWalking);
         }
     }
 
@@ -95,14 +111,11 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
         }
     }
 
-    // --- NUOVA LOGICA: SI AVVICINA E PARLA ---
     void MoveToPlayerLogic()
     {
         if (playerTransform == null) return;
-
         agent.SetDestination(playerTransform.position);
 
-        // Se ha raggiunto il player, avvia automaticamente la conversazione
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
             StartConversation();
@@ -117,11 +130,9 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
 
     public void EndConversation()
     {
-        // Una volta finito di parlare, resta in Idle come richiesto
         ChangeState("Idle");
     }
 
-    // --- LOGICHE STANDARD ---
     void PatrolLogic()
     {
         agent.updateRotation = true; 
@@ -135,12 +146,17 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
     {
         NpcState originalState = currentState;
         currentState = NpcState.Idle;
+        
+        UpdateAnimation(false); // Si ferma durante l'attesa al waypoint
+        
         yield return new WaitForSeconds(waitTimeAtPoint);
         
         if (currentState == NpcState.Idle)
         {
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
             currentState = originalState;
+            
+            UpdateAnimation(true); // Riprende a camminare
             MoveToNextWaypoint();
         }
     }
@@ -173,7 +189,6 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
         }
     }
 
-    // --- INTERFACCIA ---
     public void Interact() 
     {
         if (currentState != NpcState.Talk) StartConversation();
