@@ -6,27 +6,17 @@ using UnityEngine;
 public class EndCreditsController : MonoBehaviour
 {
     [SerializeField] private string _homeScene;
-    [SerializeField] private AppEventData _onStartScene;
+    [SerializeField] private AppEventData _onHomeSceneRequest;
     [SerializeField] private AppEventData _onEndCreditsExit;
     [SerializeField] private AppEventData _onFadeInEnd;
     [SerializeField] private BlackScreenFader _blackScreenFader;
 
-    void Awake()
-    {
-
-    }
-
-    void OnDisable()
-    {
-
-    }
-
-    private void HandleOnStart()
+    public void HandleOnTimelineEnd()
     {
         FromSceneToScene fromSceneToScene;
         fromSceneToScene.from = "EndCreditsScene";
         fromSceneToScene.to = _homeScene;
-        _onStartScene.RaiseWithParam(fromSceneToScene);
+        _onHomeSceneRequest.RaiseWithParam(fromSceneToScene);
     }
 
     public void ExitEnd()

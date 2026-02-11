@@ -106,6 +106,10 @@ public class AppController : MonoBehaviour
         if(scene.name == _scenes[0]){
             _menuController = FindAnyObjectByType<MenuController>();
             ToHomeState();
+        }else if(scene.name == _scenes[3])
+        {
+            _endCreditsController = FindAnyObjectByType<EndCreditsController>();
+            ToEndState();
         }
     }
 
@@ -270,6 +274,12 @@ public class AppController : MonoBehaviour
     {
         _menuController.EnterHome();
         _currentAppState = AppState.Home;
+    }
+
+    private void ToEndState()
+    {
+        _endCreditsController.EnterEnd();
+        _currentAppState = AppState.End;
     }
 
     private void ToGateState()
