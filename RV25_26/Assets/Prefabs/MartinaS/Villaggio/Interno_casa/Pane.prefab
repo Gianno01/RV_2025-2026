@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 4495865394517123872}
   - component: {fileID: 665979461412985245}
   - component: {fileID: 8311595085264856448}
+  - component: {fileID: 576355079628519099}
+  - component: {fileID: 3689659537493666066}
   m_Layer: 0
   m_Name: Pane
   m_TagString: Untagged
@@ -107,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Outline
   outlineMode: 0
   outlineColor: {r: 1, g: 1, b: 0, a: 1}
-  outlineWidth: 2
+  outlineWidth: 10
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -152,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GrippableItem
   _itemName: pane
   _followOffset: {x: 0.6, y: -0.2, z: 0.7}
-  _interactionKey: 101
+  _onGripped: {fileID: 11400000, guid: d05b179f8142dcc438be04347c69b1a7, type: 2}
 --- !u!65 &8311595085264856448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -174,3 +176,40 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0916667, y: 0.08486132, z: 0.20512377}
   m_Center: {x: 0, y: -0.0040420275, z: 0}
+--- !u!114 &576355079628519099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8688737696717406956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acff8dd27787d5343ad0f9282cb45cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestStarter
+  _onEvent: {fileID: 11400000, guid: d05b179f8142dcc438be04347c69b1a7, type: 2}
+  _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
+--- !u!114 &3689659537493666066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8688737696717406956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _startQuests: 0d000000
+  _endQuests: 000000000e000000
+  _isNotInTheScene: 0
+  _gameObject: {fileID: 0}
+  _gameObjectName: 
+  _effectOnOneComponent: 1
+  _component: {fileID: 576355079628519099}
+  _componentName: 
+  _onActivate: {fileID: 0}
+  _onDeactivate: {fileID: 0}

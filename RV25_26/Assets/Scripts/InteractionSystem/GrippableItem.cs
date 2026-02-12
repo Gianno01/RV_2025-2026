@@ -9,6 +9,7 @@ public class GrippableItem : MonoBehaviour, IsInteractable
     [Header("Configurazione")]
     [SerializeField] private string _itemName = "Oggetto";
     [SerializeField] private Vector3 _followOffset = new Vector3(0.6f, -0.2f, 0.7f); 
+    [SerializeField] private AppEventData _onGripped;
 
     private Rigidbody _rb;
     private Collider _collider; 
@@ -43,6 +44,7 @@ public class GrippableItem : MonoBehaviour, IsInteractable
         _rb.isKinematic = true; 
         _rb.useGravity = false;
         if (_collider != null) _collider.enabled = false; 
+        _onGripped.Raise();
     }
 
     public void Drop() 

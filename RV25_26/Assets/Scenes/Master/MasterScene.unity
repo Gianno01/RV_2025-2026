@@ -461,7 +461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
       propertyPath: _questDatas.Array.size
-      value: 7
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
       propertyPath: _onEndCreditsSceneRequest
@@ -475,6 +475,86 @@ PrefabInstance:
       propertyPath: '_questDatas.Array.data[6]'
       value: 
       objectReference: {fileID: 11400000, guid: bf6fb32751d578e45b78938e3fb46f3d, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 38fd61ae2e5eb7c4abb46a9102b71565, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7d0f11721d37e88478feac6f00b21c2d, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[9]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 24fc2a878bea7ee4cb47219f82839ac1, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[10]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e3a938c3e97a9e49975b8556c6437fc, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[11]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d9535bd229e44a48a2861eedc6e6bbc, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[12]'
+      value: 
+      objectReference: {fileID: 11400000, guid: efa7dc6b6a62e5f4a82cd2e3ff9ff015, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[13]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 039eeea57bd00df4aba14b3f5ccf6d3d, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[14]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 94703eec549553f4d804b5732467033b, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[15]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 375d322434c8be04fa163bae78abeb24, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[16]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ac02b38a1be67941a0946516392893d, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[17]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e9423831730a10141b931058600b9df6, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[18]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e5bd62e6c9d992346b00012646ed42d9, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[19]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 20d4c6738fac6334394c024bb5554439, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[20]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e0718d325ab91f74598393949d1a0c35, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[21]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d59d2bbceb6aa8459faad2a63a7dce8, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[22]'
+      value: 
+      objectReference: {fileID: 11400000, guid: fc19b714ae07fb245821d91c4a417c01, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[23]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 6325183d302bd5e40809cd04d239e0bf, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[24]'
+      value: 
+      objectReference: {fileID: 11400000, guid: df968752e7173c54e88ea529f4e235f0, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[25]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4baf5822db1d8e04d9d39f36426ef780, type: 2}
+    - target: {fileID: 6269597568645787997, guid: 86f652471ad09c74e888221aace8c1ec, type: 3}
+      propertyPath: '_questDatas.Array.data[26]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4baf5822db1d8e04d9d39f36426ef780, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
