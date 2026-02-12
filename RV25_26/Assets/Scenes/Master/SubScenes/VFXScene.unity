@@ -545,6 +545,18 @@ PrefabInstance:
       propertyPath: _component
       value: 
       objectReference: {fileID: 328575986}
+    - target: {fileID: 6038182722565172448, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
+      propertyPath: _questIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038182722565172448, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
+      propertyPath: _componentName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038182722565172448, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
+      propertyPath: _gameObjectName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8618640752499648319, guid: a7b129b47cdae4f4c8e0d371e6d431aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 185.63
