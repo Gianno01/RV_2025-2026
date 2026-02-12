@@ -59,9 +59,11 @@ public class InteractionController : MonoBehaviour
 
                 if (Input.GetKeyDown(interactKey))
                 {
+                    Debug.Log("GetKeyDown");
                     // SE abbiamo un oggetto in mano, proviamo a consegnarlo
                     if (GrippableItem.HeldItem != null)
                     {
+                        Debug.Log("GrippableItem");
                         _currentInteractable.ReceiveItem(GrippableItem.HeldItem);
                     }
                     else

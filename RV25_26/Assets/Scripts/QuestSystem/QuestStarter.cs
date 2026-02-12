@@ -6,7 +6,7 @@ public class QuestStarter : MonoBehaviour
     [SerializeField] private AppEventData _onQuestStart;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    void Awake()
+    void OnEnable()
     {
         _onEvent.OnEvent += HandleOnEvent;
     }
@@ -18,6 +18,7 @@ public class QuestStarter : MonoBehaviour
 
     private void HandleOnEvent()
     {
+        Debug.Log("ONQUESTSTART");
         _onQuestStart.Raise();
     }
 }

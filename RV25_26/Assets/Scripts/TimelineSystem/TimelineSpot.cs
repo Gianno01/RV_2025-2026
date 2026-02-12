@@ -28,6 +28,7 @@ public class TimelineSpot : MonoBehaviour, ITimelineChangeable
 
     public void HandleSignalOnTimelineEnd()
     {
+        Debug.Log("HANDLEONTIMELINEEND");
         if(_onTimelineEnd != null) _onTimelineEnd.Raise();
     }
 }

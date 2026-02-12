@@ -20,6 +20,7 @@ public class ItemReceiver : MonoBehaviour, IsInteractable
 
     public void ReceiveItem(GrippableItem item)
     {
+        Debug.Log("GrippableItem: " + item);
         if (item == null) return;
 
         if (destroyOnDelivery)

@@ -256,13 +256,13 @@ PrefabInstance:
       addedObject: {fileID: 5632222084166118814}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3517939524311587643}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4912810809504850528}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5518480194737627413}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3517939524311587643}
   m_SourcePrefab: {fileID: 100100000, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
 --- !u!1 &2458966311550221970 stripped
 GameObject:
@@ -4154,22 +4154,6 @@ MonoBehaviour:
   _componentName: 
   _onActivate: {fileID: 0}
   _onDeactivate: {fileID: 0}
---- !u!114 &3517939524311587643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2458966311550221970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62990637f1d40f64ea47f26e4fadf6ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemReceiver
-  receiverName: doctor
-  destroyOnDelivery: 1
-  deliveryPoint: {fileID: 0}
-  _onDeliveryObject: {fileID: 11400000, guid: fca5e2f9bb47ac94687a2520c33b38a9, type: 2}
 --- !u!114 &4912810809504850528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4207,6 +4191,22 @@ MonoBehaviour:
   _componentName: 
   _onActivate: {fileID: 0}
   _onDeactivate: {fileID: 0}
+--- !u!114 &3517939524311587643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2458966311550221970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62990637f1d40f64ea47f26e4fadf6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemReceiver
+  receiverName: doctor
+  destroyOnDelivery: 1
+  deliveryPoint: {fileID: 0}
+  _onDeliveryObject: {fileID: 11400000, guid: fca5e2f9bb47ac94687a2520c33b38a9, type: 2}
 --- !u!4 &2984708398591386664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}

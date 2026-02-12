@@ -198,5 +198,10 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
     public string GetDescription() => $"{actionVerb} {npcName}";
     public void OnFocus() { if (_outline != null) _outline.enabled = true; }
     public void OnLostFocus() { if (_outline != null) _outline.enabled = false; }
-    public void ReceiveItem(GrippableItem item) { }
+    public void ReceiveItem(GrippableItem item)
+    {
+        //Debug.Log("l'oggetto viene distrutto!");
+        ItemReceiver itemReceiver = GetComponent<ItemReceiver>();
+        itemReceiver.ReceiveItem(item);
+    }
 }
