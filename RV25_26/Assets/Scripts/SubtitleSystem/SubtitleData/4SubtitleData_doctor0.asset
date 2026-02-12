@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
+  m_Name: 4SubtitleData_doctor0
+  m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
+  text: "Hey, kid\u2026are you hurt? Your brother? No\u2026he\u2019s not here. I\u2019m
+    sorry.\r\nI need your help though. In that storage tent, there is a sterile syringe.
+    Can you bring it to me?"
