@@ -85,6 +85,7 @@ public class GameplayController : MonoBehaviour
     {
         _onFadeInEnd.OnEvent -= HandleFadeInEnd;
         _player.SetActive(false);
+        Debug.Log("PLAYER: " + _player);
         CompleteToExitGameplay(AppState.Cutscene);
     }
 

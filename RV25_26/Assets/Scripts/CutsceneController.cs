@@ -70,8 +70,8 @@ public class CutsceneController : MonoBehaviour
     private void HandleOnFadeInEnd()
     {
         _onFadeInEnd.OnEvent -= HandleOnFadeInEnd;
-        GameObject cutsceneCam = GameObject.FindAnyObjectByType<CinemachineCamera>().gameObject;
-        cutsceneCam.SetActive(false);
+        /*GameObject cutsceneCam = GameObject.FindAnyObjectByType<CinemachineCamera>().gameObject;
+        cutsceneCam.SetActive(false);*/
         _onCutsceneExit.Raise();
         this.enabled = false;
     }

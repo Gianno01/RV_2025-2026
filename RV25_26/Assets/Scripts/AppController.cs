@@ -231,8 +231,11 @@ public class AppController : MonoBehaviour
         AppState nextState = (AppState) param;
         _onGameplayExit.OnParamEvent -= HandleOnGameplayExit;
 
+        Debug.Log("HANDLEGAMEPLAYEXIT");
+
         if(nextState == AppState.Cutscene)
         {
+            Debug.Log("HANDLEGAMEPLAYEXIT Cutscene");
             ToCutsceneState();
             _cutsceneController.PlayCurrentTimeline();
         }
