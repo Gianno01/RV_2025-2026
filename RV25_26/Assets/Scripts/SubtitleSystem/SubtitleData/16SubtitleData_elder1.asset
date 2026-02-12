@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 16SubtitleData_elder1
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "Thank you\u2026thank you, child. You remind me of my wife\u2026She always
-    helped everyone. I lost her\u2026when they bombed our neighborhood. Things have
-    only gotten worse since then. We live between two fears now...the soldiers on
-    one side, and the settlers on the other. Every day someone disappears. Every
-    day, someone doesn\u2019t come back. You\u2019re looking for someone too, aren\u2019t
-    you? Your brother\u2026don\u2019t give up, little one!"
+  text: "Thank you\u2026QQthank you, child.QQYou remind me of my wife\u2026QQShe
+    always helped everyone.QQI lost her\u2026QQwhen they bombed our neighborhood.QQThings
+    have only gotten worse since then.QQWe live between two fears now...QQthe soldiers
+    on one side, and the settlers on the other.QQEvery day someone disappears.QQEvery
+    day, someone doesn\u2019t come back.QQYou\u2019re looking for someone too, aren\u2019t
+    you?QQYour brother\u2026don\u2019t give up, little one!QQ"

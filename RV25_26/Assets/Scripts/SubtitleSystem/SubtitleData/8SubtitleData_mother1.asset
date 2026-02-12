@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 8SubtitleData_mother1
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "Please, stay here with me\u2026I can\u2019t lose you too. Every moment you\u2019re
-    out there, I\u2019m terrified\u2026I don\u2019t know what I would do if anything
-    happened to you."
+  text: "Please,QQstay here with me\u2026QQI can\u2019t lose you too.QQEvery moment
+    you\u2019re out there, I\u2019m terrified\u2026QQI don\u2019t know what I would
+    do if anything happened to you.QQ"

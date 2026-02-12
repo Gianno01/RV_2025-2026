@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 4SubtitleData_doctor0
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "Hey, kid\u2026are you hurt? Your brother? No\u2026he\u2019s not here. I\u2019m
-    sorry.\r\nI need your help though. In that storage tent, there is a sterile syringe.
-    Can you bring it to me?"
+  text: "Hey, kid\u2026QQare you hurt?QQYour brother?QQNo\u2026he\u2019s not here.QQI\u2019m
+    sorry.QQI need your help though.QQIn that storage tent, there is a sterile syringe.QQCan
+    you bring it to me?QQ"

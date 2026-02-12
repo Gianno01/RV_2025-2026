@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 5SubtitleData_doctor1
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "Thank you\u2026really thank you. This place\u2026we can\u2019t keep up anymore.\u201D\r\nThere
-    are too many wounded, too few of us\u2026and we\u2019re running out of supplies."
+  text: "Thank you\u2026QQreally thank you.QQThis place\u2026QQwe can\u2019t keep
+    up anymore.QQThere are too many wounded,QQtoo few of us\u2026QQand we\u2019re
+    running out of supplies.QQ"

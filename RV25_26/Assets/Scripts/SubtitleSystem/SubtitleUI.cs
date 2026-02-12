@@ -18,10 +18,13 @@ public class SubtitleUI : MonoBehaviour
     private IEnumerator ShowText(string text)
     {
         _canvasGroup.alpha = 1;
-        string[] periods = Regex.Split(text, @"(?<=[.;!?]+)");
+        string[] periods = Regex.Split(text, "QQ");
+
+        Debug.Log("SUBTITLE");
         
         foreach(string s in periods)
         {
+            Debug.Log(s);
             _textBox.text = s;
             yield return new WaitForSeconds(_timeToWaitBetweenPeriod);
         }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 7SubtitleData_hint1
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "He\u2019s starving\u2026there is no food here. Maybe I should go home, mum
-    will have some bread."
+  text: "He\u2019s starving\u2026QQthere is no food here.QQMaybe I should go home,
+    mum will have some bread.QQ"

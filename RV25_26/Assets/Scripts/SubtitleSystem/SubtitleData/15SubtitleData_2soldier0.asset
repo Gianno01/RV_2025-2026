@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 15SubtitleData_2soldier0
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "Kids aren\u2019t allowed to wander around camps. Turn around and leave.
-    Now!"
+  text: "Kids aren\u2019t allowed to wander around camps.QQTurn around and leave.QQNow!QQ"
