@@ -6,7 +6,7 @@ using System;
 public enum NpcState { Idle, Patrol, Talk, Follow }
 
 [RequireComponent(typeof(NavMeshAgent))]
-[RequireComponent(typeof(BoxCollider))] 
+//[RequireComponent(typeof(BoxCollider))] 
 [RequireComponent(typeof(Animator))] // Assicura che ci sia un Animator
 public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
 {

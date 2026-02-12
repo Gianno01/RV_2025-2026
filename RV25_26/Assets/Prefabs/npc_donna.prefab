@@ -62,6 +62,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4cc55d91ca98b5f45890e620178b2670, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4586217600084464945}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4cc55d91ca98b5f45890e620178b2670, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2645457867726522078}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4cc55d91ca98b5f45890e620178b2670, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6449879573447590484}
   m_SourcePrefab: {fileID: 100100000, guid: 4cc55d91ca98b5f45890e620178b2670, type: 3}
 --- !u!1 &8531483038655489570 stripped
 GameObject:
@@ -113,3 +119,44 @@ CapsuleCollider:
   m_Height: 1.9121814
   m_Direction: 1
   m_Center: {x: 0, y: 0.93516564, z: 0.11959076}
+--- !u!195 &2645457867726522078
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8531483038655489570}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &6449879573447590484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8531483038655489570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b6dd13e970b4440871cdac4628f2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcBrain
+  currentState: 1
+  talkDistance: 2
+  waypoints: []
+  waitTimeAtPoint: 2
+  lookSpeed: 5
+  npcName: npc_donna
+  actionVerb: Parla con

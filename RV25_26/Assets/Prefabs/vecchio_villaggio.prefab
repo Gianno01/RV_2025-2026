@@ -80,13 +80,34 @@ PrefabInstance:
       addedObject: {fileID: 6321356223608648009}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 3978067030560247971}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 48559777799474415}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2452544710928602877}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 497191954219068133}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1701127460233290259}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4543050036897200393}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 2156972803452350024}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3704961453030402642}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3978067030560247971}
+      addedObject: {fileID: 1083325987614172259}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4498916629043996656}
   m_SourcePrefab: {fileID: 100100000, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
 --- !u!1 &9073693125024513044 stripped
 GameObject:
@@ -136,6 +157,109 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3978067030560247971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51a33c5623c052448e51b5538b1a061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TalkingCharacter
+  _textSpot: {fileID: 0}
+  _timelineSpot: {fileID: 0}
+  _outline: {fileID: 0}
+--- !u!114 &48559777799474415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acff8dd27787d5343ad0f9282cb45cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestStarter
+  _onEvent: {fileID: 0}
+  _onQuestStart: {fileID: 0}
+--- !u!114 &2452544710928602877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
+  _onCurrentQuestChange: {fileID: 0}
+  _startQuests: 
+  _endQuests: 
+  _isNotInTheScene: 0
+  _gameObject: {fileID: 0}
+  _gameObjectName: 
+  _effectOnOneComponent: 0
+  _component: {fileID: 0}
+  _componentName: 
+  _onActivate: {fileID: 0}
+  _onDeactivate: {fileID: 0}
+--- !u!114 &497191954219068133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b352af0f010e70a4881fbcfdf2812fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerCaller
+  _onCurrentQuestChange: {fileID: 0}
+  _isNotInTheScene: 0
+  _questIndex: 0
+  _secToWaitBeforeCall: 0
+  _component: {fileID: 0}
+  _methodName: 
+  _param: 0
+  _gameObjectName: 
+  _componentName: 
+--- !u!114 &1701127460233290259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ae1886a48327e4080a7b5606971ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerTextChanger
+  _onCurrentQuestChange: {fileID: 0}
+  _questTexts: []
+  _onTextChange: {fileID: 0}
+--- !u!114 &4543050036897200393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb03969ed3815b34cb21a905a3c2f74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerTimelineChanger
+  _onCurrentQuestChange: {fileID: 0}
+  _questTimelines: []
+  _onTimelineChange: {fileID: 0}
 --- !u!114 &2156972803452350024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +293,7 @@ MonoBehaviour:
   _onTimelineStart: {fileID: 0}
   _onTimelineEnd: {fileID: 0}
   _stopCurrentClip: 0
---- !u!114 &3978067030560247971
+--- !u!114 &1083325987614172259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,9 +302,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 9073693125024513044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b51a33c5623c052448e51b5538b1a061, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TalkingCharacter
-  _textSpot: {fileID: 0}
-  _timelineSpot: {fileID: 0}
-  _outline: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!320 &4498916629043996656
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
