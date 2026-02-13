@@ -490,10 +490,10 @@ AudioSource:
   m_GameObject: {fileID: 272131649}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4751844569400289678, guid: af85ee41901bd3e4ab76bcfd8b736562, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -538,7 +538,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1271,10 +1271,10 @@ AudioSource:
   m_GameObject: {fileID: 1582208148}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4751844569400289678, guid: af85ee41901bd3e4ab76bcfd8b736562, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1670,7 +1670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8531483038655489570, guid: 5aad74b9e0e3f044faa288b990f21ab7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9020211097288113304, guid: 5aad74b9e0e3f044faa288b990f21ab7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1771,7 +1771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6520254804956047045, guid: 63b1d765b1ed0ec4aa8d0547eca663c7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8273006797444434643, guid: 63b1d765b1ed0ec4aa8d0547eca663c7, type: 3}
       propertyPath: 'waypoints.Array.data[0]'
@@ -2163,7 +2163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 926015261599706902, guid: 79a6b7fe8ef6c80449c8cdb822b86fcc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2355,7 +2355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257016179554481113, guid: 82cffa40a4ad1a748ad61a96dbb6c7c4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000015497208
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4257016179554481113, guid: 82cffa40a4ad1a748ad61a96dbb6c7c4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2416,6 +2416,14 @@ PrefabInstance:
     - target: {fileID: 4414707776588583522, guid: 82cffa40a4ad1a748ad61a96dbb6c7c4, type: 3}
       propertyPath: _questTimelines.Array.data[0].questIndex
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5154432030299230382, guid: 82cffa40a4ad1a748ad61a96dbb6c7c4, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 4751844569400289678, guid: af85ee41901bd3e4ab76bcfd8b736562, type: 2}
+    - target: {fileID: 5154432030299230382, guid: 82cffa40a4ad1a748ad61a96dbb6c7c4, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6364214436845886734, guid: 82cffa40a4ad1a748ad61a96dbb6c7c4, type: 3}
       propertyPath: _onCurrentQuestChange
@@ -2761,7 +2769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3110764200093986879, guid: 6eb1363e057474a4e926a2757d9c37f5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2791,7 +2799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b6dd13e970b4440871cdac4628f2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcBrain
-  currentState: 0
+  currentState: 1
   talkDistance: 2
   waypoints:
   - {fileID: 2115228789}
@@ -2834,6 +2842,10 @@ PrefabInstance:
     - target: {fileID: 27300944553944805, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
       propertyPath: m_Speed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935874413393961534, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2458966311550221970, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
       propertyPath: m_Name
@@ -2981,7 +2993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8849657949366565297, guid: 74a59e6cc4762b04a8ea0b3b36df0bf2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3435,7 +3447,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4751844569400289678, guid: af85ee41901bd3e4ab76bcfd8b736562, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3622,7 +3634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4381121394013808650, guid: 2d668e3fcabae3542aab9219f437ae79, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

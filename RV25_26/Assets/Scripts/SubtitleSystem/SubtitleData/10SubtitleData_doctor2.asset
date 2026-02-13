@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 10SubtitleData_doctor2
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "I heard you talking. If your brother is not here, the refugee camp ahead
-    is your best chance. I just received a call, there is a boy there, hurt in the
-    leg. I can\u2019t leave this place, there are too many wounded.QQYou\u2019re
+  text: "I heard you talking.QQIf your brother is not here, the refugee camp ahead
+    is your best chance.QQI just received a call, there is a boy there, hurt in the
+    leg.QQI can\u2019t leave this place, there are too many wounded.QQYou\u2019re
     the only one who can reach him."
