@@ -333,6 +333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExplosionTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 3708051770686479285, guid: 1ffcede63221abc4fbb2d63f2e4ac86f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

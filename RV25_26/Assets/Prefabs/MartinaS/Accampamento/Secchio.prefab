@@ -69,6 +69,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1d3e1cf0ad2e0fe40902ea6939ab1048, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1032903373660014309}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1d3e1cf0ad2e0fe40902ea6939ab1048, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8099461051294376690}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1d3e1cf0ad2e0fe40902ea6939ab1048, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4303497290839440495}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1d3e1cf0ad2e0fe40902ea6939ab1048, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6080982101436940866}
   m_SourcePrefab: {fileID: 100100000, guid: 1d3e1cf0ad2e0fe40902ea6939ab1048, type: 3}
 --- !u!1 &7265410540419450491 stripped
 GameObject:
@@ -137,3 +146,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GrippableItem
   _itemName: secchio
   _followOffset: {x: 0.6, y: -0.2, z: 0.7}
+  _onGripped: {fileID: 11400000, guid: d05b179f8142dcc438be04347c69b1a7, type: 2}
+--- !u!114 &-8099461051294376690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7265410540419450491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acff8dd27787d5343ad0f9282cb45cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestStarter
+  _onEvent: {fileID: 11400000, guid: d05b179f8142dcc438be04347c69b1a7, type: 2}
+  _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
+--- !u!114 &-4303497290839440495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7265410540419450491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _startQuests: 17000000
+  _endQuests: 0000000018000000
+  _isNotInTheScene: 0
+  _gameObject: {fileID: 0}
+  _gameObjectName: 
+  _effectOnOneComponent: 1
+  _component: {fileID: -8099461051294376690}
+  _componentName: 
+  _onActivate: {fileID: 0}
+  _onDeactivate: {fileID: 0}
+--- !u!114 &-6080982101436940866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7265410540419450491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
