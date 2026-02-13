@@ -71,7 +71,6 @@ public class InputManager : MonoBehaviour
         // Lancia il raycast
         if (Physics.BoxCast(origin, halfBoxExtens, direction, out RaycastHit hit, Quaternion.identity, rayLength))
         {
-            Debug.Log("Colpito: " + hit.collider.name);
             if (hit.collider.gameObject.tag != "Interactable") return;
             gripObj = hit.collider.gameObject;
             gripObj.GetComponent<Rigidbody>().isKinematic = true;

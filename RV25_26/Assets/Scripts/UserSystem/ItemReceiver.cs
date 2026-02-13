@@ -20,25 +20,21 @@ public class ItemReceiver : MonoBehaviour, IsInteractable
 
     public void ReceiveItem(GrippableItem item)
     {
-        Debug.Log("GrippableItem: " + item);
         if (item == null) return;
 
         if (destroyOnDelivery)
         {
             Destroy(item.gameObject);
-            Debug.Log(item.name + " eliminato.");
         }
         else if (deliveryPoint != null)
         {
             item.PlaceOnTarget(deliveryPoint);
-            Debug.Log(item.name + " piazzato su " + receiverName);
         }
 
         // 3. INVIO EVENTO (Solo se assegnato nell'Inspector)
         if (_onDeliveryObject != null)
         {
             _onDeliveryObject.Raise();
-            Debug.Log($"Evento quest lanciato da {gameObject.name}.");
         }
         else
              Debug.Log($"nessun evento associato alla consegna.");    

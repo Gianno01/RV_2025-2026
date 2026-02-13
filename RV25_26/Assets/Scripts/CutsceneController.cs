@@ -51,7 +51,6 @@ public class CutsceneController : MonoBehaviour
 
     public void StartCutscene(int timelineIndex)
     {
-        Debug.Log("START CUTSCENE");
         _currentTimelineIndex = timelineIndex;
         _onCutsceneStart.Raise();
     }
