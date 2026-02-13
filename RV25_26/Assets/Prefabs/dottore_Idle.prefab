@@ -78,6 +78,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8810747895208503579, guid: b88b2fb6ff5c12f4d8f3cc5666ae3b8f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9211771305220856340}
+    - targetCorrespondingSourceObject: {fileID: 8810747895208503579, guid: b88b2fb6ff5c12f4d8f3cc5666ae3b8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2555503182457921531}
   m_SourcePrefab: {fileID: 100100000, guid: b88b2fb6ff5c12f4d8f3cc5666ae3b8f, type: 3}
 --- !u!4 &6978998250725296224 stripped
 Transform:
@@ -131,6 +134,27 @@ MonoBehaviour:
   _itemName: Oggetto
   _followOffset: {x: 0.6, y: -0.2, z: 0.7}
   _onGripped: {fileID: 0}
+--- !u!65 &2555503182457921531
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751171332254831322}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.049679775, y: 0.10201129, z: 0.04967977}
+  m_Center: {x: 0, y: -0.009656781, z: 0}
 --- !u!1001 &3378096665408259011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -263,6 +287,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3517939524311587643}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6152622288814477361}
   m_SourcePrefab: {fileID: 100100000, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
 --- !u!1 &2458966311550221970 stripped
 GameObject:
@@ -3986,7 +4013,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2458966311550221970}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 680fa20156821424f9601d0c6abf98f2, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 5d2b979db48b4f7468588329ca95b69b, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -4000,6 +4027,18 @@ PlayableDirector:
     value: {fileID: 1935874413393961534}
   - key: {fileID: 6641826204825411004, guid: 680fa20156821424f9601d0c6abf98f2, type: 2}
     value: {fileID: 5095391301371061432}
+  - key: {fileID: 5099726751166648993, guid: 539f0741fdcb17b4aa56b612d280f5d2, type: 2}
+    value: {fileID: 1935874413393961534}
+  - key: {fileID: 5047475412531454471, guid: 539f0741fdcb17b4aa56b612d280f5d2, type: 2}
+    value: {fileID: 3906740572073258025}
+  - key: {fileID: -3808788704645485361, guid: 539f0741fdcb17b4aa56b612d280f5d2, type: 2}
+    value: {fileID: 5095391301371061432}
+  - key: {fileID: 1496636747723449887, guid: 5d2b979db48b4f7468588329ca95b69b, type: 2}
+    value: {fileID: 5095391301371061432}
+  - key: {fileID: -2749969282724519851, guid: 5d2b979db48b4f7468588329ca95b69b, type: 2}
+    value: {fileID: 3906740572073258025}
+  - key: {fileID: 5099726751166648993, guid: 5d2b979db48b4f7468588329ca95b69b, type: 2}
+    value: {fileID: 1935874413393961534}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &5095391301371061432
@@ -4120,7 +4159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
-  _onCurrentQuestChange: {fileID: 0}
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _startQuests: 08000000
   _endQuests: 0000000009000000
   _isNotInTheScene: 0
@@ -4180,7 +4219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
-  _onCurrentQuestChange: {fileID: 0}
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _startQuests: 08000000
   _endQuests: 0000000009000000
   _isNotInTheScene: 0
@@ -4207,6 +4246,29 @@ MonoBehaviour:
   destroyOnDelivery: 1
   deliveryPoint: {fileID: 0}
   _onDeliveryObject: {fileID: 11400000, guid: fca5e2f9bb47ac94687a2520c33b38a9, type: 2}
+--- !u!114 &6152622288814477361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2458966311550221970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _startQuests: 08000000
+  _endQuests: 0000000009000000
+  _isNotInTheScene: 0
+  _gameObject: {fileID: 0}
+  _gameObjectName: 
+  _effectOnOneComponent: 1
+  _component: {fileID: 3517939524311587643}
+  _componentName: 
+  _onActivate: {fileID: 0}
+  _onDeactivate: {fileID: 0}
 --- !u!4 &2984708398591386664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
