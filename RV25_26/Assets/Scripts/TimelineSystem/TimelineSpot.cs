@@ -23,6 +23,7 @@ public class TimelineSpot : MonoBehaviour, ITimelineChangeable
 
     public void HandleSignalOnTimelineStart()
     {
+        Debug.Log("EXPLOSION START");
         if(_onTimelineStart != null) _onTimelineStart.Raise();
     }
 

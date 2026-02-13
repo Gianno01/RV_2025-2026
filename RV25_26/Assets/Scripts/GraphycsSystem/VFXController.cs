@@ -72,8 +72,8 @@ public class VFXController : MonoBehaviour
 
     public void PlayExplosionIn()
     {
-        _OutAfterIn = true;
-        _useInOutSecGap = true;
+        _OutAfterIn = false;
+        _useInOutSecGap = false;
         _explosionFader.InitToMinEffects();
         _explosionFader.ExplodeIn();
     }
