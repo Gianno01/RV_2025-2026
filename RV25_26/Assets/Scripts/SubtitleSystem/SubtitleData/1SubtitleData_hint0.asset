@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 1SubtitleData_hint0
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: MaybeQQi should ask someone around here.QQ
+  clipSubtitleChunks:
+  - text: Maybe i should ask someone around here.
+    startTime: 0
+    endTime: 3.25

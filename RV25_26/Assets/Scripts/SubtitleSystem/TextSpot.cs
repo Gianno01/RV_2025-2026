@@ -1,4 +1,12 @@
 using UnityEngine;
+using UnityEngine.Playables;
+
+public struct SubtitleDataTimeReference
+{
+    public SubtitleData subtitleData;
+    public AudioSource audioSource;
+    public PlayableDirector playableDirector;
+}
 
 public class TextSpot : MonoBehaviour, ITextChangeable
 {
@@ -6,6 +14,10 @@ public class TextSpot : MonoBehaviour, ITextChangeable
     [SerializeField] private AppEventData _onSubtitleShow;
     [SerializeField] private AppEventData _onAudioStart;
     [SerializeField] private AppEventData _onAudioEnd;
+    [Header("Se il tempo di riferimento è quello di un audio source, riempi il campo")]
+    [SerializeField] private AudioSource _audioSource;
+    [Header("Se il tempo di riferimento è quello di una timeline, riempi il campo")]
+    [SerializeField] private PlayableDirector _playableDirector;
     private bool busy = false;
 
     void OnEnable()
@@ -37,6 +49,13 @@ public class TextSpot : MonoBehaviour, ITextChangeable
 
     public void ShowText()
     {
-        if(!busy) _onSubtitleShow.RaiseWithParam(currentSubtitle);
+        SubtitleDataTimeReference st;
+        st.audioSource = null;
+        st.playableDirector = null;
+        if(_audioSource != null) st.audioSource = _audioSource;
+        if(_playableDirector != null) st.playableDirector = _playableDirector;
+        st.subtitleData = currentSubtitle;
+
+        if(!busy) _onSubtitleShow.RaiseWithParam(st);
     }
 }

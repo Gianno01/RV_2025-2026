@@ -12,8 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 2SubtitleData_coetaneo0
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "QQI saw him this morning!QQHe was running toward the main road\u2026QQWhen
-    the settlers came\u2026QQthey were shouting that they\u2019d burn everything
-    down\u2026QQthat this village isn\u2019t ours.QQI heard them laughing\u2026QQthose
-    awful laughs\u2026QQthen the shooting started and\u2026QQI had to hide.QQI was
-    too scare!QQI\u2019m really sorry, I don\u2019t know anything else.QQ"
+  clipSubtitleChunks:
+  - text: I saw him this morning!
+    startTime: 1.9
+    endTime: 3.46
+  - text: He was running toward the main road.
+    startTime: 3.46
+    endTime: 5.43
+  - text: "When the settlers came\u2026 they were shouting that they\u2019d burn
+      everything down\u2026"
+    startTime: 5.43
+    endTime: 9.07
+  - text: "that this village isn\u2019t ours.\r\n"
+    startTime: 9.07
+    endTime: 11.4
+  - text: "I heard them laughing\u2026those awful laughs\u2026"
+    startTime: 11.4
+    endTime: 14.26
+  - text: "then the shooting started and\u2026 I had to hide."
+    startTime: 14.26
+    endTime: 17.18
+  - text: "I was too scare! I\u2019m really sorry, I don\u2019t know anything else."
+    startTime: 17.18
+    endTime: 20.43

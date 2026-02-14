@@ -18,7 +18,10 @@ public class TimelineSpot : MonoBehaviour, ITimelineChangeable
     public void PlayTimeline()
     {
         if(_playableDirector.state == PlayState.Playing && !_stopCurrentClip) return;
-        if(_currentTimeline != null) _playableDirector.Play(_currentTimeline);
+        if(_currentTimeline != null){
+            _playableDirector.playableAsset = _currentTimeline;
+            _playableDirector.Play();
+        }
     }
 
     public void HandleSignalOnTimelineStart()
