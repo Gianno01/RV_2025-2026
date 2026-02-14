@@ -46,6 +46,19 @@ public class GameplayController : MonoBehaviour
 
         _player.SetActive(true);
 
+        if(appState == AppState.Cutscene)
+        {
+            GameObject[] cams = GameObject.FindGameObjectsWithTag("CutsceneCamera");
+            foreach(GameObject g in cams)
+            {
+                if (g.activeInHierarchy)
+                {
+                    g.SetActive(false);
+                    break;
+                }
+            }
+        }
+
         if(appState == AppState.Gate)
         {
             _player.GetComponent<MotionController>().enabled = true;
@@ -85,7 +98,6 @@ public class GameplayController : MonoBehaviour
     {
         _onFadeInEnd.OnEvent -= HandleFadeInEnd;
         _player.SetActive(false);
-        Debug.Log("PLAYER: " + _player);
         CompleteToExitGameplay(AppState.Cutscene);
     }
 
