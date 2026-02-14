@@ -172,83 +172,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8359993448146854829, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
-      propertyPath: playerCamera
-      value: 
-      objectReference: {fileID: 499736449}
-    - target: {fileID: 8359993448146854829, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
       propertyPath: pointerImage
       value: 
       objectReference: {fileID: 1374938644}
-    - target: {fileID: 8359993448146854829, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
-      propertyPath: _onHelpRequest
-      value: 
-      objectReference: {fileID: 11400000, guid: a5dc3523006616948908e8f0ec7db983, type: 2}
-    - target: {fileID: 8359993448146854829, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
-      propertyPath: interactColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8359993448146854829, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
-      propertyPath: interactColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8359993448146854829, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
-      propertyPath: _onHomeSceneRequest
-      value: 
-      objectReference: {fileID: 11400000, guid: c7836186f056ae447960a558808f9da0, type: 2}
-    - target: {fileID: 8359993448146854829, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
-      propertyPath: interactionDistance
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5082097235873229177, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 499736447}
-    - targetCorrespondingSourceObject: {fileID: 5082097235873229177, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 499736448}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
---- !u!1 &499736446 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5082097235873229177, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
-  m_PrefabInstance: {fileID: 499736445}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &499736447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499736446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3fc00fe74b7449418b5d4589a5cb637, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TeleportationController
-  spotPosNames:
-  - CheatSpotVillaggio
-  - CheatSpotOspedale
-  - CheatSpotAccampamento
---- !u!114 &499736448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499736446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 452703f47cea6e4458dbed27ac60591c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::QuestAdder
-  _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
---- !u!20 &499736449 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 4370684851687189700, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
-  m_PrefabInstance: {fileID: 499736445}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1374938642
 GameObject:
   m_ObjectHideFlags: 0

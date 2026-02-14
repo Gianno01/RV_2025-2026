@@ -151,6 +151,10 @@ GameObject:
   - component: {fileID: 8316438102989499793}
   - component: {fileID: 5947142173187706659}
   - component: {fileID: 8359993448146854829}
+  - component: {fileID: 7693473007686831712}
+  - component: {fileID: 5966360528113697332}
+  - component: {fileID: 6872196962003117557}
+  - component: {fileID: 189642355262951889}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -277,6 +281,7 @@ MonoBehaviour:
   changeViewKey: 118
   firstPersonPos: {x: 0, y: 0.8, z: 0}
   thirdPersonPos: {x: 0.5, y: 1.5, z: -3}
+  audioSpot: {fileID: 5966360528113697332}
 --- !u!114 &8359993448146854829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,11 +294,161 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f7421d89eedc244be348e8b5bc2732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionController
-  interactionDistance: 100
+  interactionDistance: 2
+  interactionRadius: 0.2
   interactionLayer:
     serializedVersion: 2
     m_Bits: 55
-  playerCamera: {fileID: 5884134823273519969}
+  playerCamera: {fileID: 4370684851687189700}
   tutorialPanel: {fileID: 0}
+  pointerImage: {fileID: 0}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  interactColor: {r: 1, g: 1, b: 0, a: 0}
   interactKey: 101
   tutorialKey: 104
+  homeKey: 117
+  _onHelpRequest: {fileID: 11400000, guid: a5dc3523006616948908e8f0ec7db983, type: 2}
+  _onHomeSceneRequest: {fileID: 11400000, guid: c7836186f056ae447960a558808f9da0, type: 2}
+--- !u!82 &7693473007686831712
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082097235873229177}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -5518195975160408736, guid: af85ee41901bd3e4ab76bcfd8b736562, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &5966360528113697332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082097235873229177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca91019b6e9de94ea047726fb71f192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioSpot
+  _onAudioStart: {fileID: 0}
+  _onAudioEnd: {fileID: 0}
+  _clip: {fileID: 8300000, guid: 99434c2db9de47841abe42f0b30f84e1, type: 3}
+  _stopCurrentClip: 0
+  _playMoreThanOne: 0
+--- !u!114 &6872196962003117557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082097235873229177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3fc00fe74b7449418b5d4589a5cb637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeleportationController
+  spotPosNames:
+  - CheatSpotVillaggio
+  - CheatSpotOspedale
+  - CheatSpotAccampamento
+--- !u!114 &189642355262951889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082097235873229177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452703f47cea6e4458dbed27ac60591c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestAdder
+  _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}

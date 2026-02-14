@@ -22,11 +22,14 @@ public class MotionController : MonoBehaviour
     public Vector3 firstPersonPos = new Vector3(0, 0.8f, 0); // Posizione locale testa
     public Vector3 thirdPersonPos = new Vector3(0.5f, 1.5f, -3f); // Posizione dietro le spalle
 
+    public AudioSpot audioSpot;
+
     // Stato interno
     private CharacterController characterController;
     private Vector3 velocity;
     private float xRotation = 0f;
     private bool isFirstPerson = true;
+    private Vector3 _previousMove = Vector3.zero;
 
     void Start()
     {
@@ -74,6 +77,20 @@ public class MotionController : MonoBehaviour
 
         // Gestione corsa (Shift sinistro)
         float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
+
+        if(currentSpeed == sprintSpeed)
+        {
+            audioSpot.ChangePitch(1.5f);
+        }
+        else
+        {
+            audioSpot.ChangePitch(1);
+        }
+        
+        if(move != Vector3.zero && _previousMove == Vector3.zero) audioSpot.PlayAudio();
+        else if(move == Vector3.zero && _previousMove != Vector3.zero) audioSpot.StopAudio();
+
+        _previousMove = move;
 
         // Muovi il Character Controller
         characterController.Move(move * currentSpeed * Time.deltaTime);

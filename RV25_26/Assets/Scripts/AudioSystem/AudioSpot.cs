@@ -42,6 +42,17 @@ public class AudioSpot : MonoBehaviour, IClipChangeable
         });
     }
 
+    public void StopAudio()
+    {
+        if(_audioSource.isPlaying)
+            _audioSource.Stop();
+    }
+
+    public void ChangePitch(float pitch)
+    {
+        _audioSource.pitch = pitch;
+    }
+
     public void ChangeClip(AudioClip clip)
     {
         if (clip != null)
