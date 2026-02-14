@@ -202,6 +202,6 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
     {
         //Debug.Log("l'oggetto viene distrutto!");
         ItemReceiver itemReceiver = GetComponent<ItemReceiver>();
-        itemReceiver.ReceiveItem(item);
+        if(itemReceiver != null && itemReceiver.enabled) itemReceiver.ReceiveItem(item);
     }
 }
