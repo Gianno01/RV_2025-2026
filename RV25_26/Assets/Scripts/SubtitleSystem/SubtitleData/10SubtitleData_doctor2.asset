@@ -12,7 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 10SubtitleData_doctor2
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "I heard you talking.QQIf your brother is not here, the refugee camp ahead
-    is your best chance.QQI just received a call, there is a boy there, hurt in the
-    leg.QQI can\u2019t leave this place, there are too many wounded.QQYou\u2019re
-    the only one who can reach him."
+  clipSubtitleChunks:
+  - text: I heard you talking...
+    startTime: 0
+    endTime: 2.2
+  - text: if your brother is not here, the <b>refugee camp</b> ahead is your best
+      chance.
+    startTime: 2.2
+    endTime: 7.33
+  - text: I just received a call, there is <b>a boy there, hurt in the leg</b>.
+    startTime: 7.33
+    endTime: 12.07
+  - text: "I can\u2019t leave this place, there are too many wounded..."
+    startTime: 12.07
+    endTime: 15.4
+  - text: "you\u2019re the only one who can <b>reach him.</b>"
+    startTime: 15.4
+    endTime: 17.6

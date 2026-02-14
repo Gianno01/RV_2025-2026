@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 9SubtitleData_hungry1
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "Bread\u2026QQthankyou!QQI wish I could help you\u2026QQbut I havent seen
-    your brother, I\u2019m sorry.QQ"
+  clipSubtitleChunks:
+  - text: "Bread\u2026 thank you!"
+    startTime: 0
+    endTime: 3.9
+  - text: "I wish I could help you\u2026 but I haven't seen your brother, I\u2019m
+      sorry."
+    startTime: 3.9
+    endTime: 8.9

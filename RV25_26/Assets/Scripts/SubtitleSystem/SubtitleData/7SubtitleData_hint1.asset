@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 7SubtitleData_hint1
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "He\u2019s starving\u2026QQthere is no food here.QQMaybe I should go home,
-    mum will have some bread.QQ"
+  clipSubtitleChunks:
+  - text: "He\u2019s starving\u2026 there is no food here."
+    startTime: 0
+    endTime: 3.5
+  - text: Maybe I should <b>go home</b>, mum will have some <b>bread</b>.
+    startTime: 3.5
+    endTime: 6.4

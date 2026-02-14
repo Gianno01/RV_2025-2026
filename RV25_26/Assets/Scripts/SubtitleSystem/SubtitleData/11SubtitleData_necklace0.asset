@@ -10,6 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
-  m_Name: 13SubtitleData_user0
+  m_Name: 11SubtitleData_necklace0
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: Excuse me...QQhave you seen...QQ
+  clipSubtitleChunks:
+  - text: "this necklace\u2026 it\u2019s his."
+    startTime: 1.28
+    endTime: 3.83
+  - text: "He must have <b>passed through here\u2026</b>"
+    startTime: 3.83
+    endTime: 5.9

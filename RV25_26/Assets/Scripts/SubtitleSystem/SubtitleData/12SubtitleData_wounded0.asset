@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 12SubtitleData_wounded0
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "Is that a medicine?QQThank you\u2026QQit hurts so much!QQYour brother?QQNo,
-    I haven\u2019t seen him.QQBut if he came through here\u2026QQthe soldiers would\u2019ve
-    noticed.QQYou should ask them\u2026QQ\r\n"
+  clipSubtitleChunks:
+  - text: "Is that a medicine? Thank you\u2026 it hurts so much."
+    startTime: 0
+    endTime: 4.89
+  - text: "Your brother? No, <b>I haven\u2019t seen him</b>."
+    startTime: 4.89
+    endTime: 7.71
+  - text: "But if he came through here\u2026 <b>the soldiers</b> would\u2019ve noticed.
+      You should <b>ask them</b>.\r\n"
+    startTime: 7.71
+    endTime: 13.11

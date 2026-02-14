@@ -10,8 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
-  m_Name: 14SubtitleData_1soldier0
+  m_Name: 14SubtitleData_soldier0
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "Hey!QQWhat do you think you are doing?QQYou can\u2019t just walk up to us
-    like that.QQStep back!QQQQKids aren\u2019t allowed to wander around camps.QQTurn
-    around and leave.QQNow!QQ"
+  clipSubtitleChunks:
+  - text: Hey! What do you think you are doing?
+    startTime: 0
+    endTime: 2.93
+  - text: "You can\u2019t just walk up to us like that. Step back!"
+    startTime: 2.93
+    endTime: 6.77
+  - text: "Kids aren\u2019t allowed to wander around camps. Turn around and leave,
+      now!"
+    startTime: 6.77
+    endTime: 11.6

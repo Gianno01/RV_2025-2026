@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 18SubtitleData_mother2
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "Boys\u2026QQwhere are you?!QQPlease\u2026QQplease answer me!QQMy sons\u2026please,
-    don\u2019t leave me!QQ"
+  clipSubtitleChunks:
+  - text: "Boys\u2026 where are you?!"
+    startTime: 5.4
+    endTime: 7.8
+  - text: "Please\u2026 please answer me!"
+    startTime: 7.8
+    endTime: 10
+  - text: "My sons\u2026 please, don\u2019t leave me..."
+    startTime: 10
+    endTime: 13.15

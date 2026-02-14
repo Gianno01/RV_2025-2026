@@ -16,13 +16,13 @@ MonoBehaviour:
   - text: "Hey\u2026 hey sweetheart\u2026 you are awake!"
     startTime: 0
     endTime: 3.7
-  - text: "Listen to me\u2026your brother\u2026he didn\u2019t come back."
+  - text: "Listen to me\u2026 <b>your brother\u2026 he didn\u2019t come back</b>."
     startTime: 3.7
     endTime: 7.17
-  - text: "When they attacked the village\u2026he ran away\u2026and I haven\u2019t
+  - text: "When they attacked the village\u2026 he ran away\u2026 and I haven\u2019t
       seen him since."
     startTime: 7.17
     endTime: 12.15
-  - text: "We have to find him. Please\u2026be careful!"
+  - text: "We have to <b>find him</b>. Please\u2026 be careful!"
     startTime: 12.15
     endTime: 15.6

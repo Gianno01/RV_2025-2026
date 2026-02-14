@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 16SubtitleData_elder0
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "Oh little one\u2026QQthat bucket\u2026QQit\u2019s heavier every day\u2026QQ"
+  clipSubtitleChunks:
+  - text: "Oh little one\u2026 <b>that bucket</b>\u2026"
+    startTime: 0
+    endTime: 3.85
+  - text: "it\u2019s heavier every day\u2026"
+    startTime: 3.85
+    endTime: 7.34

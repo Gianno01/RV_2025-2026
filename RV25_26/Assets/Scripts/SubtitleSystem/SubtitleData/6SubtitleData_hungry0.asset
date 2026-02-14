@@ -12,5 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79506a901625a7247aa2dd7746700391, type: 3}
   m_Name: 6SubtitleData_hungry0
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
-  text: "Please kid\u2026QQI\u2019m feeling like I\u2019m dying\u2026QQI haven\u2019t
-    eaten in two days\u2026QQthere is no food left in these tents.QQ"
+  clipSubtitleChunks:
+  - text: "Please kid\u2026 I\u2019m feeling like I\u2019m dying\u2026"
+    startTime: 0
+    endTime: 3.53
+  - text: "I haven\u2019t eaten in two days\u2026 there is no food left in these
+      tents."
+    startTime: 3.53
+    endTime: 8.63
+  - text: Do you have anything I can eat? Anything at all?
+    startTime: 8.63
+    endTime: 12.9
