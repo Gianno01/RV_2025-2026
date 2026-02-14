@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!320 &28513966 stripped
+PlayableDirector:
+  m_CorrespondingSourceObject: {fileID: 1771614179724735169, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+  m_PrefabInstance: {fileID: 3671989021511903962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &55918096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,7 +1826,7 @@ PrefabInstance:
     - target: {fileID: 1771614179724735169, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
       propertyPath: m_PlayableAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 42dde1d35fc64f347baa030762506940, type: 2}
+      objectReference: {fileID: 11400000, guid: 952ef3f9911dd2d448de66d05d686c49, type: 2}
     - target: {fileID: 1771614179724735169, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
       propertyPath: m_SceneBindings.Array.size
       value: 6
@@ -1850,6 +1855,10 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[5].value
       value: 
       objectReference: {fileID: 1421900335}
+    - target: {fileID: 5096423703691025478, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
+      propertyPath: _playableDirector
+      value: 
+      objectReference: {fileID: 28513966}
     - target: {fileID: 5564424946728733324, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
       propertyPath: _questTimelines.Array.size
       value: 2
@@ -2060,6 +2069,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1088714290378037189, guid: aa8e549a2eb9b414eb510a0fd3cbab2e, type: 3}
+      propertyPath: _onAudioStart
+      value: 
+      objectReference: {fileID: 11400000, guid: 99c20bc86e3f5a449a89aca63912f36d, type: 2}
+    - target: {fileID: 1088714290378037189, guid: aa8e549a2eb9b414eb510a0fd3cbab2e, type: 3}
+      propertyPath: _playableDirector
+      value: 
+      objectReference: {fileID: 6305236145464274894}
     - target: {fileID: 2818325229351178865, guid: aa8e549a2eb9b414eb510a0fd3cbab2e, type: 3}
       propertyPath: m_Name
       value: bambino
@@ -2104,6 +2121,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3642682006689929726, guid: aa8e549a2eb9b414eb510a0fd3cbab2e, type: 3}
+      propertyPath: _onTimelineStart
+      value: 
+      objectReference: {fileID: 11400000, guid: 99c20bc86e3f5a449a89aca63912f36d, type: 2}
     - target: {fileID: 4975169850216190768, guid: aa8e549a2eb9b414eb510a0fd3cbab2e, type: 3}
       propertyPath: outlineWidth
       value: 10
@@ -2112,11 +2133,20 @@ PrefabInstance:
       propertyPath: outlineColor.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5195710276749075495, guid: aa8e549a2eb9b414eb510a0fd3cbab2e, type: 3}
+      propertyPath: _questTexts.Array.data[0].subtitleData
+      value: 
+      objectReference: {fileID: 11400000, guid: 91d4b23a9850fb448b76d0d81379d8c6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa8e549a2eb9b414eb510a0fd3cbab2e, type: 3}
+--- !u!320 &6305236145464274894 stripped
+PlayableDirector:
+  m_CorrespondingSourceObject: {fileID: 7935686911409367757, guid: aa8e549a2eb9b414eb510a0fd3cbab2e, type: 3}
+  m_PrefabInstance: {fileID: 6305236145464274893}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6414579815684009734
 PrefabInstance:
   m_ObjectHideFlags: 0
