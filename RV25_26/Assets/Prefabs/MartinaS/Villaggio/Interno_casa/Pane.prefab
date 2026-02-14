@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrippableItem
   _itemName: pane
-  _followOffset: {x: 0.6, y: -0.2, z: 0.7}
+  _followOffset: {x: 0.66, y: -0.36, z: 0.77}
+  _rotOffset: {x: -61.5, y: -68, z: 0}
   _onGripped: {fileID: 11400000, guid: d05b179f8142dcc438be04347c69b1a7, type: 2}
 --- !u!65 &8311595085264856448
 BoxCollider:

@@ -132,8 +132,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrippableItem
   _itemName: Oggetto
-  _followOffset: {x: 0.6, y: -0.2, z: 0.7}
-  _onGripped: {fileID: 0}
+  _followOffset: {x: 0.6, y: -0.28, z: 0.7}
+  _rotOffset: {x: 0.36, y: 0, z: 17.79}
+  _onGripped: {fileID: 11400000, guid: d05b179f8142dcc438be04347c69b1a7, type: 2}
 --- !u!65 &2555503182457921531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -398,7 +399,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -581,6 +582,8 @@ MonoBehaviour:
   _onSubtitleShow: {fileID: 11400000, guid: 758569c885bad534c8e24685446bb6bd, type: 2}
   _onAudioStart: {fileID: 11400000, guid: 332b242dcc998f84ba9115ec658977e5, type: 2}
   _onAudioEnd: {fileID: 11400000, guid: 5101f41777e14b548ac9f715fa4de320, type: 2}
+  _audioSource: {fileID: 0}
+  _playableDirector: {fileID: 2251487523263401161}
 --- !u!114 &3814085678230457489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3992,7 +3995,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -4057,7 +4060,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: fb9f7a40a7162d8498b3c72984571cec, type: 2}
     - {fileID: 11400000, guid: 08260f72fe85777408fca5b9ab11e4d7, type: 2}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: b6418bac0f8187b48a4e8212d3eeab98, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -4100,7 +4103,19 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     - m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 9211771305220856340}
+          m_TargetAssemblyTypeName: GrippableItem, Assembly-CSharp
+          m_MethodName: Interact
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &7264734409530550359
 MonoBehaviour:
   m_ObjectHideFlags: 0

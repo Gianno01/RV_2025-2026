@@ -132,7 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrippableItem
   _itemName: Siringa_02
-  _followOffset: {x: 0.6, y: -0.2, z: 0.7}
+  _followOffset: {x: 0.65, y: -0.26, z: 0.7}
+  _rotOffset: {x: 0, y: 0, z: -61.9}
   _onGripped: {fileID: 11400000, guid: d05b179f8142dcc438be04347c69b1a7, type: 2}
 --- !u!65 &461203181159665768
 BoxCollider:

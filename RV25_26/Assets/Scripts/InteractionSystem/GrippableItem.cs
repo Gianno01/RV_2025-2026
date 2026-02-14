@@ -9,6 +9,7 @@ public class GrippableItem : MonoBehaviour, IsInteractable
     [Header("Configurazione")]
     [SerializeField] private string _itemName = "Oggetto";
     [SerializeField] private Vector3 _followOffset = new Vector3(0.6f, -0.2f, 0.7f); 
+    [SerializeField] private Vector3 _rotOffset = Vector3.zero; 
     [SerializeField] private AppEventData _onGripped;
 
     private Rigidbody _rb;
@@ -27,8 +28,8 @@ public class GrippableItem : MonoBehaviour, IsInteractable
 
     void Start() 
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null) _playerTransform = player.transform;
+        GameObject playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        if (playerCamera != null) _playerTransform = playerCamera.transform;
     }
 
     public void Interact() 
@@ -75,7 +76,7 @@ public class GrippableItem : MonoBehaviour, IsInteractable
         if (_isGrabbed && _playerTransform != null) 
         {
             transform.position = _playerTransform.TransformPoint(_followOffset);
-            transform.rotation = _playerTransform.rotation;
+            transform.rotation = _playerTransform.rotation * Quaternion.Euler(_rotOffset);
         }
     }
 

@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d3e1cf0ad2e0fe40902ea6939ab1048, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d3e1cf0ad2e0fe40902ea6939ab1048, type: 3}
       propertyPath: m_LocalRotation.y
@@ -49,6 +49,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 1d3e1cf0ad2e0fe40902ea6939ab1048, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d341c7aa95cabb4699b10dc74a07164, type: 2}
+    - target: {fileID: -6708016843206180936, guid: 1d3e1cf0ad2e0fe40902ea6939ab1048, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5d341c7aa95cabb4699b10dc74a07164, type: 2}
@@ -145,7 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrippableItem
   _itemName: secchio
-  _followOffset: {x: 0.6, y: -0.2, z: 0.7}
+  _followOffset: {x: 0.6, y: -0.32, z: 0.7}
+  _rotOffset: {x: -14.16, y: 47.82, z: 5.22}
   _onGripped: {fileID: 11400000, guid: d05b179f8142dcc438be04347c69b1a7, type: 2}
 --- !u!114 &-8099461051294376690
 MonoBehaviour:
