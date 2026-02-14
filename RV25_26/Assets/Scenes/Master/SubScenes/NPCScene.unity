@@ -329,6 +329,10 @@ PrefabInstance:
       propertyPath: _onSubtitleShow
       value: 
       objectReference: {fileID: 11400000, guid: 758569c885bad534c8e24685446bb6bd, type: 2}
+    - target: {fileID: 2357637632112582388, guid: 7da93c772b1c2bd49bb95aa76222795c, type: 3}
+      propertyPath: _playableDirector
+      value: 
+      objectReference: {fileID: 995815222}
     - target: {fileID: 2480400668047672195, guid: 7da93c772b1c2bd49bb95aa76222795c, type: 3}
       propertyPath: _outline
       value: 
@@ -1826,7 +1830,7 @@ PrefabInstance:
     - target: {fileID: 1771614179724735169, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
       propertyPath: m_PlayableAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 952ef3f9911dd2d448de66d05d686c49, type: 2}
+      objectReference: {fileID: 11400000, guid: 42dde1d35fc64f347baa030762506940, type: 2}
     - target: {fileID: 1771614179724735169, guid: 45571cd9e6a92fa4393a33155cc57bc3, type: 3}
       propertyPath: m_SceneBindings.Array.size
       value: 6
@@ -2323,6 +2327,10 @@ PrefabInstance:
       propertyPath: _onSubtitleShow
       value: 
       objectReference: {fileID: 11400000, guid: 758569c885bad534c8e24685446bb6bd, type: 2}
+    - target: {fileID: 1330801661852758540, guid: 82cffa40a4ad1a748ad61a96dbb6c7c4, type: 3}
+      propertyPath: _playableDirector
+      value: 
+      objectReference: {fileID: 1788412886}
     - target: {fileID: 1762471788156784530, guid: 82cffa40a4ad1a748ad61a96dbb6c7c4, type: 3}
       propertyPath: _component
       value: 
@@ -2885,6 +2893,10 @@ PrefabInstance:
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2251487523263401161, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d2b979db48b4f7468588329ca95b69b, type: 2}
     - target: {fileID: 2458966311550221970, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
       propertyPath: m_Name
       value: dottore_Idle
@@ -2989,6 +3001,10 @@ PrefabInstance:
       propertyPath: m_Events.m_Events.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5884764220536877531, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
+      propertyPath: _playableDirector
+      value: 
+      objectReference: {fileID: 7354684411018097347}
     - target: {fileID: 9211771305220856340, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
       propertyPath: _onGripped
       value: 
@@ -3009,6 +3025,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410967ce04dbf9b4fbd6441ad680a863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrippableItem
+--- !u!320 &7354684411018097347 stripped
+PlayableDirector:
+  m_CorrespondingSourceObject: {fileID: 2251487523263401161, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
+  m_PrefabInstance: {fileID: 7354684411018097345}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7442600465766077588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3098,6 +3119,10 @@ PrefabInstance:
       propertyPath: _onSubtitleShow
       value: 
       objectReference: {fileID: 11400000, guid: 758569c885bad534c8e24685446bb6bd, type: 2}
+    - target: {fileID: 1195774302041562807, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+      propertyPath: _playableDirector
+      value: 
+      objectReference: {fileID: 7897571076233181899}
     - target: {fileID: 1454005658243683191, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
       propertyPath: _outline
       value: 
@@ -3846,6 +3871,10 @@ PrefabInstance:
       propertyPath: _onSubtitleShow
       value: 
       objectReference: {fileID: 11400000, guid: 758569c885bad534c8e24685446bb6bd, type: 2}
+    - target: {fileID: 2156972803452350024, guid: 852bc97d46b36b2478adfaf4b8050d8d, type: 3}
+      propertyPath: _playableDirector
+      value: 
+      objectReference: {fileID: 8926295015435250510}
     - target: {fileID: 2452544710928602877, guid: 852bc97d46b36b2478adfaf4b8050d8d, type: 3}
       propertyPath: _component
       value: 
