@@ -9,7 +9,8 @@ public class InteractionController : MonoBehaviour
     public LayerMask interactionLayer;
 
     [Header("References")]
-    public Transform playerCamera; 
+    //public Transform playerCamera; 
+    public Camera playerCamera;
     public GameObject tutorialPanel; 
 
     [Header("UI Pointer")]
@@ -27,6 +28,7 @@ public class InteractionController : MonoBehaviour
     [SerializeField] private AppEventData _onHomeSceneRequest;
 
     private IsInteractable _currentInteractable;
+    private Vector3 _screenCenter = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
 
     private void Update()
     {
@@ -37,10 +39,11 @@ public class InteractionController : MonoBehaviour
 
     void HandleInteraction()
     {
-        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        //Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        Ray ray = playerCamera.ScreenPointToRay(_screenCenter);
         RaycastHit hit;
 
-        bool hitSomething = Physics.SphereCast(ray, interactionRadius, out hit, interactionDistance, interactionLayer);
+        bool hitSomething = Physics.Raycast(ray, out hit, interactionDistance, interactionLayer);
 
         if (hitSomething)
         {
