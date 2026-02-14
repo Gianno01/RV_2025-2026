@@ -2885,18 +2885,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 27300944553944805, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1935874413393961534, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2251487523263401161, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_PlayableAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5d2b979db48b4f7468588329ca95b69b, type: 2}
     - target: {fileID: 2458966311550221970, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
       propertyPath: m_Name
       value: dottore_Idle
@@ -2941,95 +2929,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: 'm_Events.m_Signals.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: b6418bac0f8187b48a4e8212d3eeab98, type: 2}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[2].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 7354684411018097346}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 7354684411018097346}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Interact
-      objectReference: {fileID: 0}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Interact
-      objectReference: {fileID: 0}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: GrippableItem, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GrippableItem, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5095391301371061432, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5884764220536877531, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: _playableDirector
-      value: 
-      objectReference: {fileID: 7354684411018097347}
-    - target: {fileID: 9211771305220856340, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-      propertyPath: _onGripped
-      value: 
-      objectReference: {fileID: 11400000, guid: d05b179f8142dcc438be04347c69b1a7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
---- !u!114 &7354684411018097346 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9211771305220856340, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-  m_PrefabInstance: {fileID: 7354684411018097345}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 410967ce04dbf9b4fbd6441ad680a863, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GrippableItem
---- !u!320 &7354684411018097347 stripped
-PlayableDirector:
-  m_CorrespondingSourceObject: {fileID: 2251487523263401161, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
-  m_PrefabInstance: {fileID: 7354684411018097345}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7442600465766077588
 PrefabInstance:
   m_ObjectHideFlags: 0
