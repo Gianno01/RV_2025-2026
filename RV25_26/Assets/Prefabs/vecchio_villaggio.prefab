@@ -89,6 +89,9 @@ PrefabInstance:
       addedObject: {fileID: 2452544710928602877}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 7720043420841678720}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 497191954219068133}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
       insertIndex: -1
@@ -108,6 +111,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4498916629043996656}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 32314781876646106}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 415495818325345297}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5072577267605341328}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1670708020639990575}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2377325451950986860}
   m_SourcePrefab: {fileID: 100100000, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
 --- !u!1 &9073693125024513044 stripped
 GameObject:
@@ -169,9 +187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51a33c5623c052448e51b5538b1a061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TalkingCharacter
-  _textSpot: {fileID: 0}
-  _timelineSpot: {fileID: 0}
-  _outline: {fileID: 0}
+  _textSpot: {fileID: 2156972803452350024}
+  _timelineSpot: {fileID: 3704961453030402642}
+  _outline: {fileID: 1083325987614172259}
 --- !u!114 &48559777799474415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,8 +202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acff8dd27787d5343ad0f9282cb45cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestStarter
-  _onEvent: {fileID: 0}
-  _onQuestStart: {fileID: 0}
+  _onEvent: {fileID: 11400000, guid: e2591f1d92588594faa9214fe77fd995, type: 2}
+  _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
 --- !u!114 &2452544710928602877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,14 +216,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
-  _onCurrentQuestChange: {fileID: 0}
-  _startQuests: 
-  _endQuests: 
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _startQuests: 16000000
+  _endQuests: 00000000
   _isNotInTheScene: 0
   _gameObject: {fileID: 0}
   _gameObjectName: 
-  _effectOnOneComponent: 0
-  _component: {fileID: 0}
+  _effectOnOneComponent: 1
+  _component: {fileID: 3978067030560247971}
+  _componentName: 
+  _onActivate: {fileID: 0}
+  _onDeactivate: {fileID: 0}
+--- !u!114 &7720043420841678720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _startQuests: 1600000019000000
+  _endQuests: 00000000170000001a000000
+  _isNotInTheScene: 0
+  _gameObject: {fileID: 0}
+  _gameObjectName: 
+  _effectOnOneComponent: 1
+  _component: {fileID: 48559777799474415}
   _componentName: 
   _onActivate: {fileID: 0}
   _onDeactivate: {fileID: 0}
@@ -221,12 +262,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b352af0f010e70a4881fbcfdf2812fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerCaller
-  _onCurrentQuestChange: {fileID: 0}
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _isNotInTheScene: 0
-  _questIndex: 0
-  _secToWaitBeforeCall: 0
-  _component: {fileID: 0}
-  _methodName: 
+  _questIndex: 25
+  _secToWaitBeforeCall: 1
+  _component: {fileID: 3978067030560247971}
+  _methodName: Interact
   _param: 0
   _gameObjectName: 
   _componentName: 
@@ -242,8 +283,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ae1886a48327e4080a7b5606971ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerTextChanger
-  _onCurrentQuestChange: {fileID: 0}
-  _questTexts: []
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _questTexts:
+  - questIndex: 22
+    subtitleData: {fileID: 11400000, guid: e4038705698a9e54cbe16d6329c40661, type: 2}
+  - questIndex: 25
+    subtitleData: {fileID: 11400000, guid: a563abf363af84f45a99bee447b93af5, type: 2}
   _onTextChange: {fileID: 0}
 --- !u!114 &4543050036897200393
 MonoBehaviour:
@@ -257,8 +302,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb03969ed3815b34cb21a905a3c2f74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerTimelineChanger
-  _onCurrentQuestChange: {fileID: 0}
-  _questTimelines: []
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _questTimelines:
+  - questIndex: 22
+    timeline: {fileID: 11400000, guid: 3e24f027e71317240a87a2e92b27c614, type: 2}
+  - questIndex: 25
+    timeline: {fileID: 11400000, guid: a133974466f360140b38fde28b27bc8a, type: 2}
   _onTimelineChange: {fileID: 0}
 --- !u!114 &2156972803452350024
 MonoBehaviour:
@@ -273,9 +322,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextSpot
   currentSubtitle: {fileID: 0}
-  _onSubtitleShow: {fileID: 0}
-  _onAudioStart: {fileID: 0}
-  _onAudioEnd: {fileID: 0}
+  _onSubtitleShow: {fileID: 11400000, guid: 758569c885bad534c8e24685446bb6bd, type: 2}
+  _onAudioStart: {fileID: 11400000, guid: 15d3af405fa30a648b4ae56101412d4a, type: 2}
+  _onAudioEnd: {fileID: 11400000, guid: e2591f1d92588594faa9214fe77fd995, type: 2}
+  _audioSource: {fileID: 0}
+  _playableDirector: {fileID: 4498916629043996656}
 --- !u!114 &3704961453030402642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,9 +340,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimelineSpot
   _currentTimeline: {fileID: 0}
-  _playableDirector: {fileID: 0}
-  _onTimelineStart: {fileID: 0}
-  _onTimelineEnd: {fileID: 0}
+  _playableDirector: {fileID: 4498916629043996656}
+  _onTimelineStart: {fileID: 11400000, guid: 15d3af405fa30a648b4ae56101412d4a, type: 2}
+  _onTimelineEnd: {fileID: 11400000, guid: e2591f1d92588594faa9214fe77fd995, type: 2}
   _stopCurrentClip: 0
 --- !u!114 &1083325987614172259
 MonoBehaviour:
@@ -306,8 +357,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Outline
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
+  outlineColor: {r: 1, g: 1, b: 0, a: 1}
+  outlineWidth: 10
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -320,11 +371,218 @@ PlayableDirector:
   m_GameObject: {fileID: 9073693125024513044}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 0}
+  m_PlayableAsset: {fileID: 11400000, guid: a133974466f360140b38fde28b27bc8a, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: -1460895953041934286, guid: 3e24f027e71317240a87a2e92b27c614, type: 2}
+    value: {fileID: 2377325451950986860}
+  - key: {fileID: -2988777145772376158, guid: 3e24f027e71317240a87a2e92b27c614, type: 2}
+    value: {fileID: 6321356223608648009}
+  - key: {fileID: -5964456454298751627, guid: 3e24f027e71317240a87a2e92b27c614, type: 2}
+    value: {fileID: 1670708020639990575}
+  - key: {fileID: 2822369307028892253, guid: a133974466f360140b38fde28b27bc8a, type: 2}
+    value: {fileID: 2377325451950986860}
+  - key: {fileID: -3120454791805488025, guid: a133974466f360140b38fde28b27bc8a, type: 2}
+    value: {fileID: 6321356223608648009}
+  - key: {fileID: 2818441926712964817, guid: a133974466f360140b38fde28b27bc8a, type: 2}
+    value: {fileID: 1670708020639990575}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &32314781876646106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62990637f1d40f64ea47f26e4fadf6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemReceiver
+  receiverName: vecchio
+  destroyOnDelivery: 1
+  deliveryPoint: {fileID: 0}
+  _onDeliveryObject: {fileID: 11400000, guid: fca5e2f9bb47ac94687a2520c33b38a9, type: 2}
+--- !u!114 &415495818325345297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acff8dd27787d5343ad0f9282cb45cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestStarter
+  _onEvent: {fileID: 11400000, guid: fca5e2f9bb47ac94687a2520c33b38a9, type: 2}
+  _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
+--- !u!114 &5072577267605341328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _startQuests: 18000000
+  _endQuests: 0000000019000000
+  _isNotInTheScene: 0
+  _gameObject: {fileID: 0}
+  _gameObjectName: 
+  _effectOnOneComponent: 1
+  _component: {fileID: 415495818325345297}
+  _componentName: 
+  _onActivate: {fileID: 0}
+  _onDeactivate: {fileID: 0}
+--- !u!114 &1670708020639990575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 08260f72fe85777408fca5b9ab11e4d7, type: 2}
+    - {fileID: 11400000, guid: fb9f7a40a7162d8498b3c72984571cec, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3704961453030402642}
+          m_TargetAssemblyTypeName: TimelineSpot, Assembly-CSharp
+          m_MethodName: HandleSignalOnTimelineStart
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3704961453030402642}
+          m_TargetAssemblyTypeName: TimelineSpot, Assembly-CSharp
+          m_MethodName: HandleSignalOnTimelineEnd
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!82 &2377325451950986860
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

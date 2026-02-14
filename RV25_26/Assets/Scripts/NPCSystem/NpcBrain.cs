@@ -41,6 +41,11 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
         
         agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>(); // Inizializzazione Animator
+
+        foreach(Transform t in waypoints)
+        {
+            t.position = new Vector3(t.position.x, transform.position.y, t.position.z);
+        }
     }
 
     void Start()

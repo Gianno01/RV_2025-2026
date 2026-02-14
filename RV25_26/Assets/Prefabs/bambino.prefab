@@ -702,7 +702,7 @@ MonoBehaviour:
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _questTexts:
   - questIndex: 4
-    subtitleData: {fileID: 11400000, guid: 845b2c6ee1b22ff47aca3680ba24492a, type: 2}
+    subtitleData: {fileID: 11400000, guid: 91d4b23a9850fb448b76d0d81379d8c6, type: 2}
   _onTextChange: {fileID: 0}
 --- !u!114 &5295132449955987879
 MonoBehaviour:
@@ -749,8 +749,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TextSpot
   currentSubtitle: {fileID: 0}
   _onSubtitleShow: {fileID: 11400000, guid: 758569c885bad534c8e24685446bb6bd, type: 2}
-  _onAudioStart: {fileID: 11400000, guid: e0f49d89f91e8124a8c97e0cf88112d1, type: 2}
+  _onAudioStart: {fileID: 11400000, guid: 99c20bc86e3f5a449a89aca63912f36d, type: 2}
   _onAudioEnd: {fileID: 11400000, guid: 9f0e2b6c8d4669c47911d0a70671566f, type: 2}
+  _audioSource: {fileID: 0}
+  _playableDirector: {fileID: 7935686911409367757}
 --- !u!114 &3642682006689929726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,7 +767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimelineSpot
   _currentTimeline: {fileID: 0}
   _playableDirector: {fileID: 7935686911409367757}
-  _onTimelineStart: {fileID: 0}
+  _onTimelineStart: {fileID: 11400000, guid: 99c20bc86e3f5a449a89aca63912f36d, type: 2}
   _onTimelineEnd: {fileID: 11400000, guid: 9f0e2b6c8d4669c47911d0a70671566f, type: 2}
   _stopCurrentClip: 0
 --- !u!320 &7935686911409367757
@@ -851,8 +853,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Outline
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
+  outlineColor: {r: 1, g: 1, b: 0, a: 1}
+  outlineWidth: 10
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []

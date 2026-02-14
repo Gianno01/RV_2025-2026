@@ -415,13 +415,16 @@ PrefabInstance:
       addedObject: {fileID: 1734180608373281299}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6abc17cafbf793c4191762cc8465df66, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 5806111544646014736}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6abc17cafbf793c4191762cc8465df66, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 6640465326879250696}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6abc17cafbf793c4191762cc8465df66, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3071845611290331339}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6abc17cafbf793c4191762cc8465df66, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5880799046896821996}
+      addedObject: {fileID: 1365039090486772772}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6abc17cafbf793c4191762cc8465df66, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3874260518696402185}
@@ -446,6 +449,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6abc17cafbf793c4191762cc8465df66, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8621184862079099515}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6abc17cafbf793c4191762cc8465df66, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5168295054127019016}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6abc17cafbf793c4191762cc8465df66, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1582871963104315031}
   m_SourcePrefab: {fileID: 100100000, guid: 6abc17cafbf793c4191762cc8465df66, type: 3}
 --- !u!1 &8800649101501332102 stripped
 GameObject:
@@ -594,6 +603,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5806111544646014736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800649101501332102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b6dd13e970b4440871cdac4628f2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcBrain
+  currentState: 0
+  talkDistance: 4
+  waypoints: []
+  waitTimeAtPoint: 2
+  lookSpeed: 5
+  npcName: Mother
+  actionVerb: Parla con
 --- !u!114 &6640465326879250696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,7 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestStarter
   _onEvent: {fileID: 11400000, guid: 5d9273e56ce01ba43a9ef0060176e516, type: 2}
   _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
---- !u!114 &5880799046896821996
+--- !u!114 &1365039090486772772
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -636,8 +664,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
-  _startQuests: 
-  _endQuests: 03000000
+  _startQuests: 0e000000
+  _endQuests: 030000000f000000
   _isNotInTheScene: 0
   _gameObject: {fileID: 0}
   _gameObjectName: 
@@ -683,6 +711,8 @@ MonoBehaviour:
   _questTexts:
   - questIndex: 2
     subtitleData: {fileID: 11400000, guid: ec818732ade0c8244a4c2f5ced5d03fb, type: 2}
+  - questIndex: 14
+    subtitleData: {fileID: 11400000, guid: f558c3225e25d954ea578afc60a8ef07, type: 2}
   _onTextChange: {fileID: 0}
 --- !u!114 &5564424946728733324
 MonoBehaviour:
@@ -700,6 +730,8 @@ MonoBehaviour:
   _questTimelines:
   - questIndex: 2
     timeline: {fileID: 11400000, guid: 952ef3f9911dd2d448de66d05d686c49, type: 2}
+  - questIndex: 14
+    timeline: {fileID: 11400000, guid: 42dde1d35fc64f347baa030762506940, type: 2}
   _onTimelineChange: {fileID: 0}
 --- !u!114 &5096423703691025478
 MonoBehaviour:
@@ -717,6 +749,8 @@ MonoBehaviour:
   _onSubtitleShow: {fileID: 11400000, guid: 758569c885bad534c8e24685446bb6bd, type: 2}
   _onAudioStart: {fileID: 11400000, guid: f71929e5e39b2f64f9cc46fca70ac087, type: 2}
   _onAudioEnd: {fileID: 11400000, guid: 5d9273e56ce01ba43a9ef0060176e516, type: 2}
+  _audioSource: {fileID: 0}
+  _playableDirector: {fileID: 1771614179724735169}
 --- !u!114 &1409291203796372504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,7 +777,7 @@ PlayableDirector:
   m_GameObject: {fileID: 8800649101501332102}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 952ef3f9911dd2d448de66d05d686c49, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 42dde1d35fc64f347baa030762506940, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -754,6 +788,12 @@ PlayableDirector:
   - key: {fileID: -2364291673880071121, guid: 952ef3f9911dd2d448de66d05d686c49, type: 2}
     value: {fileID: 1734180608373281299}
   - key: {fileID: -4717915789588825720, guid: 952ef3f9911dd2d448de66d05d686c49, type: 2}
+    value: {fileID: 8621184862079099515}
+  - key: {fileID: -1144158845688874542, guid: 42dde1d35fc64f347baa030762506940, type: 2}
+    value: {fileID: 1734180608373281299}
+  - key: {fileID: -6238248465714572954, guid: 42dde1d35fc64f347baa030762506940, type: 2}
+    value: {fileID: 7232572571911935257}
+  - key: {fileID: -707994179290983420, guid: 42dde1d35fc64f347baa030762506940, type: 2}
     value: {fileID: 8621184862079099515}
   m_ExposedReferences:
     m_References: []
@@ -820,3 +860,53 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 5806111544646014736}
+          m_TargetAssemblyTypeName: NpcBrain, Assembly-CSharp
+          m_MethodName: ChangeState
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: idle
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!195 &5168295054127019016
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800649101501332102}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1582871963104315031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800649101501332102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e76696bdb12c6041a54c11fc574e9fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerStateChanger
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _questStates:
+  - questIndex: 14
+    state: Follow

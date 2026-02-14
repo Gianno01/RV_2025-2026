@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4cc55d91ca98b5f45890e620178b2670, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.6
+      value: 54.5184
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4cc55d91ca98b5f45890e620178b2670, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4cc55d91ca98b5f45890e620178b2670, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -124
+      value: -106.93693
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4cc55d91ca98b5f45890e620178b2670, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.61785966
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4cc55d91ca98b5f45890e620178b2670, type: 3}
       propertyPath: m_LocalRotation.x
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4cc55d91ca98b5f45890e620178b2670, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.78628844
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4cc55d91ca98b5f45890e620178b2670, type: 3}
       propertyPath: m_LocalRotation.z
@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4cc55d91ca98b5f45890e620178b2670, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -103.68
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4cc55d91ca98b5f45890e620178b2670, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -129,7 +129,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 0.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -155,7 +155,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NpcBrain
   currentState: 1
   talkDistance: 2
-  waypoints: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   waitTimeAtPoint: 2
   lookSpeed: 5
   npcName: npc_donna
