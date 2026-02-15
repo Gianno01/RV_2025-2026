@@ -2021,10 +2021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3fc00fe74b7449418b5d4589a5cb637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportationController
-  spotPos:
-  - {fileID: 654183794}
-  - {fileID: 1589281671}
-  - {fileID: 615485261}
+  spotPosNames: []
 --- !u!1001 &512130747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7544,7 +7541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &1643678607
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10218,6 +10215,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TextSpot
   currentSubtitle: {fileID: 0}
   _onSubtitleShow: {fileID: 0}
+  _onAudioStart: {fileID: 0}
+  _onAudioEnd: {fileID: 0}
+  _audioSource: {fileID: 0}
+  _playableDirector: {fileID: 0}
 --- !u!114 &2134447701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10441,6 +10442,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8562213452892847616, guid: fba206494396d1f41b03ec1950339934, type: 3}
   m_PrefabInstance: {fileID: 970157667208616804}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1103413422037356873
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 557366439716020944, guid: e8719bee238d2694ca2a85195c10d174, type: 3}
+      propertyPath: m_Name
+      value: Explosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477556695407718042, guid: e8719bee238d2694ca2a85195c10d174, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477556695407718042, guid: e8719bee238d2694ca2a85195c10d174, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477556695407718042, guid: e8719bee238d2694ca2a85195c10d174, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477556695407718042, guid: e8719bee238d2694ca2a85195c10d174, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477556695407718042, guid: e8719bee238d2694ca2a85195c10d174, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477556695407718042, guid: e8719bee238d2694ca2a85195c10d174, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477556695407718042, guid: e8719bee238d2694ca2a85195c10d174, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477556695407718042, guid: e8719bee238d2694ca2a85195c10d174, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477556695407718042, guid: e8719bee238d2694ca2a85195c10d174, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477556695407718042, guid: e8719bee238d2694ca2a85195c10d174, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e8719bee238d2694ca2a85195c10d174, type: 3}
 --- !u!1001 &1129968971563422469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11013,6 +11071,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TextSpot
   currentSubtitle: {fileID: 0}
   _onSubtitleShow: {fileID: 0}
+  _onAudioStart: {fileID: 0}
+  _onAudioEnd: {fileID: 0}
+  _audioSource: {fileID: 0}
+  _playableDirector: {fileID: 0}
 --- !u!114 &3453469135525555608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12194,3 +12256,4 @@ SceneRoots:
   - {fileID: 1333462660}
   - {fileID: 987710880}
   - {fileID: 1004497597}
+  - {fileID: 1103413422037356873}

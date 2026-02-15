@@ -16,6 +16,7 @@ public class ExplosionFader : MonoBehaviour
 {
     [SerializeField] private Volume _screenVfxVolume;
     [SerializeField] private Image _whitePoint;
+    [SerializeField] private CanvasGroup _whitePointGroup;
 
     [SerializeField] private Ease _scaleInEase;
     [SerializeField] private Ease _scaleOutEase;
@@ -23,6 +24,9 @@ public class ExplosionFader : MonoBehaviour
     [SerializeField] private Vector3 _maxPointScale;
     [SerializeField] private float _scaleInDuration;
     [SerializeField] private float _scaleOutDuration;
+
+    [SerializeField] private float _minAlpha;
+    [SerializeField] private float _maxAlpha;
 
     [SerializeField] [ColorUsage(true, true)] private Color _baseColor;
     [SerializeField] private float _minHDRIntensity;
@@ -82,6 +86,7 @@ public class ExplosionFader : MonoBehaviour
         float factor = Mathf.Pow(2,_minHDRIntensity);
         Color minColor = new Color(_baseColor.r * factor, _baseColor.g * factor, _baseColor.b * factor, _baseColor.a);
         _whitePoint.transform.localScale = _minPointScale;
+        _whitePointGroup.alpha = _minAlpha;
         _whitePointMaterial.SetColor("_EmissionColor", minColor);
         _depthOfField.focusDistance.value = _maxFocusDistance;
         _lensDistortion.intensity.value = _minDistortionIntensity;
@@ -95,6 +100,7 @@ public class ExplosionFader : MonoBehaviour
         float factor = Mathf.Pow(2,_maxHDRIntensity);
         Color maxColor = new Color(_baseColor.r * factor, _baseColor.g * factor, _baseColor.b * factor, _baseColor.a);
         _whitePoint.transform.localScale = _maxPointScale;
+        _whitePointGroup.alpha = _maxAlpha;
         _whitePointMaterial.SetColor("_EmissionColor", maxColor);
         _depthOfField.focusDistance.value = _minFocusDistance;
         _lensDistortion.intensity.value = _maxDistortionIntensity;
@@ -130,6 +136,7 @@ public class ExplosionFader : MonoBehaviour
 
         _sequence = DOTween.Sequence();
         _sequence.Append(DOTween.To(() => _whitePoint.transform.localScale, (s) => _whitePoint.transform.localScale = s, _maxPointScale, _scaleInDuration)).SetEase(_scaleInEase);
+        _sequence.Join(DOTween.To(() => _whitePointGroup.alpha, (a) => _whitePointGroup.alpha = a, _maxAlpha, _scaleInDuration)).SetEase(_scaleInEase);
         _sequence.Join(DOTween.To(() => _whitePointMaterial.GetColor("_EmissionColor"), (c) => _whitePointMaterial.SetColor("_EmissionColor", c), maxColor, _bloomInDuration));
         _sequence.Join(DOTween.To(() => _depthOfField.focusDistance.value, (f) => _depthOfField.focusDistance.value = f, _minFocusDistance, _depthOfFieldInDuration));
         _sequence.Join(DOTween.To(() => _lensDistortion.intensity.value, (d) => _lensDistortion.intensity.value = d, _maxDistortionIntensity, _lensDistortionInDuration));
@@ -152,6 +159,7 @@ public class ExplosionFader : MonoBehaviour
 
         _sequence = DOTween.Sequence();
         _sequence.Append(DOTween.To(() => _whitePoint.transform.localScale, (s) => _whitePoint.transform.localScale = s, _minPointScale, _scaleOutDuration)).SetEase(_scaleOutEase);
+        _sequence.Join(DOTween.To(() => _whitePointGroup.alpha, (a) => _whitePointGroup.alpha = a, _minAlpha, _scaleOutDuration)).SetEase(_scaleOutEase);
         _sequence.Join(DOTween.To(() => _whitePointMaterial.GetColor("_EmissionColor"), (c) => _whitePointMaterial.SetColor("_EmissionColor", c), minColor, _bloomOutDuration));
         _sequence.Join(DOTween.To(() => _depthOfField.focusDistance.value, (f) => _depthOfField.focusDistance.value = f, _maxFocusDistance, _depthOfFieldOutDuration));
         _sequence.Join(DOTween.To(() => _lensDistortion.intensity.value, (d) => _lensDistortion.intensity.value = d, _minDistortionIntensity, _lensDistortionOutDuration));

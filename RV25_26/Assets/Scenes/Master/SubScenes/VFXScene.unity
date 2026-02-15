@@ -198,17 +198,53 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1587068437}
     - target: {fileID: 3611391170019248863, guid: fba206494396d1f41b03ec1950339934, type: 3}
+      propertyPath: _maxAlpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611391170019248863, guid: fba206494396d1f41b03ec1950339934, type: 3}
       propertyPath: _whitePoint
       value: 
       objectReference: {fileID: 1137075618}
     - target: {fileID: 3611391170019248863, guid: fba206494396d1f41b03ec1950339934, type: 3}
+      propertyPath: _baseColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611391170019248863, guid: fba206494396d1f41b03ec1950339934, type: 3}
+      propertyPath: _maxPointScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611391170019248863, guid: fba206494396d1f41b03ec1950339934, type: 3}
+      propertyPath: _maxPointScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611391170019248863, guid: fba206494396d1f41b03ec1950339934, type: 3}
+      propertyPath: _minPointScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611391170019248863, guid: fba206494396d1f41b03ec1950339934, type: 3}
+      propertyPath: _minPointScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611391170019248863, guid: fba206494396d1f41b03ec1950339934, type: 3}
+      propertyPath: _scaleInDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611391170019248863, guid: fba206494396d1f41b03ec1950339934, type: 3}
       propertyPath: _screenVfxVolume
       value: 
       objectReference: {fileID: 1362333305}
+    - target: {fileID: 3611391170019248863, guid: fba206494396d1f41b03ec1950339934, type: 3}
+      propertyPath: _whitePointGroup
+      value: 
+      objectReference: {fileID: 1137075620}
     - target: {fileID: 4172990476290487392, guid: fba206494396d1f41b03ec1950339934, type: 3}
       propertyPath: _VFXCamera
       value: 
       objectReference: {fileID: 237555256}
+    - target: {fileID: 8498369833732532915, guid: fba206494396d1f41b03ec1950339934, type: 3}
+      propertyPath: _minAlpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8498369833732532915, guid: fba206494396d1f41b03ec1950339934, type: 3}
       propertyPath: _whitePoint
       value: 
@@ -217,6 +253,10 @@ PrefabInstance:
       propertyPath: _screenVfxVolume
       value: 
       objectReference: {fileID: 1362333305}
+    - target: {fileID: 8498369833732532915, guid: fba206494396d1f41b03ec1950339934, type: 3}
+      propertyPath: _whitePointGroup
+      value: 
+      objectReference: {fileID: 1137075622}
     - target: {fileID: 8562213452892847616, guid: fba206494396d1f41b03ec1950339934, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.24251
@@ -354,6 +394,18 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 237555256}
+    - target: {fileID: 5091797096909458952, guid: 9e8c56c8033156f45b359d076afe2140, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091797096909458952, guid: 9e8c56c8033156f45b359d076afe2140, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091797096909458952, guid: 9e8c56c8033156f45b359d076afe2140, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8270356155678361930, guid: 9e8c56c8033156f45b359d076afe2140, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -441,7 +493,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6637222921578488040, guid: 9e8c56c8033156f45b359d076afe2140, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1137075622}
   m_SourcePrefab: {fileID: 100100000, guid: 9e8c56c8033156f45b359d076afe2140, type: 3}
 --- !u!114 &1137075618 stripped
 MonoBehaviour:
@@ -459,12 +514,34 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5258468581051007936, guid: 9e8c56c8033156f45b359d076afe2140, type: 3}
   m_PrefabInstance: {fileID: 1137075617}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1137075621}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!225 &1137075620 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 5091797096909458952, guid: 9e8c56c8033156f45b359d076afe2140, type: 3}
+  m_PrefabInstance: {fileID: 1137075617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1137075621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6637222921578488040, guid: 9e8c56c8033156f45b359d076afe2140, type: 3}
+  m_PrefabInstance: {fileID: 1137075617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1137075622
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137075621}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1362333304
 PrefabInstance:
   m_ObjectHideFlags: 0

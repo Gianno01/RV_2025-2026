@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1431865483492821225}
   - component: {fileID: 342274876611268652}
   - component: {fileID: 4094009361474907361}
+  - component: {fileID: 5091797096909458952}
   m_Layer: 7
   m_Name: WhitePoint
   m_TagString: Untagged
@@ -75,6 +76,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &5091797096909458952
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2190974445872757481}
+  m_Enabled: 1
+  m_Alpha: 0.86
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6637222921578488040
 GameObject:
   m_ObjectHideFlags: 0
