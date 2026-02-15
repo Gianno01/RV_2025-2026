@@ -13,7 +13,7 @@ public class TeleportationController : MonoBehaviour
             spotPos[i] = GameObject.Find(spotPosNames[i]).transform;
         }
     }
-    void Update()
+    void LateUpdate()
     {
         HandleTeleport();
     }
