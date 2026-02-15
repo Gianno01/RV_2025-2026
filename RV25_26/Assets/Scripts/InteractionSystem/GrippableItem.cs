@@ -45,7 +45,7 @@ public class GrippableItem : MonoBehaviour, IsInteractable
         _rb.isKinematic = true; 
         _rb.useGravity = false;
         if (_collider != null) _collider.enabled = false; 
-        _onGripped.Raise();
+        if(_onGripped != null) _onGripped.Raise();
     }
 
     public void Drop() 

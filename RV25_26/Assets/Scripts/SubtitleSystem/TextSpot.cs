@@ -56,6 +56,6 @@ public class TextSpot : MonoBehaviour, ITextChangeable
         if(_playableDirector != null) st.playableDirector = _playableDirector;
         st.subtitleData = currentSubtitle;
 
-        if(!busy) _onSubtitleShow.RaiseWithParam(st);
+        if(!busy && st.subtitleData != null) _onSubtitleShow.RaiseWithParam(st);
     }
 }

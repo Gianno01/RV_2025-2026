@@ -50,6 +50,29 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ad09be785ec5dd34b9199b24ff05cf24, type: 2}
   - {fileID: 11400000, guid: 22e66f6b9c37a404c9c6b9bef9ad1d52, type: 2}
   - {fileID: 11400000, guid: d0d673af432734c45acf8f8586fadce2, type: 2}
+  - {fileID: 11400000, guid: 42dc2df22670d57448c4282be1af968b, type: 2}
+  - {fileID: 11400000, guid: bf6fb32751d578e45b78938e3fb46f3d, type: 2}
+  - {fileID: 11400000, guid: 38fd61ae2e5eb7c4abb46a9102b71565, type: 2}
+  - {fileID: 11400000, guid: 7d0f11721d37e88478feac6f00b21c2d, type: 2}
+  - {fileID: 11400000, guid: 24fc2a878bea7ee4cb47219f82839ac1, type: 2}
+  - {fileID: 11400000, guid: 8e3a938c3e97a9e49975b8556c6437fc, type: 2}
+  - {fileID: 11400000, guid: 9d9535bd229e44a48a2861eedc6e6bbc, type: 2}
+  - {fileID: 11400000, guid: efa7dc6b6a62e5f4a82cd2e3ff9ff015, type: 2}
+  - {fileID: 11400000, guid: 039eeea57bd00df4aba14b3f5ccf6d3d, type: 2}
+  - {fileID: 11400000, guid: 94703eec549553f4d804b5732467033b, type: 2}
+  - {fileID: 11400000, guid: 375d322434c8be04fa163bae78abeb24, type: 2}
+  - {fileID: 11400000, guid: 9ac02b38a1be67941a0946516392893d, type: 2}
+  - {fileID: 11400000, guid: e9423831730a10141b931058600b9df6, type: 2}
+  - {fileID: 11400000, guid: e5bd62e6c9d992346b00012646ed42d9, type: 2}
+  - {fileID: 11400000, guid: 20d4c6738fac6334394c024bb5554439, type: 2}
+  - {fileID: 11400000, guid: e0718d325ab91f74598393949d1a0c35, type: 2}
+  - {fileID: 11400000, guid: 3d59d2bbceb6aa8459faad2a63a7dce8, type: 2}
+  - {fileID: 11400000, guid: fc19b714ae07fb245821d91c4a417c01, type: 2}
+  - {fileID: 11400000, guid: 6325183d302bd5e40809cd04d239e0bf, type: 2}
+  - {fileID: 11400000, guid: df968752e7173c54e88ea529f4e235f0, type: 2}
+  - {fileID: 11400000, guid: 4baf5822db1d8e04d9d39f36426ef780, type: 2}
+  - {fileID: 11400000, guid: b9f49a70bf00d7340a6f508736895f87, type: 2}
+  - {fileID: 11400000, guid: 99aff89a746852c4a84bf567a2d50ba2, type: 2}
   _onStartQuest: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
-  _onHint: {fileID: 11400000, guid: ac4837d110398b949898dc90c88644c0, type: 2}
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _onEndCreditsSceneRequest: {fileID: 11400000, guid: c7836186f056ae447960a558808f9da0, type: 2}

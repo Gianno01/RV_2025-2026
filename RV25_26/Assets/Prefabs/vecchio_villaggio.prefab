@@ -126,6 +126,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2377325451950986860}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 214006809666977674}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2919499012105271644}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1655057876291248893}
   m_SourcePrefab: {fileID: 100100000, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
 --- !u!1 &9073693125024513044 stripped
 GameObject:
@@ -217,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
-  _startQuests: 16000000
+  _startQuests: 17000000
   _endQuests: 00000000
   _isNotInTheScene: 0
   _gameObject: {fileID: 0}
@@ -240,8 +249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
-  _startQuests: 1600000019000000
-  _endQuests: 00000000170000001a000000
+  _startQuests: 170000001a000000
+  _endQuests: 00000000180000001b000000
   _isNotInTheScene: 0
   _gameObject: {fileID: 0}
   _gameObjectName: 
@@ -264,7 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerCaller
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _isNotInTheScene: 0
-  _questIndex: 25
+  _questIndex: 26
   _secToWaitBeforeCall: 1
   _component: {fileID: 3978067030560247971}
   _methodName: Interact
@@ -285,9 +294,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerTextChanger
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _questTexts:
-  - questIndex: 22
+  - questIndex: 23
     subtitleData: {fileID: 11400000, guid: e4038705698a9e54cbe16d6329c40661, type: 2}
-  - questIndex: 25
+  - questIndex: 26
     subtitleData: {fileID: 11400000, guid: a563abf363af84f45a99bee447b93af5, type: 2}
   _onTextChange: {fileID: 0}
 --- !u!114 &4543050036897200393
@@ -304,9 +313,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerTimelineChanger
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
   _questTimelines:
-  - questIndex: 22
+  - questIndex: 23
     timeline: {fileID: 11400000, guid: 3e24f027e71317240a87a2e92b27c614, type: 2}
-  - questIndex: 25
+  - questIndex: 26
     timeline: {fileID: 11400000, guid: a133974466f360140b38fde28b27bc8a, type: 2}
   _onTimelineChange: {fileID: 0}
 --- !u!114 &2156972803452350024
@@ -434,8 +443,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
   _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
-  _startQuests: 18000000
-  _endQuests: 0000000019000000
+  _startQuests: 19000000
+  _endQuests: 000000001a000000
   _isNotInTheScene: 0
   _gameObject: {fileID: 0}
   _gameObjectName: 
@@ -586,3 +595,61 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &214006809666977674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b352af0f010e70a4881fbcfdf2812fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerCaller
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _isNotInTheScene: 1
+  _questIndex: 22
+  _secToWaitBeforeCall: 4
+  _component: {fileID: 0}
+  _methodName: StartCutscene
+  _param: 2
+  _gameObjectName: CutsceneController
+  _componentName: CutsceneController
+--- !u!114 &2919499012105271644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acff8dd27787d5343ad0f9282cb45cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestStarter
+  _onEvent: {fileID: 11400000, guid: 3e6c25369ad99704cb3e9862b46b3ce6, type: 2}
+  _onQuestStart: {fileID: 11400000, guid: b80f7f1ef2277674a8b05ad82cefcdf2, type: 2}
+--- !u!114 &1655057876291248893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _startQuests: 16000000
+  _endQuests: 0000000017000000
+  _isNotInTheScene: 0
+  _gameObject: {fileID: 0}
+  _gameObjectName: 
+  _effectOnOneComponent: 1
+  _component: {fileID: 2919499012105271644}
+  _componentName: 
+  _onActivate: {fileID: 0}
+  _onDeactivate: {fileID: 0}

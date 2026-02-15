@@ -28,7 +28,7 @@ public class OnQuestListenerTextChanger : OnQuestListener
             }
         }
 
-        if(subtitleData == null) return;
+        //if(subtitleData == null) return;
 
         ITextChangeable textChangeable = GetComponent<ITextChangeable>();
         textChangeable.ChangeText(subtitleData);
