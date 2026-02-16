@@ -2156,7 +2156,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2458966311550221970, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 823746922}
+    - targetCorrespondingSourceObject: {fileID: 2458966311550221970, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 823746921}
   m_SourcePrefab: {fileID: 100100000, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
 --- !u!1 &538012280 stripped
 GameObject:
@@ -2804,6 +2810,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &823746895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2458966311550221970, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
+  m_PrefabInstance: {fileID: 528267685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &823746917 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1935874413393961534, guid: d2c4a0f7ff8852f42aec1e8d0cda4998, type: 3}
+  m_PrefabInstance: {fileID: 528267685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &823746921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823746895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be66d8d3d5bba0749bd536da25e6a52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcProximityCaller
+  _voiceClip: {fileID: 8300000, guid: 666f42442d935034e9f2d83fa5e8c7b2, type: 3}
+  _subtitle: {fileID: 0}
+  _onSubtitleShow: {fileID: 0}
+  _audioSource: {fileID: 823746917}
+  detectionRange: 7
+  cooldownTime: 10
+  callTriggerName: call
+  _shouldRotate: 1
+  _rotationSpeed: 1
+  _returnSpeed: 1
+  _onlyRotateWhileTalking: 0
+--- !u!114 &823746922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823746895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b6dd13e970b4440871cdac4628f2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcBrain
+  currentState: 0
+  talkDistance: 2
+  waypoints: []
+  waitTimeAtPoint: 2
+  lookSpeed: 5
+  npcName: Dottore
+  actionVerb: Parla con
 --- !u!1 &934022371
 GameObject:
   m_ObjectHideFlags: 0
@@ -3758,15 +3816,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be66d8d3d5bba0749bd536da25e6a52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcProximityCaller
-  _voiceClip: {fileID: 8300000, guid: 838488d8ff2f0fa4abee80fe6d1fb76a, type: 3}
+  _voiceClip: {fileID: 8300000, guid: 62fdb7c9146158a4c913d7b35fa043a6, type: 3}
   _subtitle: {fileID: 0}
   _onSubtitleShow: {fileID: 0}
   _audioSource: {fileID: 1676526834}
   detectionRange: 10
   cooldownTime: 2
   callTriggerName: call
-  _shouldRotate: 1
+  _shouldRotate: 0
   _rotationSpeed: 1
+  _returnSpeed: 1
   _onlyRotateWhileTalking: 0
 --- !u!82 &1676526834 stripped
 AudioSource:
