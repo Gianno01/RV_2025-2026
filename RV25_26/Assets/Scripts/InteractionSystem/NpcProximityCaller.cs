@@ -3,12 +3,12 @@ using UnityEngine;
 public class NpcProximityCaller : MonoBehaviour
 {
     [Header("Risorse Dirette")]
-    [SerializeField] private AudioClip _voiceClip; // La risorsa audio diretta
-    [SerializeField] private SubtitleData _subtitle; // Il file dei sottotitoli
-    [SerializeField] private AppEventData _onSubtitleShow; // L'evento che invia il testo alla UI
+    [SerializeField] private AudioClip _voiceClip; 
+    [SerializeField] private SubtitleData _subtitle; 
+    [SerializeField] private AppEventData _onSubtitleShow; 
 
     [Header("Riferimenti Fisici")]
-    [SerializeField] private AudioSource _audioSource; //emette il suono
+    [SerializeField] private AudioSource _audioSource; 
     private Animator _animator;
     private NpcBrain _brain;
 
@@ -19,6 +19,12 @@ public class NpcProximityCaller : MonoBehaviour
     [Header("Animazione")]
     [SerializeField] private string callTriggerName = "call"; 
 
+    [Header("Rotazione (Inspector)")]
+    [SerializeField] private bool _shouldRotate = true;
+    [SerializeField] private float _rotationSpeed = 5.0f;
+    [Tooltip("Se attivo, ruota verso il player solo quando l'audio sta andando")]
+    [SerializeField] private bool _onlyRotateWhileTalking = false;
+
     private Transform _playerTransform;
     private float _lastCallTime = -100f;
     private bool _playerInRange = false;
@@ -27,8 +33,6 @@ public class NpcProximityCaller : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _brain = GetComponent<NpcBrain>();
-        
-        // Se non assegnato, prova a prenderlo dall'oggetto
         if (_audioSource == null) _audioSource = GetComponent<AudioSource>();
     }
 
@@ -44,6 +48,7 @@ public class NpcProximityCaller : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, _playerTransform.position);
 
+        // --- Logica di Attivazione ---
         if (distance <= detectionRange && !_playerInRange && Time.time >= _lastCallTime + cooldownTime)
         {
             if (_brain != null && _brain.currentState == NpcState.Talk) return;
@@ -53,6 +58,31 @@ public class NpcProximityCaller : MonoBehaviour
         {
             _playerInRange = false;
         }
+
+        // --- Logica di Rotazione ---
+        if (_shouldRotate && _playerInRange)
+        {
+            HandleRotation();
+        }
+    }
+
+    private void HandleRotation()
+    {
+        // Se impostato, ruota solo se l'audio è in riproduzione
+        if (_onlyRotateWhileTalking && _audioSource != null && !_audioSource.isPlaying) return;
+
+        // Calcola la direzione verso il player
+        Vector3 direction = (_playerTransform.position - transform.position).normalized;
+        
+        // Importante: azzeriamo la Y per evitare che l'NPC si ribalti in avanti o indietro
+        direction.y = 0; 
+
+        if (direction != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            // Slerp permette una rotazione fluida invece di uno scatto secco
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * _rotationSpeed);
+        }
     }
 
     private void ExecuteCall()
@@ -60,17 +90,13 @@ public class NpcProximityCaller : MonoBehaviour
         _playerInRange = true;
         _lastCallTime = Time.time;
 
-        // 1. Animazione
         if (_animator != null) _animator.SetTrigger(callTriggerName);
 
-        // 2. Audio Diretto
         if (_audioSource != null && _voiceClip != null)
         {
             _audioSource.clip = _voiceClip;
             _audioSource.Play();
         }
-
-        // 3. Sottotitoli Diretti
 
         if (_onSubtitleShow != null && _subtitle != null)
         {
@@ -79,9 +105,9 @@ public class NpcProximityCaller : MonoBehaviour
             st.audioSource = _audioSource;
             st.playableDirector = null;
 
-            _onSubtitleShow.RaiseWithParam(st); // Invia il testo alla UI
+            _onSubtitleShow.RaiseWithParam(st);
         }
         
-        Debug.Log($"{gameObject.name} sta chiamando con risorse dirette!");
+        Debug.Log($"{gameObject.name} sta chiamando e ruotando verso il Player!");
     }
 }

@@ -2939,6 +2939,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2377325451950986860, guid: 852bc97d46b36b2478adfaf4b8050d8d, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8550061344107079342, guid: 852bc97d46b36b2478adfaf4b8050d8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.921
@@ -3754,9 +3758,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be66d8d3d5bba0749bd536da25e6a52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcProximityCaller
-  detectionRange: 3
+  _voiceClip: {fileID: 8300000, guid: 838488d8ff2f0fa4abee80fe6d1fb76a, type: 3}
+  _subtitle: {fileID: 0}
+  _onSubtitleShow: {fileID: 0}
+  _audioSource: {fileID: 1676526834}
+  detectionRange: 10
   cooldownTime: 2
   callTriggerName: call
+  _shouldRotate: 1
+  _rotationSpeed: 1
+  _onlyRotateWhileTalking: 0
+--- !u!82 &1676526834 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2377325451950986860, guid: 852bc97d46b36b2478adfaf4b8050d8d, type: 3}
+  m_PrefabInstance: {fileID: 987328054}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1676606762
 GameObject:
   m_ObjectHideFlags: 0
@@ -4745,11 +4761,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2908317413938459603, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.3538928
+      value: 51.6
       objectReference: {fileID: 0}
     - target: {fileID: 2908317413938459603, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.88158274
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 2908317413938459603, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
       propertyPath: m_LocalPosition.z
