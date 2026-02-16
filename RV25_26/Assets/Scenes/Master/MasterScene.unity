@@ -393,6 +393,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 453a907f5cfa9de4fa6bc64c05053091, type: 2}
     - target: {fileID: 4841121419019612011, guid: 5ae6f46e48c7caa4ba6466c453bf3b2f, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4841121419019612011, guid: 5ae6f46e48c7caa4ba6466c453bf3b2f, type: 3}
+      propertyPath: m_SceneBindings.Array.data[14].key
+      value: 
+      objectReference: {fileID: -5368179615860631353, guid: 453a907f5cfa9de4fa6bc64c05053091, type: 2}
+    - target: {fileID: 4841121419019612011, guid: 5ae6f46e48c7caa4ba6466c453bf3b2f, type: 3}
       propertyPath: m_SceneBindings.Array.data[2].value
       value: 
       objectReference: {fileID: 1740315235}
@@ -416,6 +424,10 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[13].value
       value: 
       objectReference: {fileID: 1032964458}
+    - target: {fileID: 4841121419019612011, guid: 5ae6f46e48c7caa4ba6466c453bf3b2f, type: 3}
+      propertyPath: m_SceneBindings.Array.data[14].value
+      value: 
+      objectReference: {fileID: 411734916}
     - target: {fileID: 7401308005474717500, guid: 5ae6f46e48c7caa4ba6466c453bf3b2f, type: 3}
       propertyPath: m_Events.m_Events.Array.data[3].m_PersistentCalls.m_Calls.Array.size
       value: 5
@@ -519,8 +531,66 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1721322186055206754, guid: 5ae6f46e48c7caa4ba6466c453bf3b2f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 411734915}
+    - targetCorrespondingSourceObject: {fileID: 1721322186055206754, guid: 5ae6f46e48c7caa4ba6466c453bf3b2f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 411734914}
   m_SourcePrefab: {fileID: 100100000, guid: 5ae6f46e48c7caa4ba6466c453bf3b2f, type: 3}
+--- !u!1 &411734913 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1721322186055206754, guid: 5ae6f46e48c7caa4ba6466c453bf3b2f, type: 3}
+  m_PrefabInstance: {fileID: 411734912}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &411734914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411734913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _startQuests: 1b000000
+  _endQuests: 000000001c000000
+  _isNotInTheScene: 0
+  _gameObject: {fileID: 0}
+  _gameObjectName: 
+  _effectOnOneComponent: 1
+  _component: {fileID: 411734915}
+  _componentName: 
+  _onActivate: {fileID: 0}
+  _onDeactivate: {fileID: 0}
+--- !u!114 &411734915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411734913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e970ffd5bf0bd0449c4bda4cfbf7bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnEventListenerCaller
+  _onEvent: {fileID: 11400000, guid: 063b6422bac6e77478b230d1ee01ca3c, type: 2}
+  _isNotInTheScene: 1
+  _component: {fileID: 0}
+  _methodName: Shake
+  _param: 0
+  _gameObjectName: Main Camera
+  _componentName: CameraShake
+--- !u!82 &411734916 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3777997965230961355, guid: 5ae6f46e48c7caa4ba6466c453bf3b2f, type: 3}
+  m_PrefabInstance: {fileID: 411734912}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &560256639
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,7 +1034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4995816736615920062, guid: 6ef54651906f3454b84c19451913ca3e, type: 3}
       propertyPath: m_Alpha
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5234555899862486680, guid: 6ef54651906f3454b84c19451913ca3e, type: 3}
       propertyPath: m_fontAsset

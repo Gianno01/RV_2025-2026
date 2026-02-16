@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
   clipSubtitleChunks:
   - text: "Boys\u2026 where are you?!"
-    startTime: 6.8
-    endTime: 9.5
+    startTime: 10.47
+    endTime: 12.96
   - text: "Please\u2026 please answer me!"
-    startTime: 9.5
-    endTime: 11.9
+    startTime: 12.96
+    endTime: 15.3
   - text: "My sons\u2026 please, don\u2019t leave me..."
-    startTime: 11.9
-    endTime: 15
+    startTime: 15.3
+    endTime: 18.36

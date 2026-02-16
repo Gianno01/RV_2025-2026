@@ -171,6 +171,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8308423212397736529, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
+      propertyPath: duration
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308423212397736529, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308423212397736529, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
+      propertyPath: magnitude
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8359993448146854829, guid: d79f67b7d333ca34fb3517e3a48b77c5, type: 3}
       propertyPath: pointerImage
       value: 
