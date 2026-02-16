@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening; // Necessario per DOTween
 
 public class NpcProximityCaller : MonoBehaviour
 {
@@ -19,29 +20,30 @@ public class NpcProximityCaller : MonoBehaviour
     [Header("Animazione")]
     [SerializeField] private string callTriggerName = "call"; 
 
+    [Header("Sincronizzazione")]
+    [SerializeField] private float _audioDelay = 1.0f; // <--- AGGIUNTO: Secondi di ritardo prima dell'audio
+
     [Header("Rotazione e Ritorno")]
     [SerializeField] private bool _shouldRotate = true;
-    [SerializeField] private float _rotationSpeed = 2.0f;
-    [SerializeField] private float _returnSpeed = 1.0f; // Velocità di ritorno (più lenta)
+    [SerializeField] private float _rotationSpeed = 5.0f; // Aumentata da .0f per permettere il movimento
+    [SerializeField] private float _returnSpeed = 1.0f; 
     [SerializeField] private bool _onlyRotateWhileTalking = false;
 
     private Transform _playerTransform;
-    private Quaternion _initialRotation; // Memorizza la rotazione di partenza
+    private Quaternion _initialRotation; 
     private float _lastCallTime = -100f;
     private bool _playerInRange = false;
 
     void Awake()
     {
         _animator = GetComponent<Animator>();
-        _brain = GetComponent<NpcBrain>();
+        _brain = GetComponent<NpcBrain>(); //
         if (_audioSource == null) _audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
     {
-        // Memorizziamo la rotazione che hai impostato nell'Inspector come "punto zero"
         _initialRotation = transform.rotation;
-
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null) _playerTransform = player.transform;
     }
@@ -52,10 +54,9 @@ public class NpcProximityCaller : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, _playerTransform.position);
 
-        // --- Logica di Attivazione ---
         if (distance <= detectionRange && !_playerInRange && Time.time >= _lastCallTime + cooldownTime)
         {
-            if (_brain != null && _brain.currentState == NpcState.Talk) return;
+            if (_brain != null && _brain.currentState == NpcState.Talk) return; //
             ExecuteCall();
         }
         else if (distance > detectionRange)
@@ -63,17 +64,10 @@ public class NpcProximityCaller : MonoBehaviour
             _playerInRange = false;
         }
 
-        // --- Logica di Rotazione Dinamica ---
         if (_shouldRotate)
         {
-            if (_playerInRange)
-            {
-                HandleRotationTowardsPlayer();
-            }
-            else
-            {
-                ReturnToOriginalPosition();
-            }
+            if (_playerInRange) HandleRotationTowardsPlayer();
+            else ReturnToOriginalPosition();
         }
     }
 
@@ -81,12 +75,12 @@ public class NpcProximityCaller : MonoBehaviour
     {
         if (_onlyRotateWhileTalking && _audioSource != null && !_audioSource.isPlaying) 
         {
-            ReturnToOriginalPosition(); // Se smette di parlare, torna in posizione anche se sei vicino
+            ReturnToOriginalPosition();
             return;
         }
 
         Vector3 direction = (_playerTransform.position - transform.position).normalized;
-        direction.y = 0; // Mantiene l'NPC dritto sulla sedia
+        direction.y = 0; 
 
         if (direction != Vector3.zero)
         {
@@ -97,7 +91,6 @@ public class NpcProximityCaller : MonoBehaviour
 
     private void ReturnToOriginalPosition()
     {
-        // Torna gradualmente alla rotazione memorizzata in Start()
         if (transform.rotation != _initialRotation)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, _initialRotation, Time.deltaTime * _returnSpeed);
@@ -109,22 +102,26 @@ public class NpcProximityCaller : MonoBehaviour
         _playerInRange = true;
         _lastCallTime = Time.time;
 
+        // 1. L'animazione parte subito
         if (_animator != null) _animator.SetTrigger(callTriggerName);
 
-        if (_audioSource != null && _voiceClip != null)
+        // 2. Audio e Testo partono dopo il ritardo impostato usando DOTween
+        DOVirtual.DelayedCall(_audioDelay, () => 
         {
-            _audioSource.clip = _voiceClip;
-            _audioSource.Play();
-        }
+            if (_audioSource != null && _voiceClip != null)
+            {
+                _audioSource.clip = _voiceClip;
+                _audioSource.Play(); //
+            }
 
-        if (_onSubtitleShow != null && _subtitle != null)
-        {
-            SubtitleDataTimeReference st;
-            st.subtitleData = _subtitle;
-            st.audioSource = _audioSource;
-            st.playableDirector = null;
-
-            _onSubtitleShow.RaiseWithParam(st);
-        }
+            if (_onSubtitleShow != null && _subtitle != null)
+            {
+                SubtitleDataTimeReference st; //
+                st.subtitleData = _subtitle;
+                st.audioSource = _audioSource;
+                st.playableDirector = null;
+                _onSubtitleShow.RaiseWithParam(st); //
+            }
+        });
     }
 }
