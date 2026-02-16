@@ -48,9 +48,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8574775271708046039, guid: 2f184eae6db02c64a9273b1456cb9974, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -5971071790093223898, guid: 2f184eae6db02c64a9273b1456cb9974, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -1285914538677159686, guid: 2f184eae6db02c64a9273b1456cb9974, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 373162793389026250, guid: 2f184eae6db02c64a9273b1456cb9974, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2f184eae6db02c64a9273b1456cb9974, type: 3}
       propertyPath: m_Name
       value: erbe
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f184eae6db02c64a9273b1456cb9974, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994114589669675575, guid: 2f184eae6db02c64a9273b1456cb9974, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883179882204648604, guid: 2f184eae6db02c64a9273b1456cb9974, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6483251537318714513, guid: 2f184eae6db02c64a9273b1456cb9974, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

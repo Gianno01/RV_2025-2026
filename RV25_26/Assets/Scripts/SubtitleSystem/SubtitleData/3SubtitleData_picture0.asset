@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 3SubtitleData_picture0
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
   clipSubtitleChunks:
-  - text: "He must have <b>passed through here\u2026</b>"
+  - text: "He must have <b><uppercase>passed through here\u2026</uppercase></b>"
     startTime: 4.33
     endTime: 6.09

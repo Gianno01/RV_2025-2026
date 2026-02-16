@@ -16,6 +16,6 @@ MonoBehaviour:
   - text: "this necklace\u2026 it\u2019s his."
     startTime: 1.28
     endTime: 3.83
-  - text: "He must have <b>passed through here\u2026</b>"
+  - text: "He must have <b><uppercase>passed through here\u2026</uppercase></b>"
     startTime: 3.83
     endTime: 5.9

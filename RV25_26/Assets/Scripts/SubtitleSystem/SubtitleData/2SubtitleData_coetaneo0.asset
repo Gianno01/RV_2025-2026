@@ -16,7 +16,7 @@ MonoBehaviour:
   - text: I saw him this morning!
     startTime: 1.9
     endTime: 3.46
-  - text: He was running toward <b>the main road</b>.
+  - text: He was running toward <b><uppercase>the main road</uppercase></b>.
     startTime: 3.46
     endTime: 5.43
   - text: "When the settlers came\u2026 they were shouting that they\u2019d burn

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 1SubtitleData_hint0
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
   clipSubtitleChunks:
-  - text: Maybe i should <b>ask someone around here</b>.
+  - text: Maybe i should <b><uppercase>ask someone around here</uppercase></b>.
     startTime: 0
     endTime: 3.25

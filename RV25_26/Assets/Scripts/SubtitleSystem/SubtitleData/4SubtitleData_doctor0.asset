@@ -16,7 +16,8 @@ MonoBehaviour:
   - text: "Hey, kid\u2026 are you hurt?"
     startTime: 0
     endTime: 2.92
-  - text: "Your brother? No\u2026 <b>he\u2019s not here</b>. I\u2019m sorry."
+  - text: "Your brother? No\u2026 <b><uppercase>he\u2019s not here</uppercase></b>.
+      I\u2019m sorry."
     startTime: 2.92
     endTime: 6.8
   - text: I need your help though.

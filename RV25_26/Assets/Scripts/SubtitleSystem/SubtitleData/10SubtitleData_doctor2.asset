@@ -16,11 +16,12 @@ MonoBehaviour:
   - text: I heard you talking...
     startTime: 0
     endTime: 2.2
-  - text: if your brother is not here, the <b>refugee camp</b> ahead is your best
-      chance.
+  - text: if your brother is not here, the <b><uppercase>refugee camp</uppercase></b>
+      ahead is your best chance.
     startTime: 2.2
     endTime: 7.33
-  - text: I just received a call, there is <b>a boy there, hurt in the leg</b>.
+  - text: I just received a call, there is <b><uppercase>a boy there, hurt in the
+      leg</uppercase></b>.
     startTime: 7.33
     endTime: 12.07
   - text: "I can\u2019t leave this place, there are too many wounded..."

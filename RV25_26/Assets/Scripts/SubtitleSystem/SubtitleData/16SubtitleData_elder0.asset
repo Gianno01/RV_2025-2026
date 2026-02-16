@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 16SubtitleData_elder0
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
   clipSubtitleChunks:
-  - text: "Oh little one\u2026 <b>that bucket</b>\u2026"
+  - text: "Oh little one\u2026 <b><uppercase>that bucket</uppercase></b>\u2026"
     startTime: 0
     endTime: 3.85
   - text: "it\u2019s heavier every day\u2026"

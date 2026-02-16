@@ -16,7 +16,8 @@ MonoBehaviour:
   - text: "Hey\u2026 hey sweetheart\u2026 you are awake!"
     startTime: 0
     endTime: 3.7
-  - text: "Listen to me\u2026 <b>your brother\u2026 he didn\u2019t come back</b>."
+  - text: "Listen to me\u2026 <b><uppercase>your brother\u2026 he didn\u2019t come
+      back</uppercase></b>."
     startTime: 3.7
     endTime: 7.17
   - text: "When they attacked the village\u2026 he ran away\u2026 and I haven\u2019t
