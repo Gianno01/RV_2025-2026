@@ -166,15 +166,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 99.58
+      value: 1.38927
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.007
+      value: 0.99767
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -193.79
+      value: -1.37368
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -531,6 +531,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6152622288814477361}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5950172727424889629}
   m_SourcePrefab: {fileID: 100100000, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
 --- !u!1 &2458966311550221970 stripped
 GameObject:
@@ -4524,6 +4527,30 @@ MonoBehaviour:
   _componentName: 
   _onActivate: {fileID: 0}
   _onDeactivate: {fileID: 0}
+--- !u!114 &5950172727424889629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2458966311550221970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be66d8d3d5bba0749bd536da25e6a52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcProximityCaller
+  _voiceClip: {fileID: 8300000, guid: 666f42442d935034e9f2d83fa5e8c7b2, type: 3}
+  _subtitle: {fileID: 0}
+  _onSubtitleShow: {fileID: 0}
+  _audioSource: {fileID: 1935874413393961534}
+  detectionRange: 7
+  cooldownTime: 10
+  callTriggerName: call
+  _audioDelay: 1
+  _shouldRotate: 1
+  _rotationSpeed: 5
+  _returnSpeed: 1
+  _onlyRotateWhileTalking: 0
 --- !u!4 &2984708398591386664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5b759042e70f73a4797aea0d1e58bd9a, type: 3}
