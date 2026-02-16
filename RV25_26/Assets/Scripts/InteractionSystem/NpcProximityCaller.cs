@@ -19,13 +19,14 @@ public class NpcProximityCaller : MonoBehaviour
     [Header("Animazione")]
     [SerializeField] private string callTriggerName = "call"; 
 
-    [Header("Rotazione (Inspector)")]
+    [Header("Rotazione e Ritorno")]
     [SerializeField] private bool _shouldRotate = true;
-    [SerializeField] private float _rotationSpeed = 5.0f;
-    [Tooltip("Se attivo, ruota verso il player solo quando l'audio sta andando")]
+    [SerializeField] private float _rotationSpeed = 2.0f;
+    [SerializeField] private float _returnSpeed = 1.0f; // Velocità di ritorno (più lenta)
     [SerializeField] private bool _onlyRotateWhileTalking = false;
 
     private Transform _playerTransform;
+    private Quaternion _initialRotation; // Memorizza la rotazione di partenza
     private float _lastCallTime = -100f;
     private bool _playerInRange = false;
 
@@ -38,6 +39,9 @@ public class NpcProximityCaller : MonoBehaviour
 
     void Start()
     {
+        // Memorizziamo la rotazione che hai impostato nell'Inspector come "punto zero"
+        _initialRotation = transform.rotation;
+
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null) _playerTransform = player.transform;
     }
@@ -59,29 +63,44 @@ public class NpcProximityCaller : MonoBehaviour
             _playerInRange = false;
         }
 
-        // --- Logica di Rotazione ---
-        if (_shouldRotate && _playerInRange)
+        // --- Logica di Rotazione Dinamica ---
+        if (_shouldRotate)
         {
-            HandleRotation();
+            if (_playerInRange)
+            {
+                HandleRotationTowardsPlayer();
+            }
+            else
+            {
+                ReturnToOriginalPosition();
+            }
         }
     }
 
-    private void HandleRotation()
+    private void HandleRotationTowardsPlayer()
     {
-        // Se impostato, ruota solo se l'audio è in riproduzione
-        if (_onlyRotateWhileTalking && _audioSource != null && !_audioSource.isPlaying) return;
+        if (_onlyRotateWhileTalking && _audioSource != null && !_audioSource.isPlaying) 
+        {
+            ReturnToOriginalPosition(); // Se smette di parlare, torna in posizione anche se sei vicino
+            return;
+        }
 
-        // Calcola la direzione verso il player
         Vector3 direction = (_playerTransform.position - transform.position).normalized;
-        
-        // Importante: azzeriamo la Y per evitare che l'NPC si ribalti in avanti o indietro
-        direction.y = 0; 
+        direction.y = 0; // Mantiene l'NPC dritto sulla sedia
 
         if (direction != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(direction);
-            // Slerp permette una rotazione fluida invece di uno scatto secco
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * _rotationSpeed);
+        }
+    }
+
+    private void ReturnToOriginalPosition()
+    {
+        // Torna gradualmente alla rotazione memorizzata in Start()
+        if (transform.rotation != _initialRotation)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, _initialRotation, Time.deltaTime * _returnSpeed);
         }
     }
 
@@ -107,7 +126,5 @@ public class NpcProximityCaller : MonoBehaviour
 
             _onSubtitleShow.RaiseWithParam(st);
         }
-        
-        Debug.Log($"{gameObject.name} sta chiamando e ruotando verso il Player!");
     }
 }
