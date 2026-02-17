@@ -119,6 +119,7 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
     void MoveToPlayerLogic()
     {
         if (playerTransform == null) return;
+        agent.updateRotation = true; 
         agent.SetDestination(playerTransform.position);
 
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
