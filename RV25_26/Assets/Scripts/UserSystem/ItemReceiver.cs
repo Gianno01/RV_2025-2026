@@ -4,6 +4,7 @@ public class ItemReceiver : MonoBehaviour, IsInteractable
 {
     [Header("Consegna")]
     public string receiverName = "receiver";
+    public string objIdToReceive;
     public bool destroyOnDelivery = false; // Scompare?
     public Transform deliveryPoint;        // O si piazza qui?
 
@@ -20,7 +21,9 @@ public class ItemReceiver : MonoBehaviour, IsInteractable
 
     public void ReceiveItem(GrippableItem item)
     {
+        if(!this.enabled) return;
         if (item == null) return;
+        if(item._itemName != objIdToReceive) return;
 
         if (destroyOnDelivery)
         {

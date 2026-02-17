@@ -45,6 +45,6 @@ public class TalkingCharacter : MonoBehaviour, IsInteractable
         // Se vuoi che l'NPC reagisca alla consegna, chiama Interact() o distruggi l'oggetto
         //Debug.Log("l'oggetto viene distrutto!");
         ItemReceiver itemReceiver = GetComponent<ItemReceiver>();
-        if(itemReceiver != null && itemReceiver.enabled) itemReceiver.ReceiveItem(item);
+        if(itemReceiver != null) itemReceiver.ReceiveItem(item);
     }
 }

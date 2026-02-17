@@ -113,6 +113,9 @@ PrefabInstance:
       addedObject: {fileID: 4498916629043996656}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 8609798975104824857}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 32314781876646106}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c095ac9590fca2468131d7c76fb08c5, type: 3}
       insertIndex: -1
@@ -406,6 +409,29 @@ PlayableDirector:
     value: {fileID: 1670708020639990575}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &8609798975104824857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073693125024513044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _startQuests: 19000000
+  _endQuests: 000000001a000000
+  _isNotInTheScene: 0
+  _gameObject: {fileID: 0}
+  _gameObjectName: 
+  _effectOnOneComponent: 1
+  _component: {fileID: 32314781876646106}
+  _componentName: 
+  _onActivate: {fileID: 0}
+  _onDeactivate: {fileID: 0}
 --- !u!114 &32314781876646106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemReceiver
   receiverName: vecchio
+  objIdToReceive: Secchio
   destroyOnDelivery: 1
   deliveryPoint: {fileID: 0}
   _onDeliveryObject: {fileID: 11400000, guid: fca5e2f9bb47ac94687a2520c33b38a9, type: 2}

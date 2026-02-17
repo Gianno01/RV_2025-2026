@@ -457,6 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemReceiver
   receiverName: hungry
+  objIdToReceive: Pane
   destroyOnDelivery: 1
   deliveryPoint: {fileID: 0}
   _onDeliveryObject: {fileID: 11400000, guid: fca5e2f9bb47ac94687a2520c33b38a9, type: 2}

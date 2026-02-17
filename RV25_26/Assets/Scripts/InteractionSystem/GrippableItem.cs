@@ -7,7 +7,7 @@ public class GrippableItem : MonoBehaviour, IsInteractable
     public static GrippableItem HeldItem;
 
     [Header("Configurazione")]
-    [SerializeField] private string _itemName = "Oggetto";
+    public string _itemName = "Oggetto";
     [SerializeField] private Vector3 _followOffset = new Vector3(0.6f, -0.2f, 0.7f); 
     [SerializeField] private Vector3 _rotOffset = Vector3.zero; 
     [SerializeField] private AppEventData _onGripped;
