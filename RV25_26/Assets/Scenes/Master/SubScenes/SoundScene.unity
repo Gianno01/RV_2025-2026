@@ -8532,7 +8532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioSpot
   _onAudioStart: {fileID: 0}
   _onAudioEnd: {fileID: 11400000, guid: f879bdba19bdeb141a54653db8f6f0f9, type: 2}
-  _clip: {fileID: 8300000, guid: ecbf99df2157e4b45bfd6f1d9d45bf5a, type: 3}
+  _clip: {fileID: 8300000, guid: 1555f7f2cef708449b6079a5c08aa143, type: 3}
   _stopCurrentClip: 0
   _playMoreThanOne: 0
 --- !u!82 &2071892181
