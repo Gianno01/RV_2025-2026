@@ -17,6 +17,6 @@ MonoBehaviour:
     startTime: 0
     endTime: 3.5
   - text: Maybe I should <b><uppercase>go home</uppercase></b>, mum will have some
-      <b>bread</b>.
+      <b><uppercase>bread</uppercase></b>.
     startTime: 3.5
     endTime: 6.4

@@ -19,7 +19,7 @@ MonoBehaviour:
   - text: "Your brother? No, <b><uppercase>I haven\u2019t seen him</uppercase></b>."
     startTime: 4.89
     endTime: 7.71
-  - text: "But if he came through here\u2026 <b>the soldiers</b> would\u2019ve noticed.
-      You should <b><uppercase>ask them</uppercase></b>.\r\n"
+  - text: "But if he came through here\u2026 <b><uppercase>the soldiers</uppercase></b>
+      would\u2019ve noticed. You should <b><uppercase>ask them</uppercase></b>.\r\n"
     startTime: 7.71
     endTime: 13.11

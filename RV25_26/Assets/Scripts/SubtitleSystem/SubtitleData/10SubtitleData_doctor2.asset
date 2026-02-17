@@ -27,6 +27,6 @@ MonoBehaviour:
   - text: "I can\u2019t leave this place, there are too many wounded..."
     startTime: 12.07
     endTime: 15.4
-  - text: "you\u2019re the only one who can <b>reach him.</b>"
+  - text: "you\u2019re the only one who can <b><uppercase>reach him</uppercase></b>."
     startTime: 15.4
     endTime: 17.6

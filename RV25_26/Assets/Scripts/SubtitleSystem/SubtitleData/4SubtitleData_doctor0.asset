@@ -23,7 +23,7 @@ MonoBehaviour:
   - text: I need your help though.
     startTime: 6.8
     endTime: 8.9
-  - text: In that <b>storage tent</b>, there is a sterile <b>syringe</b>. Can you
-      <b>bring it to me?</b>
+  - text: In that <b><uppercase>storage tent</uppercase></b>, there is a sterile
+      <b><uppercase>syringe</uppercase></b>. Can you <b><uppercase>bring it to me?</uppercase></b>
     startTime: 8.9
     endTime: 13.56
