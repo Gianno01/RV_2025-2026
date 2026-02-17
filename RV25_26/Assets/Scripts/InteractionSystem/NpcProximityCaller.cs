@@ -67,7 +67,7 @@ public class NpcProximityCaller : MonoBehaviour
         if (_shouldRotate)
         {
             if (_playerInRange) HandleRotationTowardsPlayer();
-            else ReturnToOriginalPosition();
+            //else ReturnToOriginalPosition();
         }
     }
 
@@ -75,7 +75,7 @@ public class NpcProximityCaller : MonoBehaviour
     {
         if (_onlyRotateWhileTalking && _audioSource != null && !_audioSource.isPlaying) 
         {
-            ReturnToOriginalPosition();
+            //ReturnToOriginalPosition();
             return;
         }
 

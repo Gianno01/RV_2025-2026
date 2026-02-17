@@ -447,10 +447,16 @@ PrefabInstance:
       addedObject: {fileID: 2549727962198836650}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2bb60ba579d3b364f9b3670cc9935ee2, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1067348821190795362}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2bb60ba579d3b364f9b3670cc9935ee2, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 8886998204314944547}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2bb60ba579d3b364f9b3670cc9935ee2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4595962052345852452}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2bb60ba579d3b364f9b3670cc9935ee2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1220229804487322959}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2bb60ba579d3b364f9b3670cc9935ee2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2770515280499613888}
@@ -478,6 +484,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2bb60ba579d3b364f9b3670cc9935ee2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4975169850216190768}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2bb60ba579d3b364f9b3670cc9935ee2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2060483557913395419}
   m_SourcePrefab: {fileID: 100100000, guid: 2bb60ba579d3b364f9b3670cc9935ee2, type: 3}
 --- !u!1 &2818325229351178865 stripped
 GameObject:
@@ -626,6 +635,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1067348821190795362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2818325229351178865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b6dd13e970b4440871cdac4628f2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcBrain
+  currentState: 0
+  talkDistance: 2
+  waypoints: []
+  waitTimeAtPoint: 2
+  lookSpeed: 5
+  npcName: Bambino
+  actionVerb: Parla con
 --- !u!114 &8886998204314944547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,6 +689,29 @@ MonoBehaviour:
   _gameObjectName: 
   _effectOnOneComponent: 1
   _component: {fileID: 8886998204314944547}
+  _componentName: 
+  _onActivate: {fileID: 0}
+  _onDeactivate: {fileID: 0}
+--- !u!114 &1220229804487322959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2818325229351178865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf3f202acb002a4ca9b981a49f8c48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnQuestListenerActivator
+  _onCurrentQuestChange: {fileID: 11400000, guid: ba668087e85eeb34495d2611913603e4, type: 2}
+  _startQuests: 04000000
+  _endQuests: 00000000
+  _isNotInTheScene: 0
+  _gameObject: {fileID: 0}
+  _gameObjectName: 
+  _effectOnOneComponent: 1
+  _component: {fileID: 1067348821190795362}
   _componentName: 
   _onActivate: {fileID: 0}
   _onDeactivate: {fileID: 0}
@@ -840,6 +891,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1067348821190795362}
+          m_TargetAssemblyTypeName: NpcBrain, Assembly-CSharp
+          m_MethodName: ChangeState
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: idle
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &4975169850216190768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -858,3 +921,25 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!195 &2060483557913395419
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2818325229351178865}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
