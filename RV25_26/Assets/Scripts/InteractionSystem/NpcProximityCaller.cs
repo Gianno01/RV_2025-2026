@@ -21,7 +21,7 @@ public class NpcProximityCaller : MonoBehaviour
     [SerializeField] private string callTriggerName = "call"; 
 
     [Header("Sincronizzazione")]
-    [SerializeField] private float _audioDelay = 1.0f; // <--- AGGIUNTO: Secondi di ritardo prima dell'audio
+    [SerializeField] private float _audioDelay = 1.0f; // <--- Secondi di ritardo prima dell'audio
 
     [Header("Rotazione e Ritorno")]
     [SerializeField] private bool _shouldRotate = true;
@@ -111,16 +111,16 @@ public class NpcProximityCaller : MonoBehaviour
             if (_audioSource != null && _voiceClip != null)
             {
                 _audioSource.clip = _voiceClip;
-                _audioSource.Play(); //
+                _audioSource.Play(); 
             }
 
             if (_onSubtitleShow != null && _subtitle != null)
             {
-                SubtitleDataTimeReference st; //
+                SubtitleDataTimeReference st; 
                 st.subtitleData = _subtitle;
                 st.audioSource = _audioSource;
                 st.playableDirector = null;
-                _onSubtitleShow.RaiseWithParam(st); //
+                _onSubtitleShow.RaiseWithParam(st); 
             }
         });
     }

@@ -113,6 +113,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8bbb7d497304b5e42b6bef2ea1f26df9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6748990508795072371}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8bbb7d497304b5e42b6bef2ea1f26df9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5486989463046059343}
   m_SourcePrefab: {fileID: 100100000, guid: 8bbb7d497304b5e42b6bef2ea1f26df9, type: 3}
 --- !u!1 &3075824576877064208 stripped
 GameObject:
@@ -599,3 +602,27 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls: []
+--- !u!114 &5486989463046059343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075824576877064208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be66d8d3d5bba0749bd536da25e6a52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcProximityCaller
+  _voiceClip: {fileID: 8300000, guid: ee4ebcdd4a3110a40861e4b9c949ca95, type: 3}
+  _subtitle: {fileID: 0}
+  _onSubtitleShow: {fileID: 0}
+  _audioSource: {fileID: 6427089141335995276}
+  detectionRange: 7
+  cooldownTime: 10
+  callTriggerName: call
+  _audioDelay: 1
+  _shouldRotate: 0
+  _rotationSpeed: 5
+  _returnSpeed: 1
+  _onlyRotateWhileTalking: 0

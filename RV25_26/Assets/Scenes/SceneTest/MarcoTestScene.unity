@@ -2839,6 +2839,7 @@ MonoBehaviour:
   detectionRange: 7
   cooldownTime: 10
   callTriggerName: call
+  _audioDelay: 1
   _shouldRotate: 1
   _rotationSpeed: 1
   _returnSpeed: 1
@@ -3687,6 +3688,100 @@ Transform:
   m_Children: []
   m_Father: {fileID: 270614120}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1507436075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3075824576877064208, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+  m_PrefabInstance: {fileID: 1581662286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1507436076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507436075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be66d8d3d5bba0749bd536da25e6a52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcProximityCaller
+  _voiceClip: {fileID: 8300000, guid: ee4ebcdd4a3110a40861e4b9c949ca95, type: 3}
+  _subtitle: {fileID: 0}
+  _onSubtitleShow: {fileID: 0}
+  _audioSource: {fileID: 1507436078}
+  detectionRange: 7
+  cooldownTime: 10
+  callTriggerName: call
+  _audioDelay: 1
+  _shouldRotate: 0
+  _rotationSpeed: 5
+  _returnSpeed: 1
+  _onlyRotateWhileTalking: 0
+--- !u!82 &1507436078 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6427089141335995276, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+  m_PrefabInstance: {fileID: 1581662286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1581662286
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2442172025471249066, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.4969893
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442172025471249066, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442172025471249066, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.430754
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442172025471249066, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8500766
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442172025471249066, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442172025471249066, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.52665913
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442172025471249066, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442172025471249066, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442172025471249066, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 63.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442172025471249066, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075824576877064208, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+      propertyPath: m_Name
+      value: affamato
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3075824576877064208, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1507436076}
+  m_SourcePrefab: {fileID: 100100000, guid: 364b2de5b94dcd8498e9994549aca769, type: 3}
 --- !u!1 &1661003715
 GameObject:
   m_ObjectHideFlags: 0
@@ -3823,6 +3918,7 @@ MonoBehaviour:
   detectionRange: 10
   cooldownTime: 2
   callTriggerName: call
+  _audioDelay: 1
   _shouldRotate: 0
   _rotationSpeed: 1
   _returnSpeed: 1
@@ -5428,3 +5524,4 @@ SceneRoots:
   - {fileID: 1661003719}
   - {fileID: 987328054}
   - {fileID: 339248898}
+  - {fileID: 1581662286}
