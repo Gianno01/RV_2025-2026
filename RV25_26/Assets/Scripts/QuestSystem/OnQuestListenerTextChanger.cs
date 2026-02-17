@@ -14,20 +14,24 @@ public class OnQuestListenerTextChanger : OnQuestListener
 {
     [SerializeField] private List<QuestText> _questTexts;
     [SerializeField] private AppEventData _onTextChange;
+    private bool _questFound;
     protected override void HandleOnQuestChange(object param)
     {
         int questIndex = (int) param;
 
         SubtitleData subtitleData = null;
+        _questFound = false;
         foreach(QuestText qt in _questTexts)
         {
             if(qt.questIndex == questIndex)
             {
                 subtitleData = qt.subtitleData;
+                _questFound = true;
                 break;
             }
         }
 
+        if(!_questFound) return;
         //if(subtitleData == null) return;
 
         ITextChangeable textChangeable = GetComponent<ITextChangeable>();

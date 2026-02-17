@@ -6,7 +6,7 @@ public class SubtitlesController: MonoBehaviour
     [SerializeField] private AppEventData _onSubtitleShow;
     //[SerializeField] private AppEventData _onTextEnd;
     [SerializeField] private bool _stopCurrentSubtitle;
-    private SubtitleData _currentSubtitleData;
+    private bool _busyWithASubtitle = false;
     private SubtitleUI _subtitleUI;
     private Coroutine _subtitleCoroutine;
 
@@ -36,8 +36,8 @@ public class SubtitlesController: MonoBehaviour
     {
         SubtitleDataTimeReference st = (SubtitleDataTimeReference) param;
 
-        if(_currentSubtitleData != null && !_stopCurrentSubtitle) return;
-        _currentSubtitleData = st.subtitleData;
+        if(_busyWithASubtitle && !_stopCurrentSubtitle) return;
+        _busyWithASubtitle = true;
 
         if(st.subtitleData != null)
         {
@@ -73,7 +73,7 @@ public class SubtitlesController: MonoBehaviour
             }
         }
         _subtitleUI.CloseUI();
-        _currentSubtitleData = null;
+        _busyWithASubtitle = false;
     }
 
     private float UpdateTimer(float startTimer, SubtitleDataTimeReference st)

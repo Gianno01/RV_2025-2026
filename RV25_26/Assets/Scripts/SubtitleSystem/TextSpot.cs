@@ -50,10 +50,8 @@ public class TextSpot : MonoBehaviour, ITextChangeable
     public void ShowText()
     {
         SubtitleDataTimeReference st;
-        st.audioSource = null;
-        st.playableDirector = null;
-        if(_audioSource != null) st.audioSource = _audioSource;
-        if(_playableDirector != null) st.playableDirector = _playableDirector;
+        st.audioSource = _audioSource;
+        st.playableDirector = _playableDirector;
         st.subtitleData = currentSubtitle;
 
         if(!busy && st.subtitleData != null) _onSubtitleShow.RaiseWithParam(st);

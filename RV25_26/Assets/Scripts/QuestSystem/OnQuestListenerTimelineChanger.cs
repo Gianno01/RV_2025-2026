@@ -15,21 +15,24 @@ public class OnQuestListenerTimelineChanger : OnQuestListener
 {
     [SerializeField] private List<QuestTimeline> _questTimelines;
     [SerializeField] private AppEventData _onTimelineChange;
+    private bool _questFound;
     protected override void HandleOnQuestChange(object param)
     {
         int questIndex = (int) param;
 
         PlayableAsset timeline = null;
+        _questFound = false;
         foreach(QuestTimeline qt in _questTimelines)
         {
             if(qt.questIndex == questIndex)
             {
                 timeline = qt.timeline;
+                _questFound = true;
                 break;
             }
         }
 
-        if(timeline == null) return;
+        if(!_questFound || timeline == null) return;
 
         ITimelineChangeable timelineChangeable = GetComponent<ITimelineChangeable>();
         timelineChangeable.ChangeTimeline(timeline);
