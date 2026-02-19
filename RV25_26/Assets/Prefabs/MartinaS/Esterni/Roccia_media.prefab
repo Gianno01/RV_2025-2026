@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2251555064973127003}
   - component: {fileID: 4097103783742708113}
   - component: {fileID: 3221800616909490111}
+  - component: {fileID: 2439951667706593467}
   m_Layer: 0
   m_Name: Roccia_media
   m_TagString: Untagged
@@ -111,3 +112,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.2403219, y: 1.8152926, z: 2.3295946}
   m_Center: {x: 0.042010967, y: 0.012054028, z: 0.033512834}
+--- !u!205 &2439951667706593467
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2583705399329503300}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.03
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 4097103783742708113}
+  m_Enabled: 1

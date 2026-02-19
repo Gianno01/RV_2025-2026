@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3224753247789334779}
   - component: {fileID: 2104144916516621762}
   - component: {fileID: 7529338316636541474}
+  - component: {fileID: 8991694703452649621}
   m_Layer: 9
   m_Name: passo
   m_TagString: Untagged
@@ -89,3 +90,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!205 &8991694703452649621
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6494507890663431797}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.03
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 7529338316636541474}
+  m_Enabled: 1
