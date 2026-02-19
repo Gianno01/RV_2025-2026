@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec346eee9db5984dbf6b1beca0bf884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkyboxController
-  _skyboxSpeed: 0.5
+  _skyboxSpeed: 0.1
   _directionalLight: {fileID: 702587604}
 --- !u!1 &1619805311
 GameObject:

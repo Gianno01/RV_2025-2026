@@ -48,7 +48,7 @@ public class QuestController : MonoBehaviour
             _onEndCreditsSceneRequest.RaiseWithParam(fromSceneToScene);
         }
 
-        Debug.Log("QUEST NUMBER: " + _currentQuestIndex);
+        //Debug.Log("QUEST NUMBER: " + _currentQuestIndex);
         _onCurrentQuestChange.RaiseWithParam(_currentQuestIndex);
 
     }
