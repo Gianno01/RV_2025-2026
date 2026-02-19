@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5754084199372789682, guid: b74d4d222565c5b43a226b348ddc212d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 5643200986912446332, guid: c727fc0f4a981434d95d63fee43b8acc, type: 3}
     - target: {fileID: 919132149155446097, guid: b74d4d222565c5b43a226b348ddc212d, type: 3}
       propertyPath: m_Name
       value: Albero_secco

@@ -131,7 +131,7 @@ public class NpcBrain : MonoBehaviour, IsInteractable, IStateChangeable
     void StartConversation()
     {
         ChangeState("Talk");
-        if (_talkingVoice != null) _talkingVoice.Interact();
+        if (_talkingVoice != null && _talkingVoice.enabled) _talkingVoice.Interact();
     }
 
     public void EndConversation()
