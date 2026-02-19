@@ -3,7 +3,22 @@ guid: 9219db43fab3b2b4799a2988330ace8e
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barre_barella_material
+    second: {fileID: 2100000, guid: ac206df173d2e8842b5a6c976390f4ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dettagli_neri_barella_material
+    second: {fileID: 2100000, guid: ac85837703cf3254d83204deb351efc0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tessuto_branda_material
+    second: {fileID: 2100000, guid: 502bffd4592cc8941b9ce1415e58dd3d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,12 @@ guid: 2849eca82ceb0b24285670a1f1c8c57f
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scatola_medica_material
+    second: {fileID: 2100000, guid: 00c6f05ad4690664381d7e2f9fb0c1fe, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

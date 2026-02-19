@@ -5,6 +5,11 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cassa_legno_mat
+    second: {fileID: 2100000, guid: 56b2ddebeac8c5f43b6d315bf38861ba, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Wood01_2K_Normal

@@ -3,7 +3,17 @@ guid: 297e8d88226f8524098ccabd1419ff8e
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dettagli_neri_barella_material
+    second: {fileID: 2100000, guid: 1b6a3d296f8ab434bb4e0b20027d3d5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scaffale_ospedale_material
+    second: {fileID: 2100000, guid: 46192f57480ffad498b848357d9f7b86, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

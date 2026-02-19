@@ -3,7 +3,12 @@ guid: 7e5a7f624820f50488072434065b6203
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scaffale_ospedale_material
+    second: {fileID: 2100000, guid: 710cfb1a1a81ef440a24896a24284b04, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

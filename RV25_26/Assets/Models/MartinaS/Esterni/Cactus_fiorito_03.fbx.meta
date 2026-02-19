@@ -3,7 +3,22 @@ guid: 6d4c475f34694634f89e210061973c24
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cactus_2_mat
+    second: {fileID: 2100000, guid: 1b7738bc08eb6064ea48ac394983a078, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Petalo_fiore_mat
+    second: {fileID: 2100000, guid: cba01c2d15e79de479e0d3356e203abe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Polline_fiore_mat
+    second: {fileID: 2100000, guid: 06414cffd74755b418a2d0133053964d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,17 @@ guid: 9340b86c1beefa1449d00c36c92afcd3
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barre_sedia_pieghevole_material
+    second: {fileID: 2100000, guid: a1a75bab5eb5b654294204e56226e1eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sedia_plastica
+    second: {fileID: 2100000, guid: 26916758b25bb0143a8cf965c297675b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

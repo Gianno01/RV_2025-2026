@@ -10,27 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f4bd92dd1ad71274f9215ab7fb59f04c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.138306
+      value: 91.73601
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4bd92dd1ad71274f9215ab7fb59f04c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.664
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4bd92dd1ad71274f9215ab7fb59f04c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -200.58835
+      value: -192.981
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4bd92dd1ad71274f9215ab7fb59f04c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.6908326
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4bd92dd1ad71274f9215ab7fb59f04c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4bd92dd1ad71274f9215ab7fb59f04c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7230148
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4bd92dd1ad71274f9215ab7fb59f04c, type: 3}
       propertyPath: m_LocalRotation.z
@@ -42,15 +42,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4bd92dd1ad71274f9215ab7fb59f04c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 92.608
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4bd92dd1ad71274f9215ab7fb59f04c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f4bd92dd1ad71274f9215ab7fb59f04c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f4bd92dd1ad71274f9215ab7fb59f04c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 46192f57480ffad498b848357d9f7b86, type: 2}
     - target: {fileID: 919132149155446097, guid: f4bd92dd1ad71274f9215ab7fb59f04c, type: 3}
       propertyPath: m_Name
       value: Scaffale_piccolo_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4bd92dd1ad71274f9215ab7fb59f04c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

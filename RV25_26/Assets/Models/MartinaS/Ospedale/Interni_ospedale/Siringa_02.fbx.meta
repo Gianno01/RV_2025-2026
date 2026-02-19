@@ -3,7 +3,17 @@ guid: 48d1b82f23fa0414693babe177f928f6
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dettagli_siringa_material
+    second: {fileID: 2100000, guid: e58c01fccd8d2af49afd2f3c37ec50b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Siringa_material
+    second: {fileID: 2100000, guid: 44688362e44a11c41b1180c8640910cf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

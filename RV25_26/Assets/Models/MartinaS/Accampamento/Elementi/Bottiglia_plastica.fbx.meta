@@ -3,7 +3,17 @@ guid: 11a7d9afeea08b642996b9ebec45ef8e
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottiglia_plastica_material
+    second: {fileID: 2100000, guid: d7649f49f3a870743ab2cb64daf012bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tappo_plastica_material
+    second: {fileID: 2100000, guid: f3a3fb7517a14604ea33801c5ada0975, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

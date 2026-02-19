@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5482b8a7fab8a224095a32944546314e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 145.97
+      value: 89.45
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5482b8a7fab8a224095a32944546314e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5482b8a7fab8a224095a32944546314e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -208.602
+      value: -96.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5482b8a7fab8a224095a32944546314e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -63,7 +63,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 5482b8a7fab8a224095a32944546314e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: cd6b01f05f7c5a24894cececd5bc2c4d, type: 2}
+      objectReference: {fileID: 2100000, guid: f7d291cacb4828b46a9c2f485c673efc, type: 2}
     - target: {fileID: 919132149155446097, guid: 5482b8a7fab8a224095a32944546314e, type: 3}
       propertyPath: m_Name
       value: Copertone_01

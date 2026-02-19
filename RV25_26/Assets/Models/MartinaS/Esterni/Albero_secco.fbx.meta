@@ -3,7 +3,12 @@ guid: b74d4d222565c5b43a226b348ddc212d
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tronco_albero_mat
+    second: {fileID: 2100000, guid: 6b4609b262a702f44893abcf18515309, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

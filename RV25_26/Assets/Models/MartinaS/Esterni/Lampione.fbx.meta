@@ -3,7 +3,12 @@ guid: bea6f5c3417c46346917932760d42166
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lampione
+    second: {fileID: 2100000, guid: 31391713b0da6a24eb963328d2597e35, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
