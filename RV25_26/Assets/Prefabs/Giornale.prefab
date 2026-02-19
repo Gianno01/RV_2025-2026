@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1455355197734170864}
   - component: {fileID: 2676637397025926245}
   - component: {fileID: 9068809526159916108}
+  - component: {fileID: 3898871007604638305}
   m_Layer: 0
   m_Name: Giornale
   m_TagString: Untagged
@@ -112,3 +113,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!205 &3898871007604638305
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7447525493897996616}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 10.000002
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0392721
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2676637397025926245}
+  m_Enabled: 1

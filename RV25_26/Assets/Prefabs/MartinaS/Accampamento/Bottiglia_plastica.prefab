@@ -65,6 +65,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11a7d9afeea08b642996b9ebec45ef8e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7302765977501914631}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11a7d9afeea08b642996b9ebec45ef8e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4082020646596575326}
   m_SourcePrefab: {fileID: 100100000, guid: 11a7d9afeea08b642996b9ebec45ef8e, type: 3}
 --- !u!1 &2322974364829908935 stripped
 GameObject:
@@ -112,6 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GrippableItem
   _itemName: Oggetto
   _followOffset: {x: 0.6, y: -0.2, z: 0.7}
+  _rotOffset: {x: 0, y: 0, z: 0}
+  _onGripped: {fileID: 0}
 --- !u!65 &7302765977501914631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -133,3 +138,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.12098115, y: 0.34922153, z: 0.12098115}
   m_Center: {x: 0, y: -0.019683264, z: 0}
+--- !u!205 &4082020646596575326
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2322974364829908935}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: -0.00491938, z: 0}
+  m_Size: 0.3787493
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.014498265
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 4268322352785907218}
+    - renderer: {fileID: 7707016809515239035}
+  m_Enabled: 1
+--- !u!23 &4268322352785907218 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 11a7d9afeea08b642996b9ebec45ef8e, type: 3}
+  m_PrefabInstance: {fileID: 3241946530613772950}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7707016809515239035 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -4176693083551464211, guid: 11a7d9afeea08b642996b9ebec45ef8e, type: 3}
+  m_PrefabInstance: {fileID: 3241946530613772950}
+  m_PrefabAsset: {fileID: 0}
